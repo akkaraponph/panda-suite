@@ -1,0 +1,1 @@
+เขียน Backend Technical Specification ภาษาไทยจาก service.py และ requirements.md แยกพฤติกรรมปัจจุบันกับการออกแบบที่เสนอ ระบุข้อที่ยังตัดสินใจไม่ได้ ห้ามแก้ source code

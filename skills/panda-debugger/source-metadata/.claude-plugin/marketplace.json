@@ -1,0 +1,17 @@
+{
+  "name": "panda-debugger",
+  "owner": {
+    "name": "akkaraponph"
+  },
+  "metadata": {
+    "description": "Evidence-first debugging skill for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "panda-debugger",
+      "source": "./",
+      "description": "Investigate software bugs from logs, source code, runtime behavior, and tests, proving the root cause with evidence before any fix.",
+      "category": "development"
+    }
+  ]
+}

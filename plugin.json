@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "panda-suite",
+  "version": "0.1.0",
+  "description": "Independent engineering and product delivery skills with lightweight Panda Lead coordination.",
+  "author": {"name": "akkaraponph", "url": "https://github.com/akkaraponph"},
+  "repository": "https://github.com/akkaraponph/panda-suite",
+  "license": "MIT",
+  "keywords": ["engineering", "planning", "debugging", "review", "documentation", "skills"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Panda Suite",
+        "shortDescription": "Engineering and product delivery skills",
+        "developerName": "akkaraponph",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": ["Use Panda Lead to coordinate this engineering task."]
+      }
+    }
+  }
+}

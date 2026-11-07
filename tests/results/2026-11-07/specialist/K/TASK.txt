@@ -1,0 +1,3 @@
+Use panda-write. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-write/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Write a short developer guide for the current service.py with a runnable usage example. The requested rejection behavior is still only a proposal. Use clear English and do not implement it.

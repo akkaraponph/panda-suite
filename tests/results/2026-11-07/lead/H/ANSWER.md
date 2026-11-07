@@ -1,0 +1,1 @@
+[`label(request)`](/tmp/panda-suite-evals-lead/H/service.py:12) returns a string containing the request's `id`, a colon and space, and its `status`. For example, `label({"id": 7, "status": "pending"})` returns `"7: pending"`; I ran that example successfully. It reads those fields without changing the request.

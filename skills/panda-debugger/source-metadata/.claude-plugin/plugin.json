@@ -1,0 +1,12 @@
+{
+  "name": "panda-debugger",
+  "description": "Investigate software bugs from logs, source code, runtime behavior, and tests, proving the root cause with evidence before any fix.",
+  "version": "1.0.0",
+  "author": {
+    "name": "akkaraponph"
+  },
+  "homepage": "https://github.com/akkaraponph/panda-debugger",
+  "repository": "https://github.com/akkaraponph/panda-debugger",
+  "keywords": ["debugging", "root-cause", "investigation", "incident", "skill"],
+  "skills": ["./skills/panda-debugger"]
+}

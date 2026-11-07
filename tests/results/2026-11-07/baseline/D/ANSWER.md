@@ -1,0 +1,3 @@
+- **[P1] Restore owner authorization before cancellation — `after.py:3`.** The removed `order["owner_id"] != actor_id` guard lets any requester cancel any unshipped order. There is no other authorization layer, and `actor_id` is now unused. For `cancel({"owner_id": 1, "status": "pending"}, 2)`, the old code raises `PermissionError("owner required")`; the new code returns `{"owner_id": 1, "status": "cancelled"}`. Restore the owner check before the shipping check and add a regression test for a non-owner cancelling an unshipped order.
+
+Verified by executing both complete implementations against that input. Neither source file was edited.

@@ -1,0 +1,3 @@
+Use panda-test. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-test/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Add and run unittest coverage for after.py against the behavior required by context.md. Include successful owner cancellation, shipped-order rejection, and non-owner rejection. You may create tests, but must not modify after.py or before.py. Report the actual result and remaining defect.

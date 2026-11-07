@@ -1,0 +1,11 @@
+- **CONFIRMED:** the success path never commits its SQLite transaction. Closing the connection discards the balance changes.
+
+For a transfer of 25 from account 1 to 2, the supplied success test expects `[75, 45]` but reads `[100, 20]`. `python3 -m unittest discover -s . -p 'test_*.py' -v` ran two tests: success persistence failed; invalid amount passed (exit 1).
+
+The trace is `transfer()` → positive-amount validation → `BEGIN` → debit → credit → `return None` → `finally: close()`. See [transfer.py](/tmp/panda-suite-evals-lead/A/transfer.py:12), the return at [line 26](/tmp/panda-suite-evals-lead/A/transfer.py:26), and close at [line 31](/tmp/panda-suite-evals-lead/A/transfer.py:31). Exception paths explicitly roll back; success has no matching commit.
+
+I checked competing explanations: missing account updates, reading a different database, and an uncommitted transaction. A temporary local database and traced connection showed each UPDATE affected one row and balances were `[75, 45]` inside the still-open transaction immediately before close. Reopening that same path showed `[100, 20]`. A control added an explicit commit in the in-memory connection wrapper before close; reopening then showed `[75, 45]`. This isolates the transaction boundary rather than inferring the cause from the failing assertion alone. Both experiments returned `None`; the control is an experiment, not a source fix.
+
+The smallest proposed change is `connection.commit()` in `transfer.py` after the destination row-count check and before `return None`. Keep rollback on exceptions and close in `finally`; commit errors should still propagate. No application or test file was changed. Implementation verification is **Not Run** because this request is investigation-only.
+
+After an authorized fix, rerun the existing tests and add checks that a missing destination rolls back the debit, a missing source leaves balances unchanged, and a negative amount is rejected. Those additional regression tests were **not run**. Findings concern this local fixture; production environment, onset, and frequency are not established. Exact commands and observed outputs are in [ACTIONS.md](/tmp/panda-suite-evals-lead/A/ACTIONS.md).

@@ -1,0 +1,1 @@
+Assess the complexity of service.py and recommend the smallest sensible design. It serves one admin greeting use case. Preserve access control and behavior. Do not edit.

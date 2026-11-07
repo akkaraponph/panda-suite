@@ -1,0 +1,3 @@
+Use panda-simplify. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-simplify/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Assess the complexity of service.py and recommend the smallest sensible design. It serves one admin greeting use case. Preserve access control and behavior. Do not edit.

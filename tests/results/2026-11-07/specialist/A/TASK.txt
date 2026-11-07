@@ -1,0 +1,3 @@
+Use panda-debugger. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Investigate why a successful transfer leaves balances unchanged. Run the available local tests and explain the cause with confidence and evidence. Do not change application code or tests.

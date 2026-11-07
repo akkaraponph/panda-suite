@@ -1,0 +1,20 @@
+{
+  "name": "panda-debugger",
+  "interface": {
+    "displayName": "PANDA DEBUGGER"
+  },
+  "plugins": [
+    {
+      "name": "panda-debugger",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Implement the approved plan in plan.md. I need to leave in a minute, so keep it moving. The external integration runner is unavailable; finish the local work and report what was actually verified.

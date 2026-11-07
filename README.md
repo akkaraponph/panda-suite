@@ -1,0 +1,235 @@
+# Panda Suite
+
+![Cyberpunk Panda Suite branding](images/branding.png)
+
+Independent Agent Skills for engineering and product delivery, coordinated when
+useful by **Panda Lead**. Think clearly. Build carefully. Ship confidently.
+
+The suite covers discovery, planning, design, implementation, debugging, review,
+verification, documentation, and delivery handoff. It is Markdown instructions
+plus small maintenance tools. It does not run an agent service or require
+multi-agent execution.
+
+[ภาษาไทย](README.th.md) · [Architecture](docs/architecture.md) ·
+[Verification and limitations](docs/verification.md)
+
+Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
+copyable examples and expected outputs for every skill.
+
+## Skills
+
+| Skill | Use it for |
+| --- | --- |
+| `panda-requirements` | Clarify actors, business rules and testable acceptance |
+| `panda-test` | Design, add, run and assess effective tests |
+| `panda-impact` | Trace dependencies and compatibility before a change |
+| `panda-release` | Prepare evidence-based release readiness without deployment |
+| `panda-skill-lab` | Design and evaluate skills with honest baseline comparisons |
+| `panda-lead` | Select the smallest workflow and coordinate requested activities |
+| `panda-brainstorm` | Explore a problem, constraints, assumptions, and alternatives |
+| `panda-plan` | Define ordered tasks, dependencies, acceptance, and verification |
+| `panda-execute` | Implement authorized work and report actual verification |
+| `panda-debugger` | Investigate a failure and establish causal confidence; preserved upstream |
+| `panda-review` | Find material defects in a bounded change |
+| `panda-simplify` | Assess unnecessary complexity while preserving invariants |
+| `buddhist-method` | Apply optional reasoning discipline at relevant decision points; preserved upstream |
+| `panda-write` | Create accurate project and developer documentation |
+| `panda-spec` | Specify current and proposed technical contracts in Thai or English |
+| `panda-manual` | Document observed user journeys or label supplied-evidence drafts |
+
+Specialists work independently. A function explanation needs no project plan.
+Brainstorming does not authorize implementation. Debugging does not automatically
+start planning or documentation. Buddhist Method is optional rather than a stage
+between every activity. Requirements, testing, impact, release, and skill evaluation are now supported.
+
+## Install from this checkout
+
+Use one method to avoid duplicate skill names. Obtain this implementation branch:
+
+```sh
+git clone --branch codex/panda-suite https://github.com/akkaraponph/panda-suite.git
+cd panda-suite
+```
+
+Run the commands below from that checkout. All source files are included; no
+recursive checkout or bootstrap is needed. This is source distribution, not a
+published package-registry release.
+
+**License status:** original Suite files use MIT; Buddhist Method retains its MIT
+license. The pinned Panda Debugger revision has no LICENSE file. Its public
+redistribution terms remain unresolved; the Suite license does not cover it.
+See [source notices](SOURCE_NOTICES.md).
+
+### Claude Code
+
+From this repository, load without installing:
+
+```sh
+claude --plugin-dir "$PWD"
+```
+
+Then use `/panda-suite:panda-lead` or a specialist such as
+`/panda-suite:panda-review`.
+
+For persistent local marketplace installation:
+
+```sh
+claude plugin marketplace add "$PWD"
+claude plugin install panda-suite@panda-suite
+```
+
+The local plugin and marketplace manifests were validated with Claude Code
+2.1.251, and its component inventory discovers all sixteen skills. Persistent
+installation and interactive model invocation were not exercised.
+
+### OpenAI Codex
+
+For local plugin installation:
+
+```sh
+codex plugin marketplace add "$PWD"
+codex plugin add panda-suite@panda-suite
+```
+
+Use the installed skill selector. Codex 0.159.2's plugin inventory exposes
+`panda-suite:panda-lead` and `panda-suite:panda-review`; select those names, or
+reference `$panda-suite:panda-lead` in your request.
+
+The portable root manifest and all sixteen plugin skill paths were read by the
+actual Codex app-server. Standalone discovery below was also tested. Persistent
+plugin installation and interactive invocation were not exercised, and no global
+user configuration was changed during validation.
+
+### Standalone skills and compatible hosts
+
+The copy utility uses Python 3.10+ and the standard library. Choose your host's
+documented discovery directory. For a Codex project:
+
+```sh
+python3 scripts/install-skills.py --destination /path/to/project/.agents/skills --all
+```
+
+For selected user-level Codex skills:
+
+```sh
+python3 scripts/install-skills.py --destination "$HOME/.agents/skills" --skill panda-lead --skill panda-plan --skill panda-execute
+```
+
+For a standalone Claude Code specialist:
+
+```sh
+python3 scripts/install-skills.py --destination "$HOME/.claude/skills" --skill panda-spec
+```
+
+The installer copies complete directories and refuses existing names, including
+late directory collisions. It does not overwrite a previous installation. Review
+and back up an old copy before replacing it. An I/O error during copying can leave
+a partial newly created directory; inspect it before retrying. Restart or refresh
+the host if a new skill does not appear.
+
+Standalone Codex invocation uses `$panda-lead`, `$panda-plan`, or `$panda-spec`;
+standalone Claude Code uses `/panda-lead`, `/panda-plan`, or `/panda-spec`.
+Other Agent Skills hosts need their own documented discovery/instruction-loading
+mechanism. Format validation alone does not prove those runtimes are compatible.
+
+## Examples
+
+These prompts use standalone Codex names; use your installation's selector above.
+
+```text
+$panda-lead Explain what this function does.
+
+$panda-plan Plan a manager rejection flow from requirements.md and the existing
+service. Include acceptance criteria. Do not implement it.
+
+$panda-debugger Investigate why this transfer returns success but balances stay
+unchanged. Show evidence and confidence. Do not edit code.
+
+$panda-execute Implement the approved plan in docs/plan.md. Run the relevant
+checks and report any unverified acceptance criteria.
+
+$panda-review Review this diff for material defects. Do not fix it yet.
+
+$panda-spec เขียน Backend Technical Specification ภาษาไทยจาก source code
+แยกพฤติกรรมปัจจุบัน ข้อเสนอ และประเด็นที่ยังต้องตัดสินใจ
+
+$panda-manual Document the test application's draft-save journey. Use actual
+browser observations and screenshots when available; label anything unverified.
+```
+
+For “implement this feature, review it, and update the README,” Lead can use
+Plan when needed → Execute → Review → Write. It carries the objective, evidence,
+artifacts, decisions, unknowns, next action, and authorization between activities.
+It loads specialists as needed through real host capabilities. If a skill or tool
+is missing, it reports the limitation rather than claiming an invocation.
+See [routing](docs/routing.md) and [skill contract](docs/skill-contract.md).
+
+## Authorization and evidence
+
+Investigation, planning, review, and simplification recommendations preserve
+application source unless changes were requested. An explicit implementation or
+fix request already authorizes relevant reversible edits; the suite does not ask
+for that approval twice. Material scope, requirement, or risk changes need a new
+decision. Destructive operations, production changes, external side effects,
+deployment, and publication need authorization covering those actions.
+
+Browser manuals distinguish observed steps from supplied documentation. Missing
+browser access produces a labeled draft. Proposed tests remain not run until
+executed; passing a small test suite does not establish every acceptance rule.
+
+## Validate and evaluate
+
+Maintenance dependencies are separate from skill use:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python scripts/validate-skills.py
+python3 scripts/vendor-upstreams.py
+.venv/bin/python -m unittest discover -s tests -p 'test_tooling.py' -v
+```
+
+Optional host checks:
+
+```sh
+claude plugin validate .claude-plugin/plugin.json
+claude plugin validate .claude-plugin/marketplace.json
+claude --plugin-dir "$PWD" plugin details panda-suite
+python3 tests/check_codex_discovery.py
+```
+
+See [evaluation instructions](tests/evaluation.md) and the
+[recorded results](tests/results/2026-11-07/summary.md). The original comparative
+exercise contains real successes and failures: three execution answers passed
+four tests while missing a Unicode separator rule, and a compound run later
+corrected it. Shared evaluator contexts prevent causal improvement claims.
+No speed or token-saving claim is made.
+
+A [browser-observed sample manual](tests/results/browser-manual/manual.md) includes
+an actual screenshot from the local synthetic fixture.
+
+## Maintain and extend
+
+Read [upstream integration](docs/integration.md) before changing vendored files.
+`python3 scripts/vendor-upstreams.py --restore` restores missing pinned files,
+checks downloaded bytes, and refuses local changes. It does not update versions.
+Keep new capabilities small, independently usable, and backed by meaningful
+scenarios. Follow the [extension contract](docs/skill-contract.md).
+
+Packaging sources: [Agent Skills specification](https://agentskills.io/specification),
+[OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins),
+[Codex skill discovery](https://learn.chatgpt.com/docs/build-skills), and
+[Claude plugin reference](https://code.claude.com/docs/en/plugins-reference).
+
+## Attribution
+
+[Panda Debugger](https://github.com/akkaraponph/panda-debugger) supplies the existing
+investigation workflow, confidence classification, references, tests, and report.
+[Buddhist Method](https://github.com/akkaraponph/buddhist-method) supplies the
+trigger-based reasoning discipline, terminology, references, and original pressure
+evaluation. Exact revisions and file mappings are in `upstream-lock.json`.
+Suite-specific research and trade-offs are in [repository findings](docs/research.md).
+
+## Essential expansion
+
+The five essential skills and their boundaries are described in the [expansion report](docs/expansion.md). Panda Debugger and Buddhist Method are primary Suite skills; their technique Markdown remains under each skill’s `references/`. Source attribution and pinned-byte verification remain in place. No runtime or persistent handoff store was added.

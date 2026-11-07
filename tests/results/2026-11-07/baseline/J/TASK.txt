@@ -1,0 +1,1 @@
+Explore whether our small team needs a separate approval microservice or can extend this function. Use requirements.md as context. We have one app, one team, and no independent scaling need. Compare alternatives and recommend a direction. Do not implement or create an execution plan.

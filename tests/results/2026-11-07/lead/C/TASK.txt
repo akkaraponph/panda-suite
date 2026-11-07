@@ -1,0 +1,3 @@
+Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Implement the approved plan in plan.md. I need to leave in a minute, so keep it moving. The external integration runner is unavailable; finish the local work and report what was actually verified.

@@ -1,0 +1,26 @@
+{
+  "name": "panda-debugger",
+  "version": "1.0.0",
+  "description": "Investigate software bugs from logs, source code, runtime behavior, and tests, proving the root cause with evidence before any fix.",
+  "author": {
+    "name": "akkaraponph",
+    "url": "https://github.com/akkaraponph"
+  },
+  "homepage": "https://github.com/akkaraponph/panda-debugger",
+  "repository": "https://github.com/akkaraponph/panda-debugger",
+  "keywords": ["debugging", "root-cause", "investigation", "incident", "skill"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PANDA DEBUGGER",
+    "shortDescription": "Evidence-first bug investigation",
+    "longDescription": "Guide an agent through Understand, Reproduce, Trace, Root Cause, Fix, and Verify, with a report that separates observed results from untested explanations.",
+    "developerName": "akkaraponph",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "defaultPrompt": [
+      "Investigate this error and prove the root cause.",
+      "Find out why this test is failing."
+    ],
+    "websiteURL": "https://github.com/akkaraponph/panda-debugger"
+  }
+}

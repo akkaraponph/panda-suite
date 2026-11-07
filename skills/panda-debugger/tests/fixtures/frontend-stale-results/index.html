@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search result demo</title>
+  <style>
+    body { font: 18px system-ui, sans-serif; max-width: 36rem; margin: 3rem auto; padding: 0 1rem; }
+    button { font: inherit; padding: .5rem .8rem; }
+  </style>
+</head>
+<body>
+  <h1>Search result demo</h1>
+  <button id="run" type="button">Run both searches</button>
+  <p id="latest">Latest choice: none</p>
+  <p id="result" aria-live="polite">Result: none</p>
+  <script type="module">
+    import { createSearch } from './search.mjs';
+
+    const search = createSearch(
+      async (query) => {
+        const response = await fetch(`/search?q=${encodeURIComponent(query)}`);
+        return response.json();
+      },
+      (query) => { document.querySelector('#latest').textContent = `Latest choice: ${query}`; },
+      (result) => { document.querySelector('#result').textContent = `Result: ${result}`; },
+      (event, query) => console.info(event, query),
+    );
+
+    document.querySelector('#run').addEventListener('click', () => {
+      search('alpha');
+      setTimeout(() => search('beta'), 10);
+    });
+  </script>
+</body>
+</html>

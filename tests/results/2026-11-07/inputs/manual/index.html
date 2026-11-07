@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Demo requests</title>
+<h1>Demo requests</h1>
+<p>Local synthetic data. This page has no network side effects.</p>
+<form>
+  <label>Request title <input id="title" required></label>
+  <button type="submit">Save draft</button>
+</form>
+<p id="result" role="status"></p>
+<script>
+document.querySelector('form').addEventListener('submit', event => {
+  event.preventDefault();
+  document.querySelector('#result').textContent =
+    'Draft saved: ' + document.querySelector('#title').value;
+});
+</script>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "panda-suite",
+  "owner": {"name": "akkaraponph"},
+  "metadata": {"description": "Independent engineering and product delivery skills"},
+  "plugins": [
+    {
+      "name": "panda-suite",
+      "source": "./",
+      "description": "Engineering and product delivery skills",
+      "category": "development"
+    }
+  ]
+}

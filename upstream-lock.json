@@ -1,0 +1,171 @@
+{
+  "format": 1,
+  "upstreams": [
+    {
+      "name": "panda-debugger",
+      "repository": "https://github.com/akkaraponph/panda-debugger.git",
+      "revision": "0b9f367954d59c44ee5e033859e29af0347f9267",
+      "license": "No license file supplied upstream",
+      "files": [
+        {
+          "source": ".agents/plugins/marketplace.json",
+          "destination": "skills/panda-debugger/source-metadata/.agents/plugins/marketplace.json",
+          "sha256": "c57607db63599b3e29c249933b8d184dee8f0f6c603cc396115c82270700b33c"
+        },
+        {
+          "source": ".claude-plugin/marketplace.json",
+          "destination": "skills/panda-debugger/source-metadata/.claude-plugin/marketplace.json",
+          "sha256": "1251eeac1730f00627a544f99c34ec14c2a91a95089eed47428730e210ff3b11"
+        },
+        {
+          "source": ".claude-plugin/plugin.json",
+          "destination": "skills/panda-debugger/source-metadata/.claude-plugin/plugin.json",
+          "sha256": "7533bf9e73140de40526c867f469750aea4b028bd2bf5559b6672f5d78417425"
+        },
+        {
+          "source": ".codex-plugin/plugin.json",
+          "destination": "skills/panda-debugger/source-metadata/.codex-plugin/plugin.json",
+          "sha256": "825494abfe66a51d700105a423efa7e2b767e776283dcf1eac4cc07234f86fdc"
+        },
+        {
+          "source": ".gitignore",
+          "destination": "skills/panda-debugger/source-metadata/.gitignore",
+          "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+        },
+        {
+          "source": "README.md",
+          "destination": "skills/panda-debugger/README.md",
+          "sha256": "ac2c04c16413c01a88d9d9dc40318fc02cba5e9ab0457f6db19e0970af1baefc"
+        },
+        {
+          "source": "skills/panda-debugger/SKILL.md",
+          "destination": "vendor/panda-debugger/SKILL.md",
+          "sha256": "3fa7409ebad9cadfb60b58e9f766446ca6f327d18226432c5c5f3700af9a9812"
+        },
+        {
+          "source": "skills/panda-debugger/references/backend-evidence.md",
+          "destination": "skills/panda-debugger/references/backend-evidence.md",
+          "sha256": "5eb5c6e06791665a1402973bc8c6ecefb5b785a597b22a6ebb63ac1e10384237"
+        },
+        {
+          "source": "skills/panda-debugger/references/frontend-browser.md",
+          "destination": "skills/panda-debugger/references/frontend-browser.md",
+          "sha256": "36c97988c239d06b750d74656679784701907114e830e3a1b505b055a32d6533"
+        },
+        {
+          "source": "skills/panda-debugger/references/investigation-guide.md",
+          "destination": "skills/panda-debugger/references/investigation-guide.md",
+          "sha256": "becbfd6b1dc4c82f5b304f462d990292632909dc0ac325f2903feff8d5793741"
+        },
+        {
+          "source": "skills/panda-debugger/references/report-template.md",
+          "destination": "skills/panda-debugger/references/report-template.md",
+          "sha256": "8ad771df678f14944e5a42c22bd5c285b5659030748e66b27ecc8cc49b3fe81d"
+        },
+        {
+          "source": "tests/evaluation.md",
+          "destination": "skills/panda-debugger/tests/evaluation.md",
+          "sha256": "0db933d331e1ff8485c590dc18fbbdca0f757e19aa87014da76c4fa1ed2ba355"
+        },
+        {
+          "source": "tests/fixtures/backend-uncommitted-transfer/README.md",
+          "destination": "skills/panda-debugger/tests/fixtures/backend-uncommitted-transfer/README.md",
+          "sha256": "0a412a4a8ac541f5fc00936cdb867680c90cdc2867216c6ae0cfbcb100015869"
+        },
+        {
+          "source": "tests/fixtures/backend-uncommitted-transfer/test_transfer.py",
+          "destination": "skills/panda-debugger/tests/fixtures/backend-uncommitted-transfer/test_transfer.py",
+          "sha256": "536f31ce03e7372c5fa62a7f361c807f017f818d4b2dc536c575bef8cc6b6d69"
+        },
+        {
+          "source": "tests/fixtures/backend-uncommitted-transfer/transfer.py",
+          "destination": "skills/panda-debugger/tests/fixtures/backend-uncommitted-transfer/transfer.py",
+          "sha256": "3ee53bc14182ef1062307d5115fb4740513f14fbc3b707d602e189efede73caf"
+        },
+        {
+          "source": "tests/fixtures/frontend-stale-results/README.md",
+          "destination": "skills/panda-debugger/tests/fixtures/frontend-stale-results/README.md",
+          "sha256": "e793dd605a2fa85094558abf472ddab2fc71be0954300a8dd817b772915a2010"
+        },
+        {
+          "source": "tests/fixtures/frontend-stale-results/index.html",
+          "destination": "skills/panda-debugger/tests/fixtures/frontend-stale-results/index.html",
+          "sha256": "595f4249ad2d0d10406012cb9414b2887514e2bbdc8ff09edc572b60433d7555"
+        },
+        {
+          "source": "tests/fixtures/frontend-stale-results/search.mjs",
+          "destination": "skills/panda-debugger/tests/fixtures/frontend-stale-results/search.mjs",
+          "sha256": "ef0d9a65f8cd5efa49cb8660f8f064849e73086257bd75528ad4c2bbeef1494f"
+        },
+        {
+          "source": "tests/fixtures/frontend-stale-results/server.py",
+          "destination": "skills/panda-debugger/tests/fixtures/frontend-stale-results/server.py",
+          "sha256": "217a6ca54736e054421998900cdae481f6ebec7c2701921686acbb3e751369de"
+        },
+        {
+          "source": "tests/fixtures/frontend-stale-results/test_search.mjs",
+          "destination": "skills/panda-debugger/tests/fixtures/frontend-stale-results/test_search.mjs",
+          "sha256": "4738e0ac743e5b9270b83463c51870393f2385b9b46b15d2f2f0b519b5d20f69"
+        },
+        {
+          "source": "tests/scenarios/concurrency-bug.md",
+          "destination": "skills/panda-debugger/tests/scenarios/concurrency-bug.md",
+          "sha256": "0b39ba60f0d65de99afc2e8a0b4c82e39f7c639b86ad7bcd10e480c692831141"
+        },
+        {
+          "source": "tests/scenarios/nil-pointer.md",
+          "destination": "skills/panda-debugger/tests/scenarios/nil-pointer.md",
+          "sha256": "cbf003ea31e5c8610373a65f0b0aaaee8ee9416891c4a90545141ebe59d90676"
+        },
+        {
+          "source": "tests/scenarios/transaction-failure.md",
+          "destination": "skills/panda-debugger/tests/scenarios/transaction-failure.md",
+          "sha256": "8f778c86e1690b8a19331868cfaef3a1abee9ebcc8d50347f6e9e4d801f7844b"
+        }
+      ]
+    },
+    {
+      "name": "buddhist-method",
+      "repository": "https://github.com/akkaraponph/buddhist-method.git",
+      "revision": "525a52fffa9db11fddfd3e4cb10c58c9efaa4e24",
+      "license": "MIT",
+      "files": [
+        {
+          "source": "LICENSE",
+          "destination": "skills/buddhist-method/LICENSE",
+          "sha256": "efb22e2ac42a78b3351c7fb0339590e7ba3c2036aa388f4ed65c3cbc558aedb4"
+        },
+        {
+          "source": "README.md",
+          "destination": "skills/buddhist-method/README.md",
+          "sha256": "0ae19cac5e80b65aacadaf1724260c4d210c18a4a1568756afc4d67742616824"
+        },
+        {
+          "source": "README.th.md",
+          "destination": "skills/buddhist-method/README.th.md",
+          "sha256": "368ca11b0bfcb55adaae22ec458669da5bb20038dbc12a79ae1a30e33981c3ef"
+        },
+        {
+          "source": "SKILL.md",
+          "destination": "skills/buddhist-method/SKILL.md",
+          "sha256": "5a161ebc793ae081710056e3ed92ee71c168e30704eb2a1ac1949be7875954bc"
+        },
+        {
+          "source": "references/ariyasacca-debug.md",
+          "destination": "skills/buddhist-method/references/ariyasacca-debug.md",
+          "sha256": "8345e2d85c6757678349d32e8635a736e4d2c0822390c4cf09fc452579908a1b"
+        },
+        {
+          "source": "references/extended-principles.md",
+          "destination": "skills/buddhist-method/references/extended-principles.md",
+          "sha256": "63418b4bb5ecb41eb68538b4bde42bf47d36272e9d73714ed95168d891dae88a"
+        },
+        {
+          "source": "tests/pressure-baseline.md",
+          "destination": "skills/buddhist-method/tests/pressure-baseline.md",
+          "sha256": "080aa7b5a1cf4e0d1fa20a6cc6706bd0d1e0e005009e525e4481dc5dc4be17b1"
+        }
+      ]
+    }
+  ]
+}
