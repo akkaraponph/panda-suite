@@ -1,5 +1,7 @@
 # Panda Suite
 
+[เว็บไซต์เอกสารและวิธีใช้งาน](https://akkaraponph.github.io/panda-suite/)
+
 เวอร์ชัน **1.0.0** · 17 skills ที่ใช้แยกกันได้
 
 ดู [คู่มือใช้ครบทุก skill](docs/usage.md) สำหรับวิธีเรียกใช้ สิ่งที่ต้องเตรียม

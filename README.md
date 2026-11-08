@@ -12,7 +12,7 @@ verification, documentation, and delivery handoff. It is Markdown instructions
 plus small maintenance tools. It does not run an agent service or require
 multi-agent execution.
 
-[ภาษาไทย](README.th.md) · [Architecture](docs/architecture.md) ·
+[Documentation site](https://akkaraponph.github.io/panda-suite/) · [ภาษาไทย](README.th.md) · [Architecture](docs/architecture.md) ·
 [Verification and limitations](docs/verification.md)
 
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,

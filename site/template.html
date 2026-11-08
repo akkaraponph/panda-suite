@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Learn to use Panda Suite: installation, engineering workflows, and practical prompts for Codex and Claude Code.">
+  <meta name="theme-color" content="#392c73">
+  <title>{{title}} · Panda Suite</title>
+  <link rel="icon" href="assets/panda.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body data-page="{{page}}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="header">
+  <a class="brand" href="index.html"><img src="assets/panda.svg" width="36" height="36" alt="">Panda Suite <span>Docs</span></a>
+  <div class="header-actions"><span class="version">v{{version}}</span><a href="https://github.com/akkaraponph/panda-suite">GitHub ↗</a><button id="menu" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+</header>
+<div class="layout">
+  <aside id="sidebar" class="sidebar" aria-label="Documentation navigation">
+    <form role="search" id="search-form"><label for="search">Search the docs</label><div class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Skill, task, command…" autocomplete="off" aria-controls="search-results"></div></form>
+    <div id="search-status" class="sr-only" role="status" aria-live="polite"></div>
+    <div id="search-results" hidden></div>
+    <nav aria-label="Guides">{{nav}}</nav>
+    <div class="sidebar-note">Focused skills.<br>Evidence before claims.</div>
+  </aside>
+  <main id="main" tabindex="-1">
+    <div class="page-meta">Panda Suite / {{title}}</div>
+    {{hero}}
+    <article>{{content}}</article>
+    <footer><a href="{{source}}">View source on GitHub ↗</a><span>Panda Suite v{{version}}</span></footer>
+  </main>
+  <aside class="on-page" aria-label="On this page"><p>On this page</p>{{toc}}<a class="help-link" href="https://github.com/akkaraponph/panda-suite/issues">Report a docs issue ↗</a></aside>
+</div>
+</body>
+</html>
