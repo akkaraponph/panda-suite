@@ -58,6 +58,25 @@ Do not implement or create an execution plan.
 Expect a problem statement, goals/non-goals, alternatives, recommendation, risks,
 and open decisions. Exploration does not authorize source changes.
 
+### Panda Research
+
+Provide a bounded technical question, relevant source paths or URLs, versions,
+constraints, and the decision it informs. Use it when investigation is the main
+task; other skills still gather ordinary evidence themselves.
+
+```text
+$panda-research Check whether the SDK version pinned in this repository supports
+our required authentication flow. Compare implementation and official versioned
+documentation. Cite deciding claims, explain contradictions and unknowns, and
+save docs/auth-research.md. Do not change code or install dependencies.
+```
+
+Expect a direct answer, supporting findings and citations, relevant versions/dates,
+uncertainty, and decision implications. Research is read-only except for requested
+notes; small answers need no saved file. Use Brainstorm to explore a direction,
+Debugger for a causal failure, Impact for a proposed change, and Write for a guide.
+See [scope and verification](panda-research.md).
+
 ### Panda Requirements
 
 Provide stakeholder requests, current workflow, actors, known policy, and constraints.
@@ -216,6 +235,8 @@ Lead does not load this method as a stage between every activity.
 ### Panda Write
 
 Provide audience, document purpose/language, source paths and output location.
+For an update, provide the existing document; for a review, state whether edits
+are authorized. Preserve established language and format unless asked to change them.
 
 ```text
 $panda-write Write docs/approvals-guide.md for new backend developers using the
@@ -225,7 +246,13 @@ Use clear English. Do not modify application code.
 ```
 
 Expect the requested document, evidence anchors, checked examples and explicit gaps.
-Thai documentation is supported. Use Spec for implementation-oriented design and
+Thai documentation is supported. Each integration is traced independently;
+implementation, configuration, deployed state, and remote contracts stay distinct.
+Exact unresolved facts use `Pending Confirmation` with the evidence needed.
+Review-only requests return findings without edits. Substantial architecture
+explanations and handovers use conditional guidance without imposing chapters
+on short guides. See the [Write refinement report](panda-write-refinement.md).
+Use Spec for implementation-oriented design and
 Manual for user interactions rather than automatically invoking all three.
 
 ### Panda Manual

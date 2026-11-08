@@ -1,5 +1,7 @@
 # Panda Suite
 
+Version **1.0.0** · 17 independent skills
+
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
 Independent Agent Skills for engineering and product delivery, coordinated when
@@ -27,27 +29,44 @@ copyable examples and expected outputs for every skill.
 | `panda-skill-lab` | Design and evaluate skills with honest baseline comparisons |
 | `panda-lead` | Select the smallest workflow and coordinate requested activities |
 | `panda-brainstorm` | Explore a problem, constraints, assumptions, and alternatives |
+| `panda-research` | Answer technical questions and verify capabilities with traceable evidence |
 | `panda-plan` | Define ordered tasks, dependencies, acceptance, and verification |
 | `panda-execute` | Implement authorized work and report actual verification |
 | `panda-debugger` | Investigate a failure and establish causal confidence; preserved upstream |
 | `panda-review` | Find material defects in a bounded change |
 | `panda-simplify` | Assess unnecessary complexity while preserving invariants |
 | `buddhist-method` | Apply optional reasoning discipline at relevant decision points; preserved upstream |
-| `panda-write` | Create accurate project and developer documentation |
+| `panda-write` | Create, review, and update accurate engineering documentation |
 | `panda-spec` | Specify current and proposed technical contracts in Thai or English |
 | `panda-manual` | Document observed user journeys or label supplied-evidence drafts |
 
 Specialists work independently. A function explanation needs no project plan.
 Brainstorming does not authorize implementation. Debugging does not automatically
 start planning or documentation. Buddhist Method is optional rather than a stage
-between every activity. Requirements, testing, impact, release, and skill evaluation are now supported.
+between every activity. Requirements, research, testing, impact, release, and skill evaluation are supported.
+
+## Research and documentation
+
+`panda-research` investigates bounded engineering questions using primary sources,
+versioned documentation, and repository evidence. It returns a direct answer,
+citations, contradictions, and explicit unknowns. A saved note is optional.
+
+`panda-write` creates, reviews, and updates engineering documentation in English
+or Thai. It traces each integration independently and separates implementation,
+configuration, deployment, and external guarantees. Substantial handovers can load
+additional guidance; small guides stay small.
+
+See the [Research contract and checks](docs/panda-research.md) and
+[Write refinement and checks](docs/panda-write-refinement.md). Both work without
+Lead. Research answers a question; Brainstorm explores directions; Write produces
+documentation; Spec defines proposed contracts and design.
 
 ## Install from this checkout
 
-Use one method to avoid duplicate skill names. Obtain this implementation branch:
+Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch codex/panda-suite https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.0.0 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 
@@ -139,6 +158,12 @@ These prompts use standalone Codex names; use your installation's selector above
 ```text
 $panda-lead Explain what this function does.
 
+$panda-research Check whether the pinned SDK supports our authentication flow.
+Cite version-specific evidence and unresolved claims. Do not change code.
+
+$panda-write Review docs/integration-guide.md against the implementation.
+Check each integration separately and report corrections. Do not edit files.
+
 $panda-plan Plan a manager rejection flow from requirements.md and the existing
 service. Include acceptance criteria. Do not implement it.
 
@@ -178,6 +203,12 @@ browser access produces a labeled draft. Proposed tests remain not run until
 executed; passing a small test suite does not establish every acceptance rule.
 
 ## Validate and evaluate
+
+The Research and Write additions pass structural validation and Codex discovery.
+Their baseline/skill behavioral comparisons are **Not Run**. The tooling suite
+currently passes 23 of 24 tests; the existing
+`test_restore_refuses_modified_upstream` failure was reproduced on unchanged HEAD.
+See the reports above for scope and evidence limits.
 
 Maintenance dependencies are separate from skill use:
 

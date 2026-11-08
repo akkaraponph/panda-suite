@@ -54,7 +54,15 @@ observe its actual UI using available browser tools. Keep no-browser and observe
 runs separate. A saved [observed manual](results/browser-manual/manual.md) shows
 the bounded journey and actual capture.
 
+The [Write refinement](../docs/panda-write-refinement.md) adds six `WRITE-*` cases
+for per-integration accuracy, review-only scope, conservative updates, missing
+deployment evidence, unavailable execution tools, and nonactivation.
+
 ## Run and score fairly
+
+The [Research addition](../docs/panda-research.md) documents nine `RESEARCH-*`
+cases, their synthetic local fixture, comparison protocol, and current Not Run
+behavioral status. Their reviewer expectations remain in the scenario catalog.
 
 Use a fresh context **per case and arm**, the same model/settings, inputs, tools,
 budget, and external-access restrictions. Keep the task agent blind to expectations,

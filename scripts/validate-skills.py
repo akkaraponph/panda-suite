@@ -12,7 +12,7 @@ import jsonschema
 import yaml
 
 EXPECTED = {
-    "panda-lead", "panda-brainstorm", "panda-plan", "panda-execute",
+    "panda-lead", "panda-brainstorm", "panda-research", "panda-plan", "panda-execute",
     "panda-debugger", "panda-review", "panda-simplify", "buddhist-method",
     "panda-write", "panda-spec", "panda-manual",
     "panda-requirements", "panda-test", "panda-impact", "panda-release", "panda-skill-lab",

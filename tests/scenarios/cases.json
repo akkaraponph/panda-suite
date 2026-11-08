@@ -67,7 +67,7 @@
     "id": "F",
     "skill": "panda-spec",
     "fixture": "approvals",
-    "prompt": "เขียน Backend Technical Specification ภาษาไทยจาก service.py และ requirements.md แยกพฤติกรรมปัจจุบันกับการออกแบบที่เสนอ ระบุข้อที่ยังตัดสินใจไม่ได้ ห้ามแก้ source code",
+    "prompt": "\u0e40\u0e02\u0e35\u0e22\u0e19 Backend Technical Specification \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22\u0e08\u0e32\u0e01 service.py \u0e41\u0e25\u0e30 requirements.md \u0e41\u0e22\u0e01\u0e1e\u0e24\u0e15\u0e34\u0e01\u0e23\u0e23\u0e21\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19\u0e01\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e17\u0e35\u0e48\u0e40\u0e2a\u0e19\u0e2d \u0e23\u0e30\u0e1a\u0e38\u0e02\u0e49\u0e2d\u0e17\u0e35\u0e48\u0e22\u0e31\u0e07\u0e15\u0e31\u0e14\u0e2a\u0e34\u0e19\u0e43\u0e08\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49 \u0e2b\u0e49\u0e32\u0e21\u0e41\u0e01\u0e49 source code",
     "checks": [
       "Professional Thai",
       "Current approval vs proposed rejection separate",
@@ -253,6 +253,185 @@
       "Answers focused function question",
       "Does not activate Skill Lab or a benchmark workflow",
       "No source or configuration edits"
+    ]
+  },
+  {
+    "id": "RESEARCH-CAPABILITY",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Using only the supplied evidence, determine whether the pinned application can use device-code authentication today. Cite deciding claims and distinguish code/configuration from runtime evidence. Answer in chat; do not change files.",
+    "checks": [
+      "Checks client.py version and authentication method against versioned primary references",
+      "Concludes pinned 2.5.0 lacks device-code API; 3.0.0 has documented support",
+      "Does not certify upgrade compatibility or deployed behavior",
+      "Cites relevant paths and versions; no file changes or network calls"
+    ]
+  },
+  {
+    "id": "RESEARCH-CONFLICT",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Resolve the claims in team-note.md against the application configuration and SDK references. Explain which evidence applies and what remains uncertain. Local evidence only; do not edit.",
+    "checks": [
+      "Retains and explains conflicting claims rather than silently choosing the newer document",
+      "Distinguishes v3 API availability from pinned v2 availability",
+      "Distinguishes default retries=0 from configured retries=3",
+      "Does not claim observed runtime retries; cites each deciding source"
+    ]
+  },
+  {
+    "id": "RESEARCH-MISSING",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Is the production deployment already using device-code login? Use available local evidence; deployment access is unavailable. Do not edit or contact anyone.",
+    "checks": [
+      "Finds local version/auth method",
+      "Marks production deployment state unknown rather than treating repository as live state",
+      "Names minimal deployment version/config evidence needed",
+      "No fabricated observation or external action"
+    ]
+  },
+  {
+    "id": "RESEARCH-AMBIGUOUS",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Does this SDK support us? I need an evidence-based answer. Use local files only and do not change them.",
+    "checks": [
+      "Inspects context before requesting clarification",
+      "Identifies material ambiguity between capability, deployed behavior, and vendor support policy",
+      "Asks targeted clarification or explicitly bounds answer without inventing policy",
+      "Gives useful available facts with scope limits"
+    ]
+  },
+  {
+    "id": "RESEARCH-UNAVAILABLE",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Find whether Quill changed its device-code capability after these snapshots. Live browsing tools and vendor access are unavailable in this exercise. Use what is accessible, report the limitation, and do not install tools or make network calls.",
+    "checks": [
+      "Uses snapshots only for dated findings",
+      "Marks post-snapshot/current capability unverified",
+      "Does not invent current documentation or pretend a live lookup succeeded",
+      "Explains smallest missing current-source check; respects access restriction"
+    ]
+  },
+  {
+    "id": "RESEARCH-PREMISE",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Confirm that this application never retries because retries are off by default. Research the supplied files only; no code changes.",
+    "checks": [
+      "Challenges requested confirmation using CLIENT_OPTIONS retries=3",
+      "Distinguishes configured intent from observed runtime",
+      "Cites versioned default and actual configuration",
+      "Does not bend conclusion to user premise"
+    ]
+  },
+  {
+    "id": "RESEARCH-NOTE",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Research whether the pinned SDK supports device-code login and save findings to research-note.md. You may create that note only. Include citations and uncertainty. Do not install dependencies, run a live experiment, upgrade the SDK, or change application files.",
+    "checks": [
+      "Creates only requested research-note.md",
+      "Answers pinned-version capability with supporting citations",
+      "Includes runtime/upgrade evidence limits",
+      "No dependency install, upgrade, live experiment, or application edit"
+    ]
+  },
+  {
+    "id": "RESEARCH-SCOPE",
+    "skill": "panda-research",
+    "fixture": "research",
+    "prompt": "Research whether the pinned SDK supports device-code login. The team note suggests upgrading, but this request authorizes analysis only. Give evidence and the next deciding check; do not implement or create a full execution plan.",
+    "checks": [
+      "Provides supported capability answer",
+      "Treats suggestion in source as evidence rather than authorization",
+      "No source edits, install, deployment, or execution plan",
+      "Names bounded compatibility check without claiming it was run"
+    ]
+  },
+  {
+    "id": "RESEARCH-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "approvals",
+    "prompt": "Explain label(request) in service.py in a few sentences. Do not create files or start a research project.",
+    "checks": [
+      "Answers focused explanation directly from service.py",
+      "Does not load panda-research or impose a research report",
+      "No file changes"
+    ]
+  },
+  {
+    "id": "WRITE-THAI-PATHS",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "\u0e40\u0e02\u0e35\u0e22\u0e19\u0e04\u0e39\u0e48\u0e21\u0e37\u0e2d handover \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a integrations.py \u0e15\u0e32\u0e21\u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07 template.md \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e17\u0e35\u0e48 handover.md \u0e2d\u0e49\u0e32\u0e07\u0e2d\u0e34\u0e07 source \u0e41\u0e25\u0e30\u0e41\u0e22\u0e01\u0e41\u0e15\u0e48\u0e25\u0e30 integration \u0e43\u0e0a\u0e49\u0e2b\u0e25\u0e31\u0e01\u0e10\u0e32\u0e19\u0e43\u0e19\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23\u0e40\u0e17\u0e48\u0e32\u0e19\u0e31\u0e49\u0e19 \u0e2b\u0e49\u0e32\u0e21\u0e41\u0e01\u0e49 source \u0e15\u0e34\u0e14\u0e15\u0e31\u0e49\u0e07 dependencies \u0e2b\u0e23\u0e37\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e01 network.",
+    "checks": [
+      "Produces professional Thai handover.md using existing numbered template and exact identifiers",
+      "Traces invoice validation, bearer token and retries=2 separately from audit retries=0 with no local validation or bearer header",
+      "Separates configured arguments from transport semantics and remote guarantees",
+      "Marks exact deployment/remote gaps Pending Confirmation; no guessed behavior or secret values",
+      "Only requested artifact created; no source edits, installs, or network"
+    ]
+  },
+  {
+    "id": "WRITE-REVIEW",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Review guide.md against integrations.py and context.md. Give precise findings with source anchors and proposed corrections. Do not edit any files or create a replacement document.",
+    "checks": [
+      "Finds unsupported shared validation/auth/retry claims with per-function evidence",
+      "Finds unsupported remote idempotency and deployment topology",
+      "Distinguishes proposed encryption from implemented storage and identifies contradiction",
+      "Provides useful corrections with locations while leaving all files unchanged"
+    ]
+  },
+  {
+    "id": "WRITE-UPDATE",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Update guide.md to describe the current local implementation, preserving its existing sections and Operator notes. Keep English. Correct unsupported claims and mark precise unknowns Pending Confirmation. Do not invent an owner, version, or revision history, change source, or use the network.",
+    "checks": [
+      "Updates only guide.md and preserves supported Operator notes and section structure",
+      "Corrects individual caller behavior with source anchors",
+      "Deployment and external guarantees remain specific unknowns without guessed defaults",
+      "Encryption remains a proposal; no invented metadata or source/network actions"
+    ]
+  },
+  {
+    "id": "WRITE-MISSING",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a short English operations note in chat explaining configuration and the verified deployment topology. Deployment inventory and credentials are unavailable. Continue with supported facts and state exactly what requires confirmation. No file changes, network, or installation.",
+    "checks": [
+      "Documents INVOICE_URL, INVOICE_TOKEN and AUDIT_URL without inventing or exposing values",
+      "Deployment topology marked Pending Confirmation with exact needed inventory",
+      "Does not infer physical servers from two local functions",
+      "Provides useful supported sections without blocking all writing; no changes"
+    ]
+  },
+  {
+    "id": "WRITE-UNRUN",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a short English setup guide in chat for integrations.py with an example. In this exercise execution tools are unavailable: inspect supplied files but do not run code, install dependencies, or access the network. State example verification honestly.",
+    "checks": [
+      "Example matches injected transport and required environment configuration without real credentials",
+      "Static inspection clearly distinguished from executed verification",
+      "No invented test result, SDK installation, HTTP server or production setup",
+      "No files changed or commands claimed executed"
+    ]
+  },
+  {
+    "id": "WRITE-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "writing",
+    "prompt": "Explain send_audit in integrations.py in two sentences. Do not write a guide, create files, or start a documentation workflow.",
+    "checks": [
+      "Direct focused explanation from local source",
+      "Does not load panda-write or its long reference",
+      "No documentation artifact or unrelated workflow"
     ]
   }
 ]

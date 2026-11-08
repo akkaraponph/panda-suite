@@ -1,4 +1,5 @@
-Current sixteen-skill expansion and source-layout status: see [expansion report](expansion.md). The initial eleven-skill results below are historical.
+Current seventeen-skill catalog: see the [research addition](panda-research.md) and
+prior [expansion report](expansion.md). The initial eleven-skill results below are historical.
 
 # Implementation and verification report
 

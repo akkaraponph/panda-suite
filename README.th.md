@@ -1,7 +1,9 @@
 # Panda Suite
 
+เวอร์ชัน **1.0.0** · 17 skills ที่ใช้แยกกันได้
+
 ดู [คู่มือใช้ครบทุก skill](docs/usage.md) สำหรับวิธีเรียกใช้ สิ่งที่ต้องเตรียม
-ตัวอย่าง prompt ผลลัพธ์ที่คาดหวัง และขอบเขตสิทธิ์ของทั้ง 16 skills
+ตัวอย่าง prompt ผลลัพธ์ที่คาดหวัง และขอบเขตสิทธิ์ของทั้ง 17 skills
 
 ชุด Agent Skills สำหรับงานวิศวกรรมซอฟต์แวร์และการส่งมอบผลิตภัณฑ์ โดยมี
 **Panda Lead** ช่วยเลือก workflow เท่าที่จำเป็น แต่ละ skill เรียกใช้แยกกันได้
@@ -14,15 +16,21 @@
 
 | Skill | หน้าที่ |
 | --- | --- |
+| `panda-requirements` | กำหนดผู้ใช้ กฎธุรกิจ และ acceptance criteria |
+| `panda-test` | ออกแบบ เพิ่ม รัน และประเมิน tests |
+| `panda-impact` | วิเคราะห์ dependencies และ compatibility ก่อนเปลี่ยนระบบ |
+| `panda-release` | เตรียมและประเมินความพร้อมของ release |
+| `panda-skill-lab` | สร้างและประเมิน skill โดยแยกผลจริงจากข้อสมมติ |
 | `panda-lead` | เลือกและประสาน workflow ตามเป้าหมายและสิทธิ์ที่ได้รับ |
 | `panda-brainstorm` | สำรวจปัญหา สมมติฐาน ทางเลือก และ trade-off |
+| `panda-research` | ค้นคว้าคำถามทางเทคนิคและตรวจข้อกล่าวอ้างจากหลักฐานที่อ้างอิงได้ |
 | `panda-plan` | วางงานตามลำดับ พร้อม acceptance criteria และวิธีตรวจสอบ |
 | `panda-execute` | ลงมือทำงานที่ได้รับอนุญาตและรายงานผลจริง |
 | `panda-debugger` | วิเคราะห์สาเหตุจากหลักฐาน ใช้ skill ต้นฉบับ |
 | `panda-review` | ตรวจข้อผิดพลาดสำคัญใน diff |
 | `panda-simplify` | ลดความซับซ้อนโดยรักษาพฤติกรรมและข้อกำหนดสำคัญ |
 | `buddhist-method` | ใช้วินัยการคิดเมื่อต้องตรวจข้อเท็จจริง ตัดสินใจ หรือรับมือความไม่แน่นอน |
-| `panda-write` | เขียนเอกสารโครงการและคู่มือนักพัฒนา |
+| `panda-write` | เขียน ตรวจทาน และปรับปรุงเอกสารวิศวกรรมและคู่มือนักพัฒนา |
 | `panda-spec` | เขียน technical specification ภาษาไทยหรืออังกฤษ |
 | `panda-manual` | เขียนคู่มือผู้ใช้จากพฤติกรรม UI ที่สังเกตได้หรือหลักฐานที่ให้มา |
 
@@ -31,7 +39,7 @@
 
 ## ติดตั้งจาก checkout นี้
 
-เลือกวิธีเดียวเพื่อหลีกเลี่ยง skill ชื่อซ้ำ ใช้ branch `codex/panda-suite` ตามคำสั่ง clone ในคู่มือภาษาอังกฤษ
+เลือกวิธีเดียวเพื่อหลีกเลี่ยง skill ชื่อซ้ำ ใช้ tag `v1.0.0` ตามคำสั่ง clone ในคู่มือภาษาอังกฤษ
 คำสั่งติดตั้งด้านล่างให้รันจาก checkout ในเครื่อง
 
 Claude Code แบบไม่ติดตั้งถาวร:
@@ -72,6 +80,12 @@ Standalone Codex ใช้ `$panda-spec`; Claude Code ที่ติดตั�
 ```text
 $panda-lead อธิบาย function นี้โดยอ้างอิง source code
 
+$panda-research ตรวจว่า SDK เวอร์ชันที่โครงการใช้รองรับ authentication flow หรือไม่
+อ้างอิง source และเอกสารของเวอร์ชันนั้น ระบุสิ่งที่ยังไม่ทราบ ห้ามแก้โค้ด
+
+$panda-write ตรวจทาน docs/integration-guide.md เทียบ implementation
+แยกตรวจแต่ละ integration รายงานข้อแก้ไขโดยไม่แก้ไฟล์
+
 $panda-plan วางแผนเพิ่ม rejection flow สำหรับ manager จาก requirements.md
 ระบุ acceptance criteria และวิธีทดสอบ ยังไม่ต้องแก้โค้ด
 
@@ -105,6 +119,11 @@ python3 scripts/vendor-upstreams.py
 ผลเดิมมีข้อผิดพลาดด้าน Unicode แม้ผ่าน test ที่ให้มาครบ จึงไม่ได้อ้างว่า
 ชุด skill ทำให้แม่นยำกว่า baseline หรือประหยัด token โดยไม่มีหลักฐาน
 
+Research และ Write ผ่าน structural validation และ Codex discovery แล้ว
+ส่วน behavioral comparison ยังเป็น **Not Run** โดย tooling tests ผ่าน 23 จาก 24 tests
+อีกหนึ่งรายการเป็นข้อผิดพลาดเดิมที่ยืนยันบน HEAD ที่ยังไม่แก้ไขแล้ว
+ดู [ผลตรวจ Research](docs/panda-research.md) และ [ผลปรับปรุง Write](docs/panda-write-refinement.md)
+
 ## ที่มาและ license
 
 ใช้ไฟล์ต้นฉบับจาก [Panda Debugger](https://github.com/akkaraponph/panda-debugger)
@@ -119,3 +138,5 @@ revision ของ Panda Debugger ที่ตรวจสอบไม่มี�
 ## ส่วนขยายที่จำเป็น
 
 เพิ่ม `panda-requirements`, `panda-test`, `panda-impact`, `panda-release` และ `panda-skill-lab` พร้อม routing ใน Panda Lead รวมเป็น 16 skills โดย Panda Debugger และ Buddhist Method เป็น skill หลัก และเก็บเอกสารเทคนิคใน `references/` ของแต่ละ skill ดู [รายงานส่วนขยาย](docs/expansion.md) ไม่มีการ commit หรือ deploy
+
+เพิ่ม `panda-research` สำหรับค้นคว้าคำถามทางเทคนิค รวมเป็น 17 skills ดู [ขอบเขตและผลตรวจสอบ](docs/panda-research.md)

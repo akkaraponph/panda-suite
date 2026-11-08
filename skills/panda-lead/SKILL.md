@@ -33,6 +33,7 @@ edit can be handled directly without another skill or a project plan.
 | Requested outcome | Skill |
 | --- | --- |
 | Explore an idea, assumptions, alternatives | `panda-brainstorm` |
+| Investigate a technical question or verify capabilities from sources | `panda-research` |
 | Clarify business rules, actors, acceptance | `panda-requirements` |
 | Design, add, run, or assess tests | `panda-test` |
 | Trace proposed change dependencies | `panda-impact` |
