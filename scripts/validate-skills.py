@@ -13,7 +13,7 @@ import yaml
 
 EXPECTED = {
     "panda-lead", "panda-brainstorm", "panda-research", "panda-plan", "panda-execute",
-    "panda-debugger", "panda-review", "panda-simplify", "buddhist-method",
+    "panda-debugger", "panda-review", "panda-sec", "panda-perf", "panda-simplify", "buddhist-method",
     "panda-write", "panda-spec", "panda-manual",
     "panda-requirements", "panda-test", "panda-impact", "panda-release", "panda-skill-lab",
 }
@@ -148,6 +148,20 @@ def validate(root):
         cases = json.loads((root / "tests/scenarios/cases.json").read_text())
         if {c["skill"] for c in cases} != EXPECTED:
             errors.append("evaluation scenario coverage does not match catalog")
+        for case in cases:
+            fixture = case.get("fixture", "")
+            source = (root / "tests/fixtures" / fixture).resolve()
+            if fixture == "upstream-transfer":
+                source = root / "skills/panda-debugger/tests/fixtures/backend-uncommitted-transfer"
+            elif not source.is_relative_to((root / "tests/fixtures").resolve()):
+                errors.append(f"{case.get('id')}: fixture escapes boundary")
+            if not fixture or not source.is_dir():
+                errors.append(f"{case.get('id')}: missing scenario fixture")
+            if not isinstance(case.get("prompt"), str) or not case["prompt"].strip():
+                errors.append(f"{case.get('id')}: missing scenario prompt")
+            checks = case.get("checks")
+            if not isinstance(checks, list) or not checks or any(not isinstance(c, str) or not c.strip() for c in checks):
+                errors.append(f"{case.get('id')}: invalid reviewer checks")
         if len({c["id"] for c in cases}) != len(cases):
             errors.append("duplicate evaluation case id")
     except (OSError, ValueError, KeyError, TypeError) as e:

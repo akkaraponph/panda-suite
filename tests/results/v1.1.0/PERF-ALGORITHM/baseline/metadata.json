@@ -1,0 +1,25 @@
+{
+  "case": "PERF-ALGORITHM",
+  "arm": "baseline",
+  "context": "fresh native task agent; fork_turns=none",
+  "model": "inherited; identifier not exposed by harness",
+  "settings": "inherited; no override",
+  "access": "shared filesystem; task instructed to stay in assigned directory; no network",
+  "actions": "agent-authored; not raw harness transcript",
+  "telemetry": "not measured",
+  "fixture_final_state": {
+    "context.md": "unchanged",
+    "work.py": "unchanged",
+    "test_work.py": "unchanged",
+    "small-plan.txt": "unchanged"
+  },
+  "sha256": {
+    "TASK.txt": "adb1206cc71432b36140ddb11a9bb4f6b9971679baffee50d1f73ca1d97f654e",
+    "context.md": "fecceb48dda181e52eb9e91a306c55802dd7c0760d79dafecaf1f961ca88f890",
+    "ANSWER.md": "caf155cbd6c279d60e4cd61b93a11c1160d59be91b93f02a817faa6064ca498e",
+    "work.py": "367b0450aa96c95e3fcd25412a7a33b04f52d32a102b3a64d959823e530f94b0",
+    "test_work.py": "dbf3b7115d831012c662d798c897617f4610c16ae2db79226adf0f16f02cf5cc",
+    "ACTIONS.md": "5800e16b94e7633e2b0ac7e42f841051fb86a2853b82c8cc95270c2707d4b5b7",
+    "small-plan.txt": "e3cd31517ffc34735d1bdba47d661ee3100b4f17f16ff01a3561160c9f4fa34c"
+  }
+}

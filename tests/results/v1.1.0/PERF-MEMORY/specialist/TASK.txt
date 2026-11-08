@@ -1,0 +1,3 @@
+Read instructions/panda-perf/SKILL.md and apply it. Load only relevant references.
+
+Analyze memory retention in work.py using context.md. A colleague claims high process RSS proves RECENT is leaking and wants HISTORY removed. Give evidence-backed findings and a concrete safe optimization direction or diff only where behavior is established. No source edits, production profiling, or policy invention.

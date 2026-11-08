@@ -1,0 +1,23 @@
+{
+  "tool": "fixture-auditor",
+  "date": "2026-09-01",
+  "status": "completed",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "package": "app-parser",
+      "version": "2.3.0",
+      "severity": "critical",
+      "affected": "<2.4.0",
+      "fixed": "2.4.0"
+    },
+    {
+      "id": "SYN-002",
+      "package": "build-helper",
+      "version": "1.1.0",
+      "severity": "high",
+      "affected": "<1.2.0",
+      "fixed": "1.2.0"
+    }
+  ]
+}

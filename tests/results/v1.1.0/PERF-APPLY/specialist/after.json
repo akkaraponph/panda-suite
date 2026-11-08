@@ -1,0 +1,64 @@
+{
+  "python": "3.14.7",
+  "concurrency": 1,
+  "warmups": 1,
+  "repetitions": 5,
+  "cases": {
+    "mostly_distinct_20000": {
+      "n": 20000,
+      "distinct": 18000,
+      "samples_ms": [
+        0.207625,
+        0.203042,
+        0.238917,
+        0.194959,
+        0.194708
+      ],
+      "median_ms": 0.203042,
+      "traced_peak_bytes": 884840,
+      "traced_current_bytes_with_result": 144120
+    },
+    "duplicates_20000": {
+      "n": 20000,
+      "distinct": 10,
+      "samples_ms": [
+        0.12575,
+        0.125584,
+        0.120125,
+        0.1175,
+        0.117375
+      ],
+      "median_ms": 0.120125,
+      "traced_peak_bytes": 512,
+      "traced_current_bytes_with_result": 216
+    },
+    "small_6": {
+      "n": 6,
+      "distinct": 4,
+      "samples_ms": [
+        0.000292,
+        0.000292,
+        0.000208,
+        0.000209,
+        0.000208
+      ],
+      "median_ms": 0.000209,
+      "traced_peak_bytes": 344,
+      "traced_current_bytes_with_result": 184
+    },
+    "empty": {
+      "n": 0,
+      "distinct": 0,
+      "samples_ms": [
+        0.000166,
+        0.000167,
+        0.000167,
+        0.000125,
+        0.000166
+      ],
+      "median_ms": 0.000166,
+      "traced_peak_bytes": 120,
+      "traced_current_bytes_with_result": 120
+    }
+  }
+}

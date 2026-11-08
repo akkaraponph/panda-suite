@@ -100,3 +100,10 @@ causal improvement or independent repeatability. See the
 [summary and independent audit](results/2026-11-07/summary.md). Subsequent runs
 must label changed fixture inputs or revised instructions rather than silently
 replacing earlier failures.
+
+## v1.1.0 additions
+
+Six `SEC-*` cases and six `PERF-*` cases cover positive findings, effective guards,
+placeholders, stale/withdrawn advisories, failed scans, complexity and semantic
+invariants, memory retention, N+1 batching, plan interpretation, unavailable tools,
+applied optimization, and nonactivation. See [actual trial results and limits](../docs/v1.1.0.md).

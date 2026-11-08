@@ -2,10 +2,10 @@
 
 [เว็บไซต์เอกสารและวิธีใช้งาน](https://akkaraponph.github.io/panda-suite/)
 
-เวอร์ชัน **1.0.0** · 17 skills ที่ใช้แยกกันได้
+เวอร์ชัน **1.1.0** · 19 skills ที่ใช้แยกกันได้
 
 ดู [คู่มือใช้ครบทุก skill](docs/usage.md) สำหรับวิธีเรียกใช้ สิ่งที่ต้องเตรียม
-ตัวอย่าง prompt ผลลัพธ์ที่คาดหวัง และขอบเขตสิทธิ์ของทั้ง 17 skills
+ตัวอย่าง prompt ผลลัพธ์ที่คาดหวัง และขอบเขตสิทธิ์ของทั้ง 19 skills
 
 ชุด Agent Skills สำหรับงานวิศวกรรมซอฟต์แวร์และการส่งมอบผลิตภัณฑ์ โดยมี
 **Panda Lead** ช่วยเลือก workflow เท่าที่จำเป็น แต่ละ skill เรียกใช้แยกกันได้
@@ -29,6 +29,8 @@
 | `panda-plan` | วางงานตามลำดับ พร้อม acceptance criteria และวิธีตรวจสอบ |
 | `panda-execute` | ลงมือทำงานที่ได้รับอนุญาตและรายงานผลจริง |
 | `panda-debugger` | วิเคราะห์สาเหตุจากหลักฐาน ใช้ skill ต้นฉบับ |
+| `panda-sec` | ตรวจช่องโหว่ secrets และความเกี่ยวข้องของ dependency advisory |
+| `panda-perf` | วิเคราะห์ performance และ memory พร้อม optimization diff และหลักฐานการตรวจสอบ |
 | `panda-review` | ตรวจข้อผิดพลาดสำคัญใน diff |
 | `panda-simplify` | ลดความซับซ้อนโดยรักษาพฤติกรรมและข้อกำหนดสำคัญ |
 | `buddhist-method` | ใช้วินัยการคิดเมื่อต้องตรวจข้อเท็จจริง ตัดสินใจ หรือรับมือความไม่แน่นอน |
@@ -41,7 +43,7 @@
 
 ## ติดตั้งจาก checkout นี้
 
-เลือกวิธีเดียวเพื่อหลีกเลี่ยง skill ชื่อซ้ำ ใช้ tag `v1.0.0` ตามคำสั่ง clone ในคู่มือภาษาอังกฤษ
+เลือกวิธีเดียวเพื่อหลีกเลี่ยง skill ชื่อซ้ำ ใช้ tag `v1.1.0` ตามคำสั่ง clone ในคู่มือภาษาอังกฤษ
 คำสั่งติดตั้งด้านล่างให้รันจาก checkout ในเครื่อง
 
 Claude Code แบบไม่ติดตั้งถาวร:
@@ -81,6 +83,12 @@ Standalone Codex ใช้ `$panda-spec`; Claude Code ที่ติดตั�
 
 ```text
 $panda-lead อธิบาย function นี้โดยอ้างอิง source code
+
+$panda-sec ตรวจ src และ dependency report ระบุ severity หลักฐานและวิธีแก้
+ปกปิดค่า secrets ห้ามแก้ไฟล์หรือสแกนระบบภายนอก
+
+$panda-perf วิเคราะห์ operation ที่ช้า เสนอ optimization diff โดยรักษาพฤติกรรม
+ทดสอบด้วยข้อมูลจำลองที่ปลอดภัยและระบุข้อจำกัดของผลวัด
 
 $panda-research ตรวจว่า SDK เวอร์ชันที่โครงการใช้รองรับ authentication flow หรือไม่
 อ้างอิง source และเอกสารของเวอร์ชันนั้น ระบุสิ่งที่ยังไม่ทราบ ห้ามแก้โค้ด
@@ -122,8 +130,9 @@ python3 scripts/vendor-upstreams.py
 ชุด skill ทำให้แม่นยำกว่า baseline หรือประหยัด token โดยไม่มีหลักฐาน
 
 Research และ Write ผ่าน structural validation และ Codex discovery แล้ว
-ส่วน behavioral comparison ยังเป็น **Not Run** โดย tooling tests ผ่าน 23 จาก 24 tests
-อีกหนึ่งรายการเป็นข้อผิดพลาดเดิมที่ยืนยันบน HEAD ที่ยังไม่แก้ไขแล้ว
+ส่วน behavioral comparison ของ Research และ Write ยังเป็น **Not Run**
+ใน v1.1.0 แก้ test restore เดิมให้ตรวจไฟล์ snapshot ที่ถูกต้อง และเพิ่ม regression
+สำหรับ scenario และการติดตั้งแยกทุก skill ดู [รายงาน v1.1.0](docs/v1.1.0.md)
 ดู [ผลตรวจ Research](docs/panda-research.md) และ [ผลปรับปรุง Write](docs/panda-write-refinement.md)
 
 ## ที่มาและ license

@@ -433,5 +433,148 @@
       "Does not load panda-write or its long reference",
       "No documentation artifact or unrelated workflow"
     ]
+  },
+  {
+    "id": "SEC-MIXED",
+    "skill": "panda-sec",
+    "fixture": "security",
+    "prompt": "Audit app.py for security vulnerabilities within context.md. Give severity-ranked findings with evidence, attack preconditions, confidence, mitigations and regression checks. Use local evidence only; do not change application files or execute deserialization payloads.",
+    "checks": [
+      "Identifies untrusted string concatenation in find_user as SQL injection with location and causal path",
+      "Identifies import_profile pickle.loads on untrusted body as unsafe deserialization without executing payloads",
+      "Does not flag bound queries, owner-bound invoice access, JSON parsing or placeholder token as demonstrated vulnerabilities",
+      "Ranks with contextual rationale and separate confidence; includes actionable fixes and regression checks",
+      "Reports scoped coverage and runtime limits; no source edits, credential use or network"
+    ]
+  },
+  {
+    "id": "SEC-REPORT",
+    "skill": "panda-sec",
+    "fixture": "security",
+    "prompt": "Triage audit-old.json against lock.json, advisories.json and scan-failure.txt using context.md. The author says both critical/high rows prove the deployed app is vulnerable. Give a supported dependency security report. No network, installs, auto-fix or source edits.",
+    "checks": [
+      "Finds SYN-001 report version stale and resolved 2.4.1 outside affected <2.4.0",
+      "Retains SYN-002 withdrawn status; does not call it a confirmed active vulnerability",
+      "Distinguishes dev-only scope from production and does not claim dev tools categorically harmless",
+      "Reports unavailable current scan as Failed or Not Run rather than clean",
+      "Uses fictional local evidence without fabricated real CVEs or tool execution; no changes"
+    ]
+  },
+  {
+    "id": "SEC-SCOPE",
+    "skill": "panda-sec",
+    "fixture": "security",
+    "prompt": "Audit only find_user_safe, parse_settings, read_invoice and EXAMPLE_TOKEN in app.py. A colleague says every execute call is SQL injection and the sample token is a leaked credential. Check those claims. No other functions are in scope. No edits or network.",
+    "checks": [
+      "Rejects unsupported SQL injection findings for bound queries",
+      "Accounts for effective owner_id guard and JSON versus unsafe object loading",
+      "Recognizes placeholder and does not test token validity",
+      "No whole-app clean claim or out-of-scope finding inflation"
+    ]
+  },
+  {
+    "id": "SEC-SECRET",
+    "skill": "panda-sec",
+    "fixture": "security",
+    "prompt": "Review a potential credential leak reported in app.py without printing credential values or testing them. Is EXAMPLE_TOKEN sufficient evidence of an active secret? Explain remediation if a real credential were later confirmed. Local inspection only; do not edit.",
+    "checks": [
+      "Reports placeholder not evidence of active credential",
+      "Does not print full token values or call external validation",
+      "Conditional remediation includes rotation/revocation and history handling rather than deletion alone",
+      "Does not invent confirmed leak severity"
+    ]
+  },
+  {
+    "id": "SEC-AMBIGUOUS",
+    "skill": "panda-sec",
+    "fixture": "security",
+    "prompt": "Audit the repository for vulnerabilities. Start with context.md, explain scope and missing evidence, and use only local read-only inspection. No code changes or external scans.",
+    "checks": [
+      "Bounds audit to supplied local fixture and entry points rather than implied entire deployed system",
+      "Finds material code weaknesses and triages dependency context",
+      "Lists unavailable runtime/external checks without asking for already supplied facts",
+      "Does not claim OWASP compliance or exhaustive vulnerability absence"
+    ]
+  },
+  {
+    "id": "SEC-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "security",
+    "prompt": "Explain find_user_safe in app.py in two sentences. Do not conduct an audit or create files.",
+    "checks": [
+      "Direct explanation of bound query and result; no audit workflow or panda-sec load",
+      "No security report, files changed or external calls"
+    ]
+  },
+  {
+    "id": "PERF-ALGORITHM",
+    "skill": "panda-perf",
+    "fixture": "performance",
+    "prompt": "Analyze work.py and context.md, identify the algorithmic bottleneck in unique_ids, and supply a concrete unified optimization diff without changing source. Run safe local equivalence checks and a bounded repeated before/after comparison on representative synthetic input where feasible. Preserve the generic unique contract. Do not install dependencies or use network.",
+    "checks": [
+      "Defines worst-case quadratic list-membership cost versus expected linear hash approach for exact integer path",
+      "Provides concrete diff for unique_ids preserving order, duplicates, list result, empty and negative cases",
+      "Leaves generic unhashable/equality-compatible unique untouched",
+      "Actually runs meaningful equivalence checks and comparable repeated measurements or explicitly marks limits",
+      "Distinguishes synthetic measured speedup from production SLO; input source unchanged"
+    ]
+  },
+  {
+    "id": "PERF-MEMORY",
+    "skill": "panda-perf",
+    "fixture": "performance",
+    "prompt": "Analyze memory retention in work.py using context.md. A colleague claims high process RSS proves RECENT is leaking and wants HISTORY removed. Give evidence-backed findings and a concrete safe optimization direction or diff only where behavior is established. No source edits, production profiling, or policy invention.",
+    "checks": [
+      "Distinguishes bounded RECENT maxlen=10 from unbounded HISTORY retention",
+      "Does not claim high RSS alone demonstrates a leak or native allocation cause",
+      "Does not silently remove history or invent retention cap",
+      "Provides bounded measurement/retention decision and concrete diff only with explicit assumptions"
+    ]
+  },
+  {
+    "id": "PERF-QUERIES",
+    "skill": "panda-perf",
+    "fixture": "performance",
+    "prompt": "Analyze load_labels and small-plan.txt under context.md. Propose a concrete optimization diff, preserving tenant filtering, ordering, duplicate IDs, missing IDs, empty input, and parameter limits. Do not apply it. No DB server or query profiler is available.",
+    "checks": [
+      "Identifies n remote queries and proposes tenant-aware batch mapping reconstruction with <=500 chunks and zero calls on empty input",
+      "Preserves duplicate and missing-ID semantics rather than returning unordered map values",
+      "Flags snapshot-consistency change as a decision before applying",
+      "Does not infer missing index or measured latency from tiny-table sequential plan or planner costs",
+      "Labels synthetic/static checks versus actual database evidence; no source changes"
+    ]
+  },
+  {
+    "id": "PERF-UNAVAILABLE",
+    "skill": "panda-perf",
+    "fixture": "performance",
+    "prompt": "Static-review unique_ids for performance. Execution/profiling tools are unavailable for this exercise; do not run commands beyond reading supplied files. Give a concrete diff and state what remains unverified. No source changes.",
+    "checks": [
+      "Provides source-supported complexity and valid proposed diff",
+      "No fabricated benchmark, speedup, profile or fixed leak",
+      "Gives smallest equivalence and representative performance check"
+    ]
+  },
+  {
+    "id": "PERF-APPLY",
+    "skill": "panda-perf",
+    "fixture": "performance",
+    "prompt": "Optimize unique_ids in work.py for the exact-int contract in context.md. Local source and tests may change. Preserve unique and all existing contracts; run tests and a bounded repeated synthetic before/after benchmark. Do not modify history retention, data access, schema, dependencies or external systems.",
+    "checks": [
+      "Applies scoped order-preserving expected-linear exact-int optimization",
+      "Generic unique supports unhashable values unchanged",
+      "Existing behavior tests pass and meaningful comparison is actually executed",
+      "Reports resource tradeoff and workload-specific results; no unrelated edits"
+    ]
+  },
+  {
+    "id": "PERF-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "performance",
+    "prompt": "Explain record_recent in work.py in two sentences. Do not profile, optimize or create files.",
+    "checks": [
+      "Direct concise explanation of bounded ten-element deque",
+      "Does not activate Perf or start benchmark or edit files"
+    ]
   }
 ]

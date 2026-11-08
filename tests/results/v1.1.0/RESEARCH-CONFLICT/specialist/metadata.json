@@ -1,0 +1,28 @@
+{
+  "case": "RESEARCH-CONFLICT",
+  "arm": "specialist",
+  "context": "fresh native task agent; fork_turns=none",
+  "model": "inherited; identifier not exposed by harness",
+  "settings": "inherited; no override",
+  "access": "shared filesystem; task instructed to stay in assigned directory; no network",
+  "actions": "agent-authored; not raw harness transcript",
+  "telemetry": "not measured",
+  "fixture_final_state": {
+    "context.md": "unchanged",
+    "client.py": "unchanged",
+    "sdk-v3.md": "unchanged",
+    "sdk-v2.md": "unchanged",
+    "team-note.md": "unchanged"
+  },
+  "sha256": {
+    "TASK.txt": "1068fd61a642beb65f4bc937f71a01513574c3aacb8d93de714ed5a00be5c319",
+    "context.md": "87ce347b5607ec6be1a954edb5ff3ca5a5ad473a3560a61ea5b92a4d497c18ba",
+    "client.py": "baa3093adc7fd4d59db7c5b3e15788c1844a750785a8e2724762c22d73d1483a",
+    "sdk-v3.md": "4151f10e237941dd107364fdfea34a917e0790567cbee2e440ffe3ffe13a981e",
+    "sdk-v2.md": "24a9084c26ed22b59fc46e7f0133a65e1747c66a77329eb14f622b4254722a6a",
+    "ANSWER.md": "64c982b6810dbf39ae274b6e9751d7efa8d826913dbdc81c670ceeb4f56f1a80",
+    "team-note.md": "74daebc26d7f2b252670db32509e12a9e2a86a30c4b5c00ef5c11ec2ae84e5d7",
+    "ACTIONS.md": "a8e83e4801dee1be471131d1f0a9d01e5153ad004817e39587741c3f39371ddd",
+    "instructions/panda-research/SKILL.md": "1f12246c983c5e2eabd8fd765785b6cc246b0e5f73db276378006053872d5a73"
+  }
+}

@@ -1,0 +1,3 @@
+Read instructions/panda-research/SKILL.md and apply it. Load only relevant references.
+
+Resolve the claims in team-note.md against the application configuration and SDK references. Explain which evidence applies and what remains uncertain. Local evidence only; do not edit.

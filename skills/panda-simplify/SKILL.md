@@ -6,7 +6,9 @@ description: Assess unnecessary complexity in code, architecture, documentation,
 # Panda Simplify
 
 Recommend the smallest design that satisfies real requirements. Fewer lines alone
-are not evidence of improvement. Default to analysis; edit only when requested.
+are not evidence of improvement. Default to analysis; edit only when requested. Performance and memory profiling
+with measured optimization diffs belongs with the performance workflow; simpler
+structure alone does not establish lower runtime cost.
 
 ## Inputs and workflow
 

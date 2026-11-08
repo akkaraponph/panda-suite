@@ -1,0 +1,3 @@
+fixture-auditor scan lock.json
+Exit status: 2
+Error: advisory service unavailable. No current scan results produced.

@@ -1,0 +1,32 @@
+{
+  "case": "SEC-NONTRIGGER",
+  "arm": "lead",
+  "context": "fresh native task agent; fork_turns=none",
+  "model": "inherited; identifier not exposed by harness",
+  "settings": "inherited; no override",
+  "access": "shared filesystem; task instructed to stay in assigned directory; no network",
+  "actions": "agent-authored; not raw harness transcript",
+  "telemetry": "not measured",
+  "fixture_final_state": {
+    "advisories.json": "unchanged",
+    "lock.json": "unchanged",
+    "audit-old.json": "unchanged",
+    "context.md": "unchanged",
+    "scan-failure.txt": "unchanged",
+    "app.py": "unchanged"
+  },
+  "sha256": {
+    "advisories.json": "cad473b9cec1e4d637b79a568f248f2b6c403391f56e1e9bbb17859f83695939",
+    "lock.json": "adfd341ae21368b366bddb5296010e98376ee3a5b1d96b2969e57036cf7fb7ff",
+    "audit-old.json": "898357b30f103d6611dfd239cf15210fbb925b3f42296d90bc034cdfc7f6d175",
+    "TASK.txt": "8f62e916b3258acf757f93e2eccee1043f3a9e824cc12ca9256539a29c67baab",
+    "context.md": "12e47840a5cb46c5b585883fb6328dd08615ee9c3fd8c54c3a16b421387e7e8a",
+    "ANSWER.md": "4ab5709215f4fc55e0cbf10f5b656699d23ec5b5c7a22011a56e51add6d66dac",
+    "scan-failure.txt": "f699e827b8daa9b73c95f5e0c78fafc5443bf2cc32d342d122f64c3d4981b0ed",
+    "app.py": "5ee479ccbb71f188fe90f4139200fd44c83204780c79dc07a7202dd5bdd4649c",
+    "ACTIONS.md": "1f9ab00ae5ff2f964ad7e79f67a8afc41516ed0f277598df241d18b9ef1146d5",
+    "instructions/panda-lead/SKILL.md": "3e78a22d29066a3d45f3669ddac7ce609b64f2bf9e3f934fa68742a021f35ab6",
+    "instructions/panda-lead/references/routing.md": "b4493cc5c13b9167f1a579f15be8b7307d09a72e43bd45f626a19a577542578e",
+    "instructions/panda-lead/references/handoff.md": "9932a24a0556481f950a053bf6dd5066dd8a079c80e4deaf067d1b86cd4e0e44"
+  }
+}

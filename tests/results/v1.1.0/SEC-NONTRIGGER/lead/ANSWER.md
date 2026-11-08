@@ -1,0 +1,1 @@
+`find_user_safe(db, name)` queries the `users` table for IDs whose name matches `name`, binding the supplied value through a `?` placeholder instead of inserting it into the SQL text. It returns all matching rows using `fetchall()`.

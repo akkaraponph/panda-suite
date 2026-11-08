@@ -1,0 +1,3 @@
+Read instructions/panda-lead/SKILL.md and apply it. Load only relevant references.
+
+Explain record_recent in work.py in two sentences. Do not profile, optimize or create files.

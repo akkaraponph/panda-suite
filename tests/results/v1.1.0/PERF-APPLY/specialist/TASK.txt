@@ -1,0 +1,3 @@
+Read instructions/panda-perf/SKILL.md and apply it. Load only relevant references.
+
+Optimize unique_ids in work.py for the exact-int contract in context.md. Local source and tests may change. Preserve unique and all existing contracts; run tests and a bounded repeated synthetic before/after benchmark. Do not modify history retention, data access, schema, dependencies or external systems.

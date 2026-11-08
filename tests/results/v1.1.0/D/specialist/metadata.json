@@ -1,0 +1,24 @@
+{
+  "case": "D",
+  "arm": "specialist",
+  "context": "fresh native task agent; fork_turns=none",
+  "model": "inherited; identifier not exposed by harness",
+  "settings": "inherited; no override",
+  "access": "shared filesystem; task instructed to stay in assigned directory; no network",
+  "actions": "agent-authored; not raw harness transcript",
+  "telemetry": "not measured",
+  "fixture_final_state": {
+    "before.py": "unchanged",
+    "context.md": "unchanged",
+    "after.py": "unchanged"
+  },
+  "sha256": {
+    "before.py": "6b93e52558a1ce1fb36ddc03cb5c14234e488e828ca6092182f9076600d825c3",
+    "TASK.txt": "d5188ef18150baeda8e8b4965a979369880851b237e1387d7cf185201b22335b",
+    "context.md": "811f6f54a8793688f114dddcb0e4b82016682106c39b70a251cafffbbfa90f5d",
+    "after.py": "d1d0d4112a330fcaa5b98d184c5a0ed664438de1dcb00108aa7c6655e0c33ecb",
+    "ANSWER.md": "3353396ffaa06a11eb6acda29978ceb8bd978cd23cf28e83c5b6fb9f41f5979a",
+    "ACTIONS.md": "abb9e2e98fc1f384aade1e52464c5c62613150cbb0b92cac568b1aa34cb2003e",
+    "instructions/panda-review/SKILL.md": "900de20d82c9a9976a26fff33e2bac4f8a1ebbfb73a77db9a1e4ab1478792d67"
+  }
+}

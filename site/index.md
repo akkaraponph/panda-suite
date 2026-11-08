@@ -35,6 +35,8 @@ Using Claude Code or standalone skills? See the [invocation reference](usage.htm
 | Define a technical contract | [Spec](panda-spec.html) |
 | Implement an authorized change | [Execute](panda-execute.html) |
 | Investigate unexpected behavior | [Debugger](panda-debugger.html) |
+| Audit vulnerabilities and dependency reports | [Sec](panda-sec.html) |
+| Investigate performance and memory cost | [Perf](panda-perf.html) |
 | Check correctness and complexity | [Review](panda-review.html), [Test](panda-test.html), or [Simplify](panda-simplify.html) |
 | Explain the system to others | [Write](panda-write.html) or [Manual](panda-manual.html) |
 | Prepare a release handoff | [Release](panda-release.html) |

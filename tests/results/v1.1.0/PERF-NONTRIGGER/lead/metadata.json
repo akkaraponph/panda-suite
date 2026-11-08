@@ -1,0 +1,28 @@
+{
+  "case": "PERF-NONTRIGGER",
+  "arm": "lead",
+  "context": "fresh native task agent; fork_turns=none",
+  "model": "inherited; identifier not exposed by harness",
+  "settings": "inherited; no override",
+  "access": "shared filesystem; task instructed to stay in assigned directory; no network",
+  "actions": "agent-authored; not raw harness transcript",
+  "telemetry": "not measured",
+  "fixture_final_state": {
+    "context.md": "unchanged",
+    "work.py": "unchanged",
+    "test_work.py": "unchanged",
+    "small-plan.txt": "unchanged"
+  },
+  "sha256": {
+    "TASK.txt": "dabfe84a218dabb32bef84b9fd2c2dcf568cf35829943bf80018aea0dd8b3f48",
+    "context.md": "fecceb48dda181e52eb9e91a306c55802dd7c0760d79dafecaf1f961ca88f890",
+    "ANSWER.md": "f471e5a9a781159a30b8402287dec3d3a46312d0640083f37640ac06447bac4c",
+    "work.py": "367b0450aa96c95e3fcd25412a7a33b04f52d32a102b3a64d959823e530f94b0",
+    "test_work.py": "dbf3b7115d831012c662d798c897617f4610c16ae2db79226adf0f16f02cf5cc",
+    "ACTIONS.md": "c52e21fa9b106f2702b0be482f006af459e9209141d48d355c129223d53ff984",
+    "small-plan.txt": "e3cd31517ffc34735d1bdba47d661ee3100b4f17f16ff01a3561160c9f4fa34c",
+    "instructions/panda-lead/SKILL.md": "be9961ebb3e2891a54dd777ba822523189089ed117e3618f04c95e51d355d60c",
+    "instructions/panda-lead/references/routing.md": "bd1a7b716d28b9906143d19649bf94f8e7cbe426ccd82ce4ee04902b3261e1e0",
+    "instructions/panda-lead/references/handoff.md": "9932a24a0556481f950a053bf6dd5066dd8a079c80e4deaf067d1b86cd4e0e44"
+  }
+}

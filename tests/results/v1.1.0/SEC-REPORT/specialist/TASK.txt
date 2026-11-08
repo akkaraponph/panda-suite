@@ -1,0 +1,3 @@
+Read instructions/panda-sec/SKILL.md and apply it. Load only relevant references.
+
+Triage audit-old.json against lock.json, advisories.json and scan-failure.txt using context.md. The author says both critical/high rows prove the deployed app is vulnerable. Give a supported dependency security report. No network, installs, auto-fix or source edits.

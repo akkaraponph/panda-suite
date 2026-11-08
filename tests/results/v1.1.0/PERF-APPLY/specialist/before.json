@@ -1,0 +1,64 @@
+{
+  "python": "3.14.7",
+  "concurrency": 1,
+  "warmups": 1,
+  "repetitions": 5,
+  "cases": {
+    "mostly_distinct_20000": {
+      "n": 20000,
+      "distinct": 18000,
+      "samples_ms": [
+        739.346,
+        740.699834,
+        736.155292,
+        738.542417,
+        734.403958
+      ],
+      "median_ms": 738.542417,
+      "traced_peak_bytes": 153696,
+      "traced_current_bytes_with_result": 153696
+    },
+    "duplicates_20000": {
+      "n": 20000,
+      "distinct": 10,
+      "samples_ms": [
+        0.479708,
+        0.468917,
+        0.468708,
+        0.468709,
+        0.478916
+      ],
+      "median_ms": 0.468917,
+      "traced_peak_bytes": 128,
+      "traced_current_bytes_with_result": 128
+    },
+    "small_6": {
+      "n": 6,
+      "distinct": 4,
+      "samples_ms": [
+        0.000209,
+        0.000208,
+        0.000209,
+        0.000208,
+        0.000208
+      ],
+      "median_ms": 0.000208,
+      "traced_peak_bytes": 32,
+      "traced_current_bytes_with_result": 32
+    },
+    "empty": {
+      "n": 0,
+      "distinct": 0,
+      "samples_ms": [
+        0.000166,
+        0.000125,
+        0.000125,
+        0.000125,
+        8.3e-05
+      ],
+      "median_ms": 0.000125,
+      "traced_peak_bytes": 0,
+      "traced_current_bytes_with_result": 0
+    }
+  }
+}

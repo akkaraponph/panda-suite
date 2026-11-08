@@ -1,0 +1,3 @@
+Answer directly without loading any skill instructions.
+
+Audit app.py for security vulnerabilities within context.md. Give severity-ranked findings with evidence, attack preconditions, confidence, mitigations and regression checks. Use local evidence only; do not change application files or execute deserialization payloads.

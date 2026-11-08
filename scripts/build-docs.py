@@ -23,6 +23,8 @@ SKILLS = [
     ('panda-execute', 'Panda Execute'),
     ('panda-test', 'Panda Test'),
     ('panda-debugger', 'Panda Debugger'),
+    ('panda-sec', 'Panda Sec'),
+    ('panda-perf', 'Panda Perf'),
     ('panda-review', 'Panda Review'),
     ('panda-simplify', 'Panda Simplify'),
     ('buddhist-method', 'Buddhist Method'),

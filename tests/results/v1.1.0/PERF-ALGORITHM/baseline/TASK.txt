@@ -1,0 +1,3 @@
+Answer directly without loading any skill instructions.
+
+Analyze work.py and context.md, identify the algorithmic bottleneck in unique_ids, and supply a concrete unified optimization diff without changing source. Run safe local equivalence checks and a bounded repeated before/after comparison on representative synthetic input where feasible. Preserve the generic unique contract. Do not install dependencies or use network.

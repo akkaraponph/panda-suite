@@ -1,0 +1,27 @@
+{
+  "case": "PERF-MEMORY",
+  "arm": "specialist",
+  "context": "fresh native task agent; fork_turns=none",
+  "model": "inherited; identifier not exposed by harness",
+  "settings": "inherited; no override",
+  "access": "shared filesystem; task instructed to stay in assigned directory; no network",
+  "actions": "agent-authored; not raw harness transcript",
+  "telemetry": "not measured",
+  "fixture_final_state": {
+    "context.md": "unchanged",
+    "work.py": "unchanged",
+    "test_work.py": "unchanged",
+    "small-plan.txt": "unchanged"
+  },
+  "sha256": {
+    "TASK.txt": "e3cbed072a1ec9f6855876f4dd4357b88b5ec213a67f3e85e5e1c080ecc1a6b9",
+    "context.md": "fecceb48dda181e52eb9e91a306c55802dd7c0760d79dafecaf1f961ca88f890",
+    "ANSWER.md": "fa836d7333eced012a89b902a7520ccccdad37d00a8072b95ae520f709c9c5bd",
+    "work.py": "367b0450aa96c95e3fcd25412a7a33b04f52d32a102b3a64d959823e530f94b0",
+    "test_work.py": "dbf3b7115d831012c662d798c897617f4610c16ae2db79226adf0f16f02cf5cc",
+    "ACTIONS.md": "2f061848dd3107288e065767336a63559839963fed9b471329435ac0a61838d3",
+    "small-plan.txt": "e3cd31517ffc34735d1bdba47d661ee3100b4f17f16ff01a3561160c9f4fa34c",
+    "instructions/panda-perf/SKILL.md": "c4ffa860979809f44c98ebfa355bd5575fc7a461fd951b58f781bdd7f0113812",
+    "instructions/panda-perf/references/profiling.md": "355564bf414ec2850001573b6f0deebce92811f2a20f50df182ac1ca68bb5b88"
+  }
+}

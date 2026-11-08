@@ -186,6 +186,39 @@ and remaining risks. To authorize repair in the same request, say “investigate
 fix”; no second approval is needed for that scope. Missing evidence stays explicit.
 The detailed technique remains in its skill-local `references/` documents.
 
+### Panda Sec
+
+Supply a diff/base or bounded code scope, security expectations, lockfiles and
+available dependency reports.
+
+```text
+$panda-sec Audit src/api and dependency-audit.json against the resolved lockfile.
+Trace attack conditions and controls. Rank supported vulnerabilities with severity,
+confidence, locations, evidence, fixes and regression checks. Redact secret values.
+Do not edit, install scanners, use credentials, upload data or scan externally.
+```
+
+Expect a scoped vulnerability report and dependency applicability triage, including
+failed/unrun scans and coverage limits. This is a dedicated audit; ordinary diff
+review still checks security defects without invoking Sec automatically.
+
+### Panda Perf
+
+Supply the slow operation, workload sizes, runtime, resource target if known,
+source/tests and available CPU, memory, query-count or plan evidence.
+
+```text
+$panda-perf Analyze src/events.py for repeated lookups and memory retention.
+Produce a minimal optimization diff preserving order, duplicates and permissions.
+Run safe local equivalence and repeated synthetic comparisons; label missing
+production evidence. Do not apply the patch or change database schema.
+```
+
+Expect ranked cost evidence, concrete diffs, semantic and resource trade-offs,
+actual comparisons and unverified checks. To apply edits, request the optimization
+explicitly. A sequential scan or high RSS alone does not prove a bottleneck/leak.
+Production load tests, profiling and database operations require matching scope.
+
 ### Panda Review
 
 Provide the PR, diff, or explicit comparison boundary and intended behavior.

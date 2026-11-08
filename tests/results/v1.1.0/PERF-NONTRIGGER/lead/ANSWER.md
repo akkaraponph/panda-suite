@@ -1,0 +1,1 @@
+`record_recent(payload)` appends the payload to the module-level `RECENT` deque. Because `RECENT` has `maxlen=10`, appending an eleventh item automatically discards the oldest item, keeping the ten most recent payloads.

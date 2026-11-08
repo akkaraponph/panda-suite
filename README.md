@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.0.0** · 17 independent skills
+Version **1.1.0** · 19 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -33,6 +33,8 @@ copyable examples and expected outputs for every skill.
 | `panda-plan` | Define ordered tasks, dependencies, acceptance, and verification |
 | `panda-execute` | Implement authorized work and report actual verification |
 | `panda-debugger` | Investigate a failure and establish causal confidence; preserved upstream |
+| `panda-sec` | Audit vulnerabilities, secrets, and dependency report applicability |
+| `panda-perf` | Profile performance and memory; produce verified optimization diffs |
 | `panda-review` | Find material defects in a bounded change |
 | `panda-simplify` | Assess unnecessary complexity while preserving invariants |
 | `buddhist-method` | Apply optional reasoning discipline at relevant decision points; preserved upstream |
@@ -44,6 +46,21 @@ Specialists work independently. A function explanation needs no project plan.
 Brainstorming does not authorize implementation. Debugging does not automatically
 start planning or documentation. Buddhist Method is optional rather than a stage
 between every activity. Requirements, research, testing, impact, release, and skill evaluation are supported.
+
+## Security and performance
+
+`panda-sec` audits scoped code or diffs and triages dependency reports. Findings
+include severity, confidence, attack conditions, source evidence, mitigations,
+and regression checks. It validates scanner matches, redacts potential secrets,
+and reports missing coverage without claiming whole-system security.
+
+`panda-perf` traces algorithmic cost, memory retention, redundant queries, N+1
+patterns, and query plans. It delivers concrete optimization diffs, preserves
+behavior, and separates static hypotheses from representative measurements.
+Analysis is read-only; requested local optimizations may be applied and tested.
+
+See [v1.1.0 scope and verification](docs/v1.1.0.md) for trials, shared quality
+checks, and remaining limits.
 
 ## Research and documentation
 
@@ -66,7 +83,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.0.0 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.1.0 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 
@@ -158,6 +175,12 @@ These prompts use standalone Codex names; use your installation's selector above
 ```text
 $panda-lead Explain what this function does.
 
+$panda-sec Audit src and the supplied dependency report. Rank supported
+vulnerabilities, redact secrets, and give fixes and checks. Do not edit or scan externally.
+
+$panda-perf Analyze this slow operation and propose a concrete optimization diff.
+Preserve behavior; run safe local comparisons and state workload limits.
+
 $panda-research Check whether the pinned SDK supports our authentication flow.
 Cite version-specific evidence and unresolved claims. Do not change code.
 
@@ -205,9 +228,8 @@ executed; passing a small test suite does not establish every acceptance rule.
 ## Validate and evaluate
 
 The Research and Write additions pass structural validation and Codex discovery.
-Their baseline/skill behavioral comparisons are **Not Run**. The tooling suite
-currently passes 23 of 24 tests; the existing
-`test_restore_refuses_modified_upstream` failure was reproduced on unchanged HEAD.
+Their baseline/skill behavioral comparisons are **Not Run**. The v1.1.0 tooling suite corrects the stale restore-test target and adds
+scenario-integrity and standalone-installation regressions for all skills.
 See the reports above for scope and evidence limits.
 
 Maintenance dependencies are separate from skill use:

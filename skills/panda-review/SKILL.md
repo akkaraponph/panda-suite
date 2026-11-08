@@ -6,7 +6,9 @@ description: Review a pull request, diff, or bounded code change for material co
 # Panda Review
 
 Find actionable defects introduced or exposed by a change. Complexity advice
-without a changed-code defect is a different task. Review does not authorize fixes.
+without a changed-code defect is a different task. Review does not authorize fixes. A dedicated vulnerability, secret, or dependency
+audit belongs with the security audit workflow; ordinary diff review still checks
+security defects within the change.
 
 ## Inputs and workflow
 

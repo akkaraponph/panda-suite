@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-01",
+  "advisories": [
+    {
+      "id": "SYN-001",
+      "package": "app-parser",
+      "affected": "<2.4.0",
+      "fixed": "2.4.0",
+      "status": "active"
+    },
+    {
+      "id": "SYN-002",
+      "package": "build-helper",
+      "affected": "<1.2.0",
+      "fixed": "1.2.0",
+      "status": "withdrawn",
+      "reason": "Reported vulnerability could not be substantiated"
+    }
+  ]
+}

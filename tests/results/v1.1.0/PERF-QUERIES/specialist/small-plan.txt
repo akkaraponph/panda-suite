@@ -1,0 +1,4 @@
+Synthetic captured PostgreSQL plan for SELECT id FROM tiny_table:
+Seq Scan on tiny_table (cost=0.00..1.03 rows=3 width=4)
+Table cardinality: 3 rows. No execution timings or buffers captured.
+An index exists on tiny_table(id) in the supplied schema snapshot.

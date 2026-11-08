@@ -1,0 +1,3 @@
+Read instructions/panda-perf/SKILL.md and apply it. Load only relevant references.
+
+Analyze load_labels and small-plan.txt under context.md. Propose a concrete optimization diff, preserving tenant filtering, ordering, duplicate IDs, missing IDs, empty input, and parameter limits. Do not apply it. No DB server or query profiler is available.

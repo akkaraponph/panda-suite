@@ -42,6 +42,8 @@ edit can be handled directly without another skill or a project plan.
 | Ordered implementation work and acceptance criteria | `panda-plan` |
 | Implement authorized work | `panda-execute` |
 | Diagnose unexpected behavior | `panda-debugger` |
+| Profile performance/memory and produce optimization diffs | `panda-perf` |
+| Audit security vulnerabilities or dependency reports | `panda-sec` |
 | Find defects in a change | `panda-review` |
 | Assess unnecessary complexity | `panda-simplify` |
 | README, developer guide, runbook | `panda-write` |
@@ -58,7 +60,7 @@ carry that permission forward without asking again. Destructive operations,
 publication, deployment, production changes, and external side effects require
 authorization covering those actions. A new request can narrow earlier scope.
 
-Skip satisfied activities. Requirements define what; Plan orders work; Impact traces what may break. Test owns test effectiveness; Debugger owns causal investigation. Release preparation never implies deployment. Use Review for focused security review, Debugger for telemetry investigation, Plan for migration planning, Brainstorm for usability exploration, and Spec for ADRs until distinct workflows justify separate skills.
+Skip satisfied activities. Requirements define what; Plan orders work; Impact traces what may break. Test owns test effectiveness; Debugger owns causal investigation. Release preparation never implies deployment. Use Sec for dedicated security audits, Review for ordinary changed-code defects, Debugger for telemetry investigation, Plan for migration planning, Brainstorm for usability exploration, and Spec for ADRs until distinct workflows justify separate skills.
 
 ## Success discipline
 

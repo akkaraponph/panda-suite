@@ -1,0 +1,3 @@
+Read instructions/panda-write/SKILL.md and apply it. Load only relevant references.
+
+Write a short developer guide for the current service.py with a runnable usage example. The requested rejection behavior is still only a proposal. Use clear English and do not implement it.

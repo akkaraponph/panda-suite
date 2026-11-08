@@ -175,10 +175,41 @@ class PackageTest(unittest.TestCase):
         self.assertEqual(0, restore(self.root))
 
     def test_restore_refuses_modified_upstream(self):
-        p = self.root / "skills/panda-debugger/SKILL.md"
+        p = self.root / "vendor/panda-debugger/SKILL.md"
         p.write_text(p.read_text() + "\nlocal change\n")
         with self.assertRaisesRegex(ValueError, "overwrite local change"):
             restore(self.root)
+
+    def test_adapted_skill_is_not_a_pinned_restore_target(self):
+        p = self.root / "skills/panda-debugger/SKILL.md"
+        p.write_text(p.read_text() + "\nlocal adaptation\n")
+        self.assertEqual(0, restore(self.root))
+        self.assertTrue(p.read_text().endswith("local adaptation\n"))
+
+    def test_every_skill_installs_independently(self):
+        local_links = runpy.run_path(str(ROOT / "scripts/validate-skills.py"))["local_links"]
+        for source in sorted((self.root / "skills").iterdir()):
+            with self.subTest(skill=source.name):
+                dest = Path(self.temp.name) / ("single-" + source.name)
+                install(self.root, dest, [source.name])
+                self.assertEqual([source.name], [p.name for p in dest.iterdir()])
+                for document in (dest / source.name).rglob("*.md"):
+                    self.assertEqual([], local_links(document, dest / source.name, standalone=True))
+
+    def test_scenario_integrity_checks(self):
+        p = self.root / "tests/scenarios/cases.json"
+        original = json.loads(p.read_text())
+        for field, value, expected in [
+            ("fixture", "../../outside", "fixture"),
+            ("fixture", "absent", "fixture"),
+            ("prompt", "", "prompt"),
+            ("checks", [], "checks"),
+        ]:
+            with self.subTest(field=field, value=value):
+                cases = json.loads(json.dumps(original))
+                cases[0][field] = value
+                p.write_text(json.dumps(cases))
+                self.assertTrue(any(expected in e for e in validate(self.root)))
 
     def test_fixture_preparation_excludes_answer_key(self):
         dest = Path(self.temp.name) / "blind-case"
