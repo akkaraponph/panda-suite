@@ -3,7 +3,7 @@ Current patch: [v1.1.1 changes and verification](v1.1.1.md).
 Prior nineteen-skill v1.1.0 checks and model trials: see [v1.1.0 report](v1.1.0.md).
 The reports below retain their original revision-specific outcomes.
 
-Current seventeen-skill catalog: see the [research addition](panda-research.md) and
+Earlier seventeen-skill catalog: see the [research addition](panda-research.md) and
 prior [expansion report](expansion.md). The initial eleven-skill results below are historical.
 
 # Implementation and verification report

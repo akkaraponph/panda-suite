@@ -6,6 +6,13 @@ direct invocation, missing capabilities, changed requests, and stale plans.
 Its [handoff contract](../skills/panda-lead/references/handoff.md) preserves scope
 and authorization between activities.
 
+Lead matches exploration, recommendation, and artifact creation to the request.
+Before recommending an addition, it checks what existing capabilities cover and
+identifies the unmet outcome. A challenged recommendation calls for reassessing
+its premise before proposing a replacement. No addition is a valid conclusion;
+an explicit artifact request still authorizes scoped creation. See the
+[v1.1.1 refinement and verification](v1.1.1.md).
+
 Routing is a model-followed instruction policy, not a keyword classifier or a
 Python routing service. No deterministic runtime dispatch is claimed. The explicit
 table makes decisions inspectable; behavior is tested with actual tasks.

@@ -84,6 +84,7 @@ def build():
         ('skill-contract', 'Extend the suite', 'docs/skill-contract.md'),
         ('integration', 'Upstream maintenance', 'docs/integration.md'),
         ('verification', 'Verification record', 'docs/verification.md'),
+        ('release-v1-1-1', 'Release v1.1.1', 'docs/v1.1.1.md'),
         ('notices', 'Source and license notices', 'SOURCE_NOTICES.md'),
         ('thai', 'ภาพรวมภาษาไทย', 'README.th.md'),
         ('maintaining', 'Maintain this site', 'site/maintaining.md'),
@@ -115,7 +116,7 @@ def build():
     groups = [
         ('Get started', [('index', 'Welcome'), ('installation', 'Installation'), ('skills', 'Skill directory'), ('usage', 'Complete usage guide')]),
         ('Skills', SKILLS),
-        ('Project', [('routing', 'Workflows and routing'), ('architecture', 'Architecture'), ('skill-contract', 'Extend the suite'), ('integration', 'Upstream maintenance'), ('verification', 'Verification record'), ('notices', 'Source and licenses'), ('thai', 'ภาษาไทย'), ('maintaining', 'Maintain this site')]),
+        ('Project', [('routing', 'Workflows and routing'), ('architecture', 'Architecture'), ('skill-contract', 'Extend the suite'), ('integration', 'Upstream maintenance'), ('verification', 'Verification record'), ('release-v1-1-1', 'Release v1.1.1'), ('notices', 'Source and licenses'), ('thai', 'ภาษาไทย'), ('maintaining', 'Maintain this site')]),
     ]
     search = []
     template = (ROOT / 'site/template.html').read_text()

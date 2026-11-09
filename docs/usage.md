@@ -41,6 +41,11 @@ Expect implementation and verification evidence plus a release-preparation hando
 not deployment. A simple question can be answered directly. You can request only a
 plan or review without authorizing implementation.
 
+For idea requests, expect options and a recommendation before a finished artifact.
+Before suggesting another skill, tool, or component, Lead checks existing coverage;
+keeping the current approach is a valid recommendation. An explicit creation
+request still authorizes the requested artifact without reopening settled choices.
+
 ## Product discovery and requirements
 
 ### Panda Brainstorm
@@ -57,6 +62,10 @@ Do not implement or create an execution plan.
 
 Expect a problem statement, goals/non-goals, alternatives, recommendation, risks,
 and open decisions. Exploration does not authorize source changes.
+
+Recommendations consider existing capabilities and may favor no addition. If you
+challenge a suggestion, expect reassessment of its premise and deciding evidence,
+with speculative opportunities distinguished from demonstrated gaps.
 
 ### Panda Research
 
@@ -122,6 +131,11 @@ do not implement the feature.
 Expect an actionable plan, evidence anchors, risks and unresolved decisions. A
 request to save a plan authorizes that document, not application changes.
 
+Where error contracts matter, expect omitted, null, empty, and invalid inputs to
+be distinguished. Proposed signatures must be capable of producing the promised
+errors; for example, a required Python argument omitted by a caller normally raises
+`TypeError` before function validation can raise `ValueError`.
+
 ### Panda Spec
 
 Provide requirements, source, audience/language, and an existing template if available.
@@ -152,6 +166,11 @@ acceptance status and unrun checks. Do not deploy or publish.
 Expect scoped changes, per-task progress, actual verification and remaining risks.
 An explicit implementation request already authorizes relevant workspace edits.
 Material scope/requirement/risk changes require a new decision.
+
+Verification derives expected outcomes from acceptance rules as well as existing
+tests. A green supplied suite may leave a required behavior unchecked; expect
+focused checks for those gaps and a separate statement of acceptance completeness.
+Restrictions on editing supplied tests remain in force.
 
 ## Quality and investigation
 
@@ -233,6 +252,10 @@ Do not fix code.
 Expect prioritized actionable findings or a concise no-significant-findings result
 with review limits. Speculation is not presented as a confirmed vulnerability or
 measured performance failure. Review authorization does not authorize repairs.
+
+Review compares changed behavior with the contract even when supplied tests pass.
+Expect a concrete triggering case for a supported defect; correct changes should
+receive no invented finding merely because a test gap exists.
 
 ### Panda Simplify
 
@@ -339,6 +362,12 @@ Expect purpose/failure mode, contract, cases, actual results where run, comparis
 limits, weaknesses and narrowly justified improvements. Ask explicitly to create
 or edit a skill when wanted. No simulated baseline, fabricated benchmark or token
 savings is acceptable. See [evaluation instructions](../tests/evaluation.md).
+
+Historical failures may already have instruction corrections. Expect inspection
+of the current skill before more rules are proposed. A locally validated fixture
+with green tests and an uncovered contract defect establishes a useful test case,
+not an improvement in model behavior. Use fresh contexts and a correct control
+for behavioral comparisons. See [v1.1.1 scope and evidence](v1.1.1.md).
 
 ## Practice locally
 

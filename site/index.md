@@ -6,6 +6,13 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
+## Latest release: v1.1.1
+
+Six skills now give more explicit guidance on contract verification, error
+boundaries, and recommendations grounded in existing capabilities. The suite
+still contains 19 independent skills. Read the [release notes](../docs/v1.1.1.md)
+for changes, checks, and the behavioral comparisons that remain unrun.
+
 ## Your first request
 
 Install the suite, open the project you want to work on, and select a skill in your agent. These examples use the **Codex plugin** names.
