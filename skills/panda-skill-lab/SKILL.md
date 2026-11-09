@@ -19,6 +19,10 @@ before designing changes. Missing access or model settings must remain visible.
 1. **Define the problem.** Identify what normal agent behavior gets wrong, why
    it matters, and observable success criteria. Separate a hypothesized failure
    from one actually seen. Check overlap with existing capabilities.
+   Inspect current instructions as well as historical failures: a recorded defect
+   may already have a correction. Prefer evaluating that correction over adding
+   another restatement. Match idea exploration, evaluation, and artifact creation
+   to the user's requested outcome.
 2. **Define the contract.** Specify name, capability/trigger description,
    non-triggers, inputs, workflow, outputs, permission boundaries, and evaluation
    criteria. Verify current format against the
@@ -34,6 +38,9 @@ before designing changes. Missing access or model settings must remain visible.
    evidence, ambiguity, tool failure, wrong initial assumptions, authorization,
    and out-of-scope pressure where relevant. Include a case where this skill
    should not activate. Keep answer keys away from task-performing agents.
+   For contract-verification failures, include a green-suite fixture with an
+   uncovered requirement violation and a correct control. Validate the fixture's
+   distinguishing behavior locally; that validates the case, not model behavior.
 5. **Establish baseline and skill runs.** Use fresh contexts per case and arm;
    hold model/settings, tools, inputs, access, and budget comparable. Save actual
    answers, loaded paths, actions, results, and authorized artifacts. Use native

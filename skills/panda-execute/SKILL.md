@@ -28,6 +28,10 @@ proceed. Ask when missing requirements materially change correctness or scope.
 3. Run the task's relevant checks using the actual repository commands. Inspect
    output and exit status. Check supplied tests against each acceptance rule;
    exercise uncovered input boundaries before calling the task verified.
+   Derive expected outcomes from the contract, independently of the implementation
+   and test names. If a required behavior is missing from the suite, run a focused
+   discriminating check; keep supplied tests intact when their modification is
+   outside scope. Report a green suite separately from acceptance completeness.
    On failure, establish what executed, the failing state,
    and its cause before changing code. If helpful and available, use the existing
    `panda-debugger` instructions; its absence does not block ordinary diagnosis.

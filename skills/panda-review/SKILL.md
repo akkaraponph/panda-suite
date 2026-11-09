@@ -23,6 +23,9 @@ range; do not imply a whole-system audit from a small diff.
    transactions, concurrency, data integrity, API compatibility, and operational
    behavior where relevant. Inspect performance only against a concrete workload
    or mechanism; speculation is a risk to verify, not a measured failure.
+   Derive expected behavior from the contract before relying on existing tests.
+   For changed behavior, check whether assertions distinguish a plausible defect
+   from the required result; passing tests alone do not establish correctness.
 3. **Validate candidates.** Identify the triggering inputs or conditions. Trace
    through the real code and existing guards; run a focused safe reproduction
    when useful. Reject findings already prevented by the implementation or based

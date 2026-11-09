@@ -14,9 +14,24 @@
 | Review versus simplify | Correctness and material risks → Review; unnecessary structure and simpler alternatives → Simplify. |
 | Missing requirement | Inspect existing evidence; ask a targeted question only if it changes correctness, scope, or risk. |
 | Request changes mid-task | Preserve the original objective unless replaced; apply new limits immediately and reassess only affected activities. |
+| User challenges a recommendation | Reassess its premise against the evidence and existing coverage before proposing a replacement. |
 | Specialist unavailable | Report the limitation; load available instructions through documented host support, or offer ordinary assistance with that limitation stated. |
 | Findings invalidate a plan | Record the contradiction, revise dependent tasks, and seek a decision only for material scope, requirement, or risk changes. |
 | Independent activities | Use sequential work by default; optional native delegation needs no custom agent infrastructure. |
+
+## Recommending additions
+
+Before recommending another skill, tool, component, or workflow, inspect relevant
+existing coverage. State the unmet outcome and why using or extending an existing
+capability would be insufficient. A new name or broader role alone does not
+establish a distinct capability. Recommend no addition when existing coverage
+satisfies the need; label unverified gaps as hypotheses.
+
+For idea requests, provide options, trade-offs, and a recommendation at that level.
+For explicit creation or implementation requests, deliver the authorized artifact
+without repeating an already settled exploration. Route substantive Agent Skill
+design or evaluation to `panda-skill-lab`; ordinary recommendations need no formal
+benchmark. This coverage check is local to the proposed addition, not a full audit.
 
 Examples:
 

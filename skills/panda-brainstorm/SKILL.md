@@ -27,9 +27,14 @@ ask a targeted question; otherwise state a working assumption.
    when viable. Compare feasibility, user experience, delivery and maintenance
    effort, operational risk, reversibility, and business fit. Use only dimensions
    that distinguish the options; do not invent cost or delivery-time estimates.
+   Check existing coverage before proposing another capability. A broader name
+   or role alone does not establish an unmet need; retaining the current approach
+   is a valid recommendation.
 5. **Recommend a direction.** Connect the recommendation to the goal and strongest
    constraints. Explain its trade-offs and the condition that would favor another
    option. If evidence is insufficient, recommend a bounded discovery step.
+   When challenged, reassess the premise and deciding evidence before suggesting
+   a replacement. Keep speculative opportunities distinct from demonstrated gaps.
 
 ## Output and completion
 

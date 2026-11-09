@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.1.0** · 19 independent skills
+Version **1.1.1** · 19 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -17,6 +17,8 @@ multi-agent execution.
 
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
 copyable examples and expected outputs for every skill.
+
+Current patch: [v1.1.1 changes and verification](docs/v1.1.1.md).
 
 ## Skills
 
@@ -83,7 +85,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.1.0 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.1.1 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 

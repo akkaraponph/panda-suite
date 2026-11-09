@@ -107,3 +107,40 @@ Six `SEC-*` cases and six `PERF-*` cases cover positive findings, effective guar
 placeholders, stale/withdrawn advisories, failed scans, complexity and semantic
 invariants, memory retention, N+1 batching, plan interpretation, unavailable tools,
 applied optimization, and nonactivation. See [actual trial results and limits](../docs/v1.1.0.md).
+
+## Lead recommendation refinement
+
+The motivating conversation showed three response weaknesses: drafting a broad
+partner skill before checking overlap with Lead, giving a finished draft during
+idea exploration, and substituting another speculative skill after a challenge.
+These are observed conversation outcomes, not controlled evidence that Lead's
+instructions caused them. The refinement clarifies requested deliverable depth,
+existing-coverage checks, and reassessment in Lead and its routing reference.
+
+`LEAD-COVERAGE`, `LEAD-IDEAS`, and `LEAD-CHALLENGE` exercise those boundaries using
+the synthetic `lead-recommendations` fixture. `LEAD-CREATE` guards against
+overcorrection: an explicit artifact request still authorizes scoped creation.
+Existing H and `EXP-LAB-NONTRIGGER` remain focused-question controls. Reviewer
+expectations stay in `scenarios/cases.json`; task workspaces receive only the
+fixture and prompt through `prepare-evaluation.py`.
+
+Prepare baseline and Lead arms in fresh destinations using the existing protocol.
+Compare original and revised Lead in separate fresh contexts with frozen fixture,
+prompt, specialist versions, access, model/settings, and budget. Keep original
+outputs and instruction snapshots. Check actual file changes for the creation and
+read-only cases; grade recommendation quality against the supplied catalog rather
+than requiring identical phrasing. The synthetic catalog is not a runtime plugin
+inventory and does not prove host discovery.
+
+Behavioral baseline, original/revised Lead comparison, and benefit measurements:
+**Not Run**. The current authoring context has seen the reviewer expectations and
+cannot serve as an independent task run. Structural checks and blind-workspace
+preparation validate packaging only; they do not establish behavioral improvement.
+
+Local checks on 2026-11-09: `.venv/bin/python scripts/validate-skills.py`
+validated all 19 skills, references, manifests, and scenario coverage;
+`.venv/bin/python -m unittest discover -s tests -p 'test_tooling.py' -v`
+passed all 27 tests. A temporary preparation check exercised all four new cases
+in baseline and Lead arms (eight workspaces), confirmed exact task prompts, and
+confirmed only `capabilities.md` and `TASK.txt` were copied, excluding reviewer
+keys. No model tasks or global installation were performed.

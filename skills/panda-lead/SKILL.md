@@ -14,6 +14,8 @@ edit can be handled directly without another skill or a project plan.
 1. Identify the requested outcome, evidence, constraints, and existing
    authorization. Inspect relevant current artifacts before asking for missing
    information. Ask only where ambiguity materially affects correctness or scope.
+   Match the deliverable to whether the user wants exploration, a recommendation,
+   or artifact creation; an idea request alone does not call for a finished artifact.
 2. Respect an explicitly named specialist. Otherwise use the table below. For
    overlap, route by the artifact the user wants, not by a keyword in their prompt.
 3. Load only the selected skill through the host's documented discovery or
@@ -51,8 +53,8 @@ edit can be handled directly without another skill or a project plan.
 | User journey instructions | `panda-manual` |
 
 Use `buddhist-method` only at a relevant uncertainty, repeated failure, pressure,
-or complexity decision. Do not load it as a mandatory stage. For routing conflicts
-or changed requests, read [routing decisions](references/routing.md).
+or complexity decision. Do not load it as a mandatory stage. For routing conflicts,
+proposed additions, or changed requests, read [routing decisions](references/routing.md).
 
 Investigation, planning, review, and recommendations do not authorize source
 changes. An explicit implementation request authorizes relevant reversible edits;

@@ -34,6 +34,10 @@ unknowns and label any proposed file layout as provisional.
    promised error outcomes. Confirm tests can detect the intended
    behavior and important regressions. Do not invent commands without checking
    the repository; mark proposed commands or unavailable checks accurately.
+   Where omission, null, empty, and invalid values have different outcomes,
+   specify them separately. Check that the proposed language or framework can
+   actually deliver the promised error at the stated boundary; leave unresolved
+   policy explicit rather than assigning an accidental runtime behavior.
 
 ## Output and completion
 

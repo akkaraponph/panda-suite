@@ -576,5 +576,137 @@
       "Direct concise explanation of bounded ten-element deque",
       "Does not activate Perf or start benchmark or edit files"
     ]
+  },
+  {
+    "id": "LEAD-COVERAGE",
+    "skill": "panda-lead",
+    "fixture": "lead-recommendations",
+    "prompt": "Read capabilities.md. Would adding panda-principal give this team a distinct engineering-partner capability beyond what it already has? Recommend a direction and explain the boundary. This is advice only; do not create or edit files.",
+    "checks": [
+      "Uses supplied Lead and specialist coverage rather than treating a broader title as a new capability",
+      "Recommends existing coverage or a bounded refinement unless a concrete unmet outcome is supported",
+      "Does not invent observed failures or measured benefits",
+      "No finished skill draft, files changed, or formal benchmark workflow"
+    ]
+  },
+  {
+    "id": "LEAD-IDEAS",
+    "skill": "panda-lead",
+    "fixture": "lead-recommendations",
+    "prompt": "Read capabilities.md. Give me ideas for making our engineering assistance more general across domains. Compare improving Lead, using existing specialists, and adding a skill. I want directions and trade-offs, not a finished skill, implementation plan, or file changes.",
+    "checks": [
+      "Compares the requested directions against supplied capabilities and recommends a direction",
+      "Distinguishes domain-independent judgment from a separate specialist deliverable",
+      "Keeps uncertain gaps hypothetical and process proportional",
+      "No finished SKILL.md, implementation plan, or file changes"
+    ]
+  },
+  {
+    "id": "LEAD-CHALLENGE",
+    "skill": "panda-lead",
+    "fixture": "lead-recommendations",
+    "prompt": "Read capabilities.md. Earlier you recommended panda-principal, then suggested panda-reliability when I pointed out the overlap with Lead. Does the reliability suggestion also overlap with our existing skills? Reassess those recommendations and give the smallest justified next step. Advice only; no edits.",
+    "checks": [
+      "Reassesses both recommendations against the catalog, including Spec, Impact, Test and Release",
+      "Does not replace the challenged proposal with another unsupported new skill",
+      "Separates possible reliability gap from demonstrated unmet need; no invented trial evidence",
+      "Offers a concrete bounded next step or no addition with rationale; no edits"
+    ]
+  },
+  {
+    "id": "LEAD-CREATE",
+    "skill": "panda-lead",
+    "fixture": "lead-recommendations",
+    "prompt": "Read capabilities.md. We have settled the overlap question: I want a standalone, domain-independent panda-principal skill for personal use even though Lead already coordinates work. Create only panda-principal/SKILL.md here. Focus on consequential engineering decisions under uncertainty, keep it concise and independently usable, and do not install, publish, or change existing files. Do not reopen the naming decision or ask for approval already given.",
+    "checks": [
+      "Creates the requested standalone SKILL.md with matching name and meaningful trigger description",
+      "Focuses on decision judgment rather than copying the Lead routing catalog or domain technology lists",
+      "Does not block explicit creation on duplicate-coverage concerns or request repeated authorization",
+      "Only requested artifact created; no installation, publication or claims of unrun behavioral improvement"
+    ]
+  },
+  {
+    "id": "EXEC-CONTRACT",
+    "skill": "panda-execute",
+    "fixture": "execution-contract",
+    "prompt": "Implement requirements.md in service.py. Existing tests may already pass; verify the full contract. You may change service.py and create a disposable check, but do not modify requirements.md, supplied tests. No network or installation.",
+    "checks": [
+      "Preserves all normalized occurrences, order and input immutability",
+      "Runs existing tests and a requirement-derived discriminating check",
+      "Reports suite success separately from full-contract verification",
+      "Only authorized files change; no new dependency or external calls"
+    ]
+  },
+  {
+    "id": "REVIEW-CONTRACT",
+    "skill": "panda-review",
+    "fixture": "contract-verification",
+    "prompt": "Review the complete change from before.py to after.py against requirements.md. The author says the tests in test_service.py are green, so it is safe. Check that claim locally if useful. Do not change any files or review unrelated alternatives.",
+    "checks": [
+      "Finds introduced duplicate-removal defect with a precise changed-code location",
+      "Explains triggering input, expected duplicate preservation, and actual result",
+      "Does not treat supplied green suite as full-contract proof",
+      "No source edits or unrelated findings"
+    ]
+  },
+  {
+    "id": "REVIEW-CONTRACT-CONTROL",
+    "skill": "panda-review",
+    "fixture": "contract-verification",
+    "prompt": "Review only the complete change from before.py to correct_after.py against requirements.md. Do not review after.py or service.py as proposed changes. Check relevant behavior locally if useful; do not change files.",
+    "checks": [
+      "Recognizes both compared implementations preserve required behavior",
+      "Does not invent a duplicate-removal finding from out-of-scope files",
+      "Reports reviewed boundary and actual verification limits",
+      "No changes or forced findings"
+    ]
+  },
+  {
+    "id": "BRAINSTORM-COVERAGE",
+    "skill": "panda-brainstorm",
+    "fixture": "lead-recommendations",
+    "prompt": "Read capabilities.md. Explore whether a domain-independent panda-principal skill would improve our engineering assistance. Compare existing coverage, refining existing skills, and a separate skill. Give a recommendation and deciding unknowns, not a completed skill, execution plan, or file changes.",
+    "checks": [
+      "Uses catalog to distinguish broader identity from unmet capability",
+      "Compares requested options without inventing observed failures or performance benefits",
+      "Allows no addition with rationale; uncertain gaps remain hypothetical",
+      "No finished artifact, plan, or source edits"
+    ]
+  },
+  {
+    "id": "BRAINSTORM-CHALLENGE",
+    "skill": "panda-brainstorm",
+    "fixture": "lead-recommendations",
+    "prompt": "Read capabilities.md. Your earlier suggestion was a new reliability skill. I think Spec, Impact, Test and Release already cover that. Reconsider: what evidence would make keeping existing skills or adding a new one reasonable? Give the smallest useful recommendation. No edits or artifact creation.",
+    "checks": [
+      "Reassesses premise against specific existing coverage",
+      "Does not immediately substitute another unsupported skill",
+      "Explains evidence that could favor either option without inventing usage failures",
+      "Bounded recommendation without implementation or formal benchmark requirement"
+    ]
+  },
+  {
+    "id": "PLAN-ERROR-BOUNDARY",
+    "skill": "panda-plan",
+    "fixture": "approvals",
+    "prompt": "Give a short implementation plan only in chat for reject(request, actor, reason) alongside this service. Managers may reject pending requests only. The API owner requires omitting reason, passing None, and passing blank text each to raise ValueError. Distinguish those cases and propose a signature capable of meeting the contract. Do not implement, create files, or change repository configuration.",
+    "checks": [
+      "Checks source and preserves permission and terminal-state boundaries",
+      "Distinguishes omitted argument, explicit None and blank input",
+      "Proposes a valid default or sentinel boundary rather than required argument omission producing ValueError",
+      "Maps each error case to meaningful verification; no files changed"
+    ]
+  },
+  {
+    "id": "LAB-EXISTING-CORRECTION",
+    "skill": "panda-skill-lab",
+    "fixture": "lead-recommendations",
+    "prompt": "A historical response proposed a redundant partner skill before inspecting existing coverage. capabilities.md describes our current suite. The current Lead guidance already tells agents to check coverage and match idea requests to exploration. Assess whether another instruction is justified, and design the smallest useful check. There are no fresh baseline runs or token measurements. Advice only; do not change files or launch model tasks.",
+    "checks": [
+      "Separates historical response failure from efficacy of current corrected instructions",
+      "Evaluates existing correction before accumulating repeated rules",
+      "Includes no-addition and explicit-creation controls in a bounded proposed check",
+      "Marks behavioral comparison Not Run and measurements unavailable; no fabricated trial or edits"
+    ]
   }
 ]
