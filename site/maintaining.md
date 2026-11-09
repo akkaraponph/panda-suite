@@ -26,6 +26,18 @@ Open `http://localhost:8000`. The build creates `dist/`, which is ignored by Git
 
 The builder checks that every packaged skill has a usage page. The link checker checks all generated internal page, asset, and fragment links. Source links lead back to GitHub; repository-relative links that are not published pages also lead to GitHub.
 
+## Reader appearance
+
+The header's **Dark mode** toggle switches between light and dark appearance.
+The first visit follows the browser's system color preference; a manual choice is
+stored locally and reused across guides and reloads. Until a manual choice is
+made, system preference changes update the current page. If browser storage is
+unavailable, the toggle still works for the current page.
+
+Theme colors live in `site/assets/style.css`. `site/assets/theme.js` applies the
+initial preference before the stylesheet loads and connects the accessible toggle.
+Print styles use a light background in either mode.
+
 ## Publish
 
 The `.github/workflows/docs.yml` workflow builds and checks the site on pull requests. Pushes to `main` that change site inputs also deploy to the `github-pages` environment. It can be run manually from GitHub Actions.

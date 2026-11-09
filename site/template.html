@@ -7,6 +7,7 @@
   <meta name="theme-color" content="#392c73">
   <title>{{title}} · Panda Suite</title>
   <link rel="icon" href="assets/panda.svg?v=mint-goggles" type="image/svg+xml">
+  <script src="assets/theme.js"></script>
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/app.js" defer></script>
 </head>
@@ -14,7 +15,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="header">
   <a class="brand" href="index.html"><img src="assets/panda.svg?v=mint-goggles" width="36" height="36" alt="">Panda Suite <span>Docs</span></a>
-  <div class="header-actions"><span class="version">v{{version}}</span><a href="https://github.com/akkaraponph/panda-suite">GitHub ↗</a><button id="menu" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
+  <div class="header-actions"><button id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>Dark mode</button><span class="version">v{{version}}</span><a href="https://github.com/akkaraponph/panda-suite">GitHub ↗</a><button id="menu" aria-expanded="false" aria-controls="sidebar">Menu</button></div>
 </header>
 <div class="layout">
   <aside id="sidebar" class="sidebar" aria-label="Documentation navigation">
