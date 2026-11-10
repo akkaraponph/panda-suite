@@ -6,12 +6,12 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
-## Latest release: v1.4.0 — Panda Craft
+## Latest release: v1.5.0 — Panda Git
 
-The suite contains 22 independent skills. [Craft](panda-craft.html) coordinates
-explicitly selected specialists, preserves authorization and handoffs, and checks
-shared acceptance criteria using Iddhipāda 4. Read the [release notes](../docs/v1.4.0.md)
-and [design and evaluation](../docs/panda-craft.md).
+The suite contains 23 independent skills. [Git](panda-git.html) inspects changes,
+classifies Conventional Commit messages and separates review from authorized
+execution. Read the [release notes](../docs/v1.5.0.md) and
+[design and evaluation](../docs/panda-git.md).
 
 ## Your first request
 
@@ -35,6 +35,7 @@ Using Claude Code or standalone skills? See the [invocation reference](usage.htm
 
 | You want to… | Start here |
 | --- | --- |
+| Review commits and perform authorized Git operations | [Git](panda-git.html) |
 | Coordinate explicitly selected specialists | [Craft](panda-craft.html) |
 | Work out what to build | [Brainstorm](panda-brainstorm.html) or [Requirements](panda-requirements.html) |
 | Check a technical claim | [Research](panda-research.html) |

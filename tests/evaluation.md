@@ -175,3 +175,13 @@ tools, exhausted specialist verification budgets, and nonactivation. See
 correct control and stays outside prepared task workspaces. Run cases in fresh
 contexts; retained direct-specialist and Craft trial artifacts are a small
 observation, not a reliability or improvement estimate.
+
+## Git operations
+
+Twelve `GIT-*` cases cover commit classification/review/execution, staged scope,
+repository conventions, issue attribution, hook failure, missing evidence/tools,
+remote ambiguity, recovery and nonactivation. Preparation copies only setup.py
+and TASK.txt. Run the task's setup command inside its isolated workspace; no
+nested Git database or reviewer key is distributed. Reviewer-only
+`python3 -B tests/reviewer/check_git.py` verifies the green-suite contract gap and
+compatible original control. See [actual three-context trial record](results/git/comparison.md).

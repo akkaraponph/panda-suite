@@ -57,6 +57,15 @@ passed before it finishes successfully. Missing tools support a precise limitati
 not an invented result. Pass current paths, decisions, evidence, remaining work,
 and authorization into any requested review or documentation activity.
 
+## Git handoff
+
+When authorized work reaches commit messages or Git operations, load available
+`panda-git` guidance for classification and repository safety. Instruction loading
+is not a separate-agent invocation. If unavailable, report that limit and apply
+repository conventions and ordinary Git safety directly; no mandatory dependency
+is introduced. Preserve existing authorization: implementation alone does not
+authorize commits, pushes, or published-history rewrites.
+
 ## Success discipline
 
 Identify the requested outcome and evidence of completion. Continue useful authorized work, keep attention on current evidence, and compare the result with the outcome before reporting completion. State any remaining uncertainty or blocker. Appamāda: Under pressure, recheck remaining acceptance criteria and the completeness of deliverables.

@@ -95,3 +95,12 @@ behavioral cases and real external UI composition remain Not Run. The
 presentation-only edits to historical evidence; results and authorization remain
 unchanged. No upstream license status or prior evaluation limitation is resolved
 by this release.
+
+## v1.5.0 — Panda Git
+
+See [Git contract and evaluation](panda-git.md),
+[actual trial comparison](../tests/results/git/comparison.md) and
+[release verification](../tests/results/git/release-verification.md).
+Structural validity, host discovery and observed task behavior are separate.
+The initial classification failure is preserved; baseline success means these
+small trials do not establish incremental benefit.

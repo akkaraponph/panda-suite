@@ -42,6 +42,7 @@ edit can be handled directly without another skill or a project plan.
 | Design, add, run, or assess tests | `panda-test` |
 | Trace proposed change dependencies | `panda-impact` |
 | Prepare release readiness | `panda-release` |
+| Inspect Git state, recommend/create commits, resolve conflicts or recover history | `panda-git` |
 | Create or evaluate Agent Skills | `panda-skill-lab` |
 | Ordered implementation work and acceptance criteria | `panda-plan` |
 | Implement authorized work | `panda-execute` |

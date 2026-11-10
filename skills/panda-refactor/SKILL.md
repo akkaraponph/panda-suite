@@ -125,6 +125,15 @@ implemented, partially implemented or not started. A passing suite does not impl
 all acceptance conditions were verified. Claim performance improvements only with
 measurements. No additional architecture report is required for a small extraction.
 
+## Git handoff
+
+When authorized work reaches commit messages or Git operations, load available
+`panda-git` guidance for classification and repository safety. Instruction loading
+is not a separate-agent invocation. If unavailable, report that limit and apply
+repository conventions and ordinary Git safety directly; no mandatory dependency
+is introduced. Preserve existing authorization: implementation alone does not
+authorize commits, pushes, or published-history rewrites.
+
 ## Success discipline
 
 Compare the requested outcome with delivered work and the invariant/check mapping.

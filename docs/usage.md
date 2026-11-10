@@ -475,3 +475,31 @@ intentionally broken fixture tests for failing Suite tooling checks.
   remain unless replaced. Consequential actions require authorization covering them.
 - Proposed design described as current: request source anchors and explicit
   current/proposed/open distinctions before relying on the artifact.
+
+## Repository operations
+
+### Panda Git
+
+**Inputs:** repository, intended files/revisions, desired Git operation, known
+conventions and existing authorization. Inspect current evidence before asking
+for missing details.
+
+```text
+$panda-git commit
+```
+
+Produces a commit review proposal: complete message, intended paths/count,
+classification, compatibility impact, checks and risks. Conventional Commits is
+the default after explicit user and repository conventions. The shorthand does
+not execute a commit by itself.
+
+```text
+$panda-git Create a commit for the auth change and its tests. Leave my notes alone.
+```
+
+Explicit execution authorization is honored without another confirmation.
+Reviews the exact staged content, preserves unrelated work, runs normal hooks,
+then verifies the hash and reports remaining changes. Push, history rewrite,
+tag and release authority are separate. Conflicts and recovery use conditional
+skill-local references. No parent coordinator or separate agent is required.
+See [contract and evaluation](panda-git.md).

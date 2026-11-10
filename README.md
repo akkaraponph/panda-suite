@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.4.0** · 22 independent skills
+Version **1.5.0** · 23 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -18,7 +18,7 @@ multi-agent execution.
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
 copyable examples and expected outputs for every skill.
 
-Current release: [v1.4.0 — Panda Craft](docs/v1.4.0.md).
+Current release: [v1.5.0 — Panda Git](docs/v1.5.0.md).
 
 [Panda Craft](docs/panda-craft.md) composes explicitly selected specialists around
 a shared outcome, compact handoffs and acceptance evidence.
@@ -33,6 +33,7 @@ a shared outcome, compact handoffs and acceptance evidence.
 | `panda-release` | Prepare evidence-based release readiness without deployment |
 | `panda-skill-lab` | Design and evaluate skills with honest baseline comparisons |
 | `panda-lead` | Select the smallest workflow and coordinate requested activities |
+| `panda-git` | Inspect Git state, classify commit messages, and perform authorized Git operations |
 | `panda-craft` | Compose explicitly selected specialists with shared acceptance and outcome verification |
 | `panda-brainstorm` | Explore a problem, constraints, assumptions, and alternatives |
 | `panda-research` | Answer technical questions and verify capabilities with traceable evidence |
@@ -91,7 +92,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.4.0 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.5.0 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 

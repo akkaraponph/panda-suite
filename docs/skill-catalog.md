@@ -3,7 +3,7 @@
 For every skill's inputs, example prompt, expected result and authorization limits,
 read the [complete usage guide](usage.md).
 
-The [README catalog](../README.md) lists all twenty-two skills and independent
+The [README catalog](../README.md) lists all twenty-three skills and independent
 installation methods. [Lead](../skills/panda-lead/SKILL.md) is the authoritative
 routing table; [expansion decisions](expansion.md) explain the new ownership
 boundaries of that milestone. [Research addition](panda-research.md) describes
@@ -36,3 +36,8 @@ or external specialists. Lead retains general workflow selection and coordinatio
 Craft focuses on their shared outcome contract, handoffs and acceptance evidence.
 Neither is a prerequisite for the other. This overlap is intentional; added
 behavioral benefit remains an evaluation question. See [Craft design and checks](panda-craft.md).
+
+Git owns repository operations and commit conventions. Release owns readiness;
+Review owns changed-code defects. Craft, Refactor and Execute load Git guidance
+when their authorized task reaches Git, with a standalone fallback if absent.
+See [Git design and trials](panda-git.md).

@@ -97,6 +97,15 @@ installed instructions are optional deeper guidance. At a specific uncertainty
 verify the claim (Kalāma); for stubborn failures investigate causes (Yoniso
 Manasikāra); for repeated decline reconsider the approach (Apāyakosalla).
 
+## Git handoff
+
+When authorized work reaches commit messages or Git operations, load available
+`panda-git` guidance for classification and repository safety. Instruction loading
+is not a separate-agent invocation. If unavailable, report that limit and apply
+repository conventions and ordinary Git safety directly; no mandatory dependency
+is introduced. Preserve existing authorization: implementation alone does not
+authorize commits, pushes, or published-history rewrites.
+
 ## Finish with evidence
 
 Stop when the requested outcome is achieved, or no further useful authorized work
