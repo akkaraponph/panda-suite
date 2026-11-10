@@ -272,6 +272,24 @@ Expect concrete complexity costs and a smaller alternative with preserved
 invariants. Fewer lines alone are not success. Say “apply the simplification” if
 you also want bounded edits and verification.
 
+### Panda Refactor
+
+Provide the target, structural problem, compatibility constraints and desired
+outcome. Combine assessment, planning, incremental edits and testing as needed.
+
+```text
+$panda-refactor Refactor src/messages to remove forwarding layers. Preserve the
+public imports, permission checks, error behavior and exact output. Run baseline
+checks, make small changes, and report actual verification and remaining gaps.
+```
+
+For read-only advice: `$panda-refactor Analyze src/messages; do not edit.`
+For a plan only: `$panda-refactor Plan the extraction; do not implement.`
+Quick is a depth modifier, not permission to skip contract checks. Expect a
+concrete structural benefit, preserved invariants and actual PASS/FAIL/NOT RUN/
+BLOCKED check results, with implementation status reported separately. Missing
+peer skills do not block use. A green suite alone does not prove equivalence.
+
 ### Buddhist Method
 
 Use at a specific uncertainty, repeated failure, complexity decision or pressure point.

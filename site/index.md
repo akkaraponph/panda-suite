@@ -6,12 +6,13 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
-## Latest release: v1.1.1
+## Latest release: v1.2.0 — Panda Refactor
 
-Six skills now give more explicit guidance on contract verification, error
-boundaries, and recommendations grounded in existing capabilities. The suite
-still contains 19 independent skills. Read the [release notes](../docs/v1.1.1.md)
-for changes, checks, and the behavioral comparisons that remain unrun.
+The suite contains 20 independent skills, adding
+[Refactor](panda-refactor.html) for structural improvements with baseline checks
+and incremental compatibility verification. Read the [release notes](../docs/v1.2.0.md).
+Behavioral comparisons remain Not Run; package checks and host discovery are
+reported separately in the [design and evaluation](../docs/panda-refactor.md).
 
 ## Your first request
 
@@ -40,6 +41,7 @@ Using Claude Code or standalone skills? See the [invocation reference](usage.htm
 | Understand what a change affects | [Impact](panda-impact.html) |
 | Turn agreed work into tasks | [Plan](panda-plan.html) |
 | Define a technical contract | [Spec](panda-spec.html) |
+| Restructure code while preserving behavior | [Refactor](panda-refactor.html) |
 | Implement an authorized change | [Execute](panda-execute.html) |
 | Investigate unexpected behavior | [Debugger](panda-debugger.html) |
 | Audit vulnerabilities and dependency reports | [Sec](panda-sec.html) |

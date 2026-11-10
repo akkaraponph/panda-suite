@@ -2,7 +2,7 @@
 
 All thirty tracked upstream files are included in this checkout. No recursive
 clone, network bootstrap, symlink traversal, or runtime fetch is needed to use
-the sixteen packaged skills.
+the twenty packaged skills in the working checkout.
 
 `upstream-lock.json` maps upstream source paths to local destinations and records
 the repository URL, full commit SHA, license state, and per-file SHA-256 hash.

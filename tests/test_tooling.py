@@ -211,6 +211,21 @@ class PackageTest(unittest.TestCase):
                 p.write_text(json.dumps(cases))
                 self.assertTrue(any(expected in e for e in validate(self.root)))
 
+    def test_refactor_preparation_keeps_oracles_out(self):
+        cases = json.loads((self.root / "tests/scenarios/cases.json").read_text())
+        for case in cases:
+            if not case["id"].startswith("REFACTOR-"):
+                continue
+            with self.subTest(case=case["id"]):
+                dest = Path(self.temp.name) / case["id"]
+                prepare(self.root, dest, case["id"], "specialist")
+                self.assertFalse((dest / "cases.json").exists())
+                self.assertFalse((dest / "check_refactor.py").exists())
+                self.assertFalse((dest / "reviewer").exists())
+                task = (dest / "TASK.txt").read_text()
+                for check in case["checks"]:
+                    self.assertNotIn(check, task)
+
     def test_fixture_preparation_excludes_answer_key(self):
         dest = Path(self.temp.name) / "blind-case"
         prepare(self.root, dest, "B", "baseline")

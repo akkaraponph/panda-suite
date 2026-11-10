@@ -48,6 +48,7 @@ edit can be handled directly without another skill or a project plan.
 | Audit security vulnerabilities or dependency reports | `panda-sec` |
 | Find defects in a change | `panda-review` |
 | Assess unnecessary complexity | `panda-simplify` |
+| Carry structural improvements through behavior-preserving verification | `panda-refactor` |
 | README, developer guide, runbook | `panda-write` |
 | Technical contracts or design specification | `panda-spec` |
 | User journey instructions | `panda-manual` |

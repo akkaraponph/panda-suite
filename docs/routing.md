@@ -20,3 +20,9 @@ table makes decisions inspectable; behavior is tested with actual tasks.
 Specialists are usable directly. Lead loads metadata first, then the selected
 workflow, then conditional references. It does not preload every skill, require
 multi-agent execution, or run a reasoning discipline between every activity.
+
+Refactor owns bounded structural improvement through baseline, incremental edits
+and compatibility verification. Simplify retains general complexity assessment;
+Plan, Execute, Test and Review retain their focused deliverables. Direct Refactor
+requests can stop at analysis or planning. Peer guidance is optional, with no
+mandatory chain or new runtime. See the [Refactor design and evaluation](panda-refactor.md).

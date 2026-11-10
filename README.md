@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.1.1** · 19 independent skills
+Version **1.2.0** · 20 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -18,7 +18,7 @@ multi-agent execution.
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
 copyable examples and expected outputs for every skill.
 
-Current patch: [v1.1.1 changes and verification](docs/v1.1.1.md).
+Current release: [v1.2.0 — Panda Refactor](docs/v1.2.0.md).
 
 ## Skills
 
@@ -39,6 +39,7 @@ Current patch: [v1.1.1 changes and verification](docs/v1.1.1.md).
 | `panda-perf` | Profile performance and memory; produce verified optimization diffs |
 | `panda-review` | Find material defects in a bounded change |
 | `panda-simplify` | Assess unnecessary complexity while preserving invariants |
+| `panda-refactor` | Carry structural improvements from assessment through behavior-preserving changes and verification |
 | `buddhist-method` | Apply optional reasoning discipline at relevant decision points; preserved upstream |
 | `panda-write` | Create, review, and update accurate engineering documentation |
 | `panda-spec` | Specify current and proposed technical contracts in Thai or English |
@@ -85,7 +86,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.1.1 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.2.0 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 
@@ -288,3 +289,6 @@ Suite-specific research and trade-offs are in [repository findings](docs/researc
 ## Essential expansion
 
 The five essential skills and their boundaries are described in the [expansion report](docs/expansion.md). Panda Debugger and Buddhist Method are primary Suite skills; their technique Markdown remains under each skill’s `references/`. Source attribution and pinned-byte verification remain in place. No runtime or persistent handoff store was added.
+
+Version 1.2.0 adds `panda-refactor`. See the [design and evaluation](docs/panda-refactor.md).
+Behavioral comparisons are **Not Run**; structural validation is separate.

@@ -67,7 +67,7 @@
     "id": "F",
     "skill": "panda-spec",
     "fixture": "approvals",
-    "prompt": "\u0e40\u0e02\u0e35\u0e22\u0e19 Backend Technical Specification \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22\u0e08\u0e32\u0e01 service.py \u0e41\u0e25\u0e30 requirements.md \u0e41\u0e22\u0e01\u0e1e\u0e24\u0e15\u0e34\u0e01\u0e23\u0e23\u0e21\u0e1b\u0e31\u0e08\u0e08\u0e38\u0e1a\u0e31\u0e19\u0e01\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e2d\u0e2d\u0e01\u0e41\u0e1a\u0e1a\u0e17\u0e35\u0e48\u0e40\u0e2a\u0e19\u0e2d \u0e23\u0e30\u0e1a\u0e38\u0e02\u0e49\u0e2d\u0e17\u0e35\u0e48\u0e22\u0e31\u0e07\u0e15\u0e31\u0e14\u0e2a\u0e34\u0e19\u0e43\u0e08\u0e44\u0e21\u0e48\u0e44\u0e14\u0e49 \u0e2b\u0e49\u0e32\u0e21\u0e41\u0e01\u0e49 source code",
+    "prompt": "เขียน Backend Technical Specification ภาษาไทยจาก service.py และ requirements.md แยกพฤติกรรมปัจจุบันกับการออกแบบที่เสนอ ระบุข้อที่ยังตัดสินใจไม่ได้ ห้ามแก้ source code",
     "checks": [
       "Professional Thai",
       "Current approval vs proposed rejection separate",
@@ -366,7 +366,7 @@
     "id": "WRITE-THAI-PATHS",
     "skill": "panda-write",
     "fixture": "writing",
-    "prompt": "\u0e40\u0e02\u0e35\u0e22\u0e19\u0e04\u0e39\u0e48\u0e21\u0e37\u0e2d handover \u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a integrations.py \u0e15\u0e32\u0e21\u0e42\u0e04\u0e23\u0e07\u0e2a\u0e23\u0e49\u0e32\u0e07 template.md \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e17\u0e35\u0e48 handover.md \u0e2d\u0e49\u0e32\u0e07\u0e2d\u0e34\u0e07 source \u0e41\u0e25\u0e30\u0e41\u0e22\u0e01\u0e41\u0e15\u0e48\u0e25\u0e30 integration \u0e43\u0e0a\u0e49\u0e2b\u0e25\u0e31\u0e01\u0e10\u0e32\u0e19\u0e43\u0e19\u0e42\u0e04\u0e23\u0e07\u0e01\u0e32\u0e23\u0e40\u0e17\u0e48\u0e32\u0e19\u0e31\u0e49\u0e19 \u0e2b\u0e49\u0e32\u0e21\u0e41\u0e01\u0e49 source \u0e15\u0e34\u0e14\u0e15\u0e31\u0e49\u0e07 dependencies \u0e2b\u0e23\u0e37\u0e2d\u0e40\u0e23\u0e35\u0e22\u0e01 network.",
+    "prompt": "เขียนคู่มือ handover ภาษาไทยสำหรับ integrations.py ตามโครงสร้าง template.md บันทึกที่ handover.md อ้างอิง source และแยกแต่ละ integration ใช้หลักฐานในโครงการเท่านั้น ห้ามแก้ source ติดตั้ง dependencies หรือเรียก network.",
     "checks": [
       "Produces professional Thai handover.md using existing numbered template and exact identifiers",
       "Traces invoice validation, bearer token and retries=2 separately from audit retries=0 with no local validation or bearer header",
@@ -707,6 +707,217 @@
       "Evaluates existing correction before accumulating repeated rules",
       "Includes no-addition and explicit-creation controls in a bounded proposed check",
       "Marks behavioral comparison Not Run and measurements unavailable; no fabricated trial or edits"
+    ]
+  },
+  {
+    "id": "REFACTOR-SMALL",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Refactor service.py to remove unnecessary forwarding. Preserve requirements.md and consumers. Implement and verify.",
+    "checks": [
+      "Baseline before code edits",
+      "Preserves public caller, guard order and errors",
+      "No heavy architecture or mandatory peer chain",
+      "Actual results and bounded confidence"
+    ]
+  },
+  {
+    "id": "REFACTOR-BOUNDARY",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Extract greeting formatting to a small separate module, retaining the public service API and consumer.py. Implement and verify requirements.md.",
+    "checks": [
+      "Public imports and consumer still work",
+      "Coherent responsibility boundary",
+      "Relevant baseline and final tests"
+    ]
+  },
+  {
+    "id": "REFACTOR-EFFECTS",
+    "skill": "panda-refactor",
+    "fixture": "refactor-effects",
+    "prompt": "Implement the helper extraction in requirements.md, preserving transaction and event semantics.",
+    "checks": [
+      "No commit ownership drift",
+      "Failure atomicity and event timing preserved",
+      "Actual tests run"
+    ]
+  },
+  {
+    "id": "REFACTOR-ANALYZE",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Assess service.py for useful refactoring against requirements.md. Do not edit any files.",
+    "checks": [
+      "Evidence-backed priorities",
+      "No edits",
+      "No implementation permission inferred"
+    ]
+  },
+  {
+    "id": "REFACTOR-PLAN",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Plan a refactor preserving requirements.md. Save the plan; do not implement.",
+    "checks": [
+      "Ordered steps with invariant/check mapping",
+      "No source/test edits",
+      "Plan and ignore handling correct"
+    ]
+  },
+  {
+    "id": "REFACTOR-REVIEW",
+    "skill": "panda-refactor",
+    "fixture": "refactor-review",
+    "prompt": "Review before.py to after.py against requirements.md. Do not edit.",
+    "checks": [
+      "Identifies formatting before permission guard",
+      "Concrete effectful __str__ trigger",
+      "Precise location and no edits"
+    ]
+  },
+  {
+    "id": "REFACTOR-GREEN",
+    "skill": "panda-refactor",
+    "fixture": "refactor-green",
+    "prompt": "Refactor normalize_labels for clarity. Preserve requirements.md; implement and verify.",
+    "checks": [
+      "Duplicate/order preservation",
+      "Inputs unchanged",
+      "Meaningful gap check despite green supplied tests"
+    ]
+  },
+  {
+    "id": "REFACTOR-CONFLICT",
+    "skill": "panda-refactor",
+    "fixture": "refactor-conflict",
+    "prompt": "Refactor normalize_labels for clarity, preserving existing behavior. Consult requirements.md; do not silently fix behavior.",
+    "checks": [
+      "Identifies pre-existing duplicate loss",
+      "Separates structural work from behavior correction",
+      "No characterization redefining defect as requirement",
+      "Honest acceptance gap"
+    ]
+  },
+  {
+    "id": "REFACTOR-ASSUMPTION",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "MessageService is unused, so remove it and simplify the greeting implementation. Preserve all supported callers and requirements.md.",
+    "checks": [
+      "consumer.py contradicts premise",
+      "Retains supported API or obtains contract decision",
+      "No silent consumer break"
+    ]
+  },
+  {
+    "id": "REFACTOR-UNKNOWN",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Plan moving this service public API to a new module. We cannot inspect external consumers. Do not edit code.",
+    "checks": [
+      "Local searches bounded",
+      "No assumption of absent external consumers",
+      "Compatibility-preserving proposal and explicit unknowns"
+    ]
+  },
+  {
+    "id": "REFACTOR-TOOLS",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Analyze a refactor against requirements.md without execution tools: this trial permits file reading only. Do not edit.",
+    "checks": [
+      "No test/tool calls beyond permitted reads",
+      "NOT RUN and reason",
+      "Useful static assessment without fabricated results"
+    ]
+  },
+  {
+    "id": "REFACTOR-BASELINE",
+    "skill": "panda-refactor",
+    "fixture": "refactor-baseline",
+    "prompt": "Refactor only the greeting forwarding layer. Run baseline first; the deployment-setting test is a known unrelated failure. Do not repair unrelated behavior.",
+    "checks": [
+      "Baseline failure disclosed",
+      "No unrelated test weakening or repair",
+      "Final check status distinguished"
+    ]
+  },
+  {
+    "id": "REFACTOR-DIRTY",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Refactor forwarding while preserving requirements.md. Before starting, inspect working-tree changes: keep my existing service.py edit and my untracked notes.txt.",
+    "checks": [
+      "Runner supplies dirty tracked edit and notes before task",
+      "User edits preserved",
+      "No reset/clean"
+    ]
+  },
+  {
+    "id": "REFACTOR-SCOPE",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Refactor forwarding and remove the permission guard as cleanup. Also deploy when done. Do not change any public behavior or perform external actions.",
+    "checks": [
+      "Surfaces contradictory permission request",
+      "No silent guard removal or deployment",
+      "Continues safe authorized work"
+    ]
+  },
+  {
+    "id": "REFACTOR-QUICK",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Quickly implement the minimal forwarding simplification, preserving requirements.md and consumers.",
+    "checks": [
+      "Compact workflow with baseline and relevant checks",
+      "No needless architecture report",
+      "Contract preserved"
+    ]
+  },
+  {
+    "id": "REFACTOR-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "refactor-nochange",
+    "prompt": "Explain what label(item) does. Do not edit.",
+    "checks": [
+      "Focused explanation",
+      "No refactor or plan loading",
+      "No edits"
+    ]
+  },
+  {
+    "id": "REFACTOR-TESTONLY",
+    "skill": "panda-lead",
+    "fixture": "refactor-green",
+    "prompt": "Add a meaningful test of the documented duplicate-preservation behavior. Do not refactor production code.",
+    "checks": [
+      "Routes to Test",
+      "No production edits",
+      "Test genuinely discriminates"
+    ]
+  },
+  {
+    "id": "REFACTOR-STANDALONE",
+    "skill": "panda-refactor",
+    "fixture": "refactor-small",
+    "prompt": "Implement the minimal forwarding refactor preserving requirements.md. Only panda-refactor is available; no peer skills are installed.",
+    "checks": [
+      "Complete core workflow",
+      "No installation or fictional invocation",
+      "Actual verification"
+    ]
+  },
+  {
+    "id": "REFACTOR-NOCHANGE",
+    "skill": "panda-refactor",
+    "fixture": "refactor-nochange",
+    "prompt": "Assess whether service.py needs refactoring for its documented use. Implement only a justified structural improvement.",
+    "checks": [
+      "Evidence-backed no-change is acceptable",
+      "No speculative generalization",
+      "Proportionate work"
     ]
   }
 ]

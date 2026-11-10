@@ -11,6 +11,7 @@
 | Debug versus review | Existing failure needing causal explanation → Debugger; defects in a diff → Review. |
 | Perf versus debugger versus simplify | Resource cost and optimization diffs → Perf; functional failure cause → Debugger; unnecessary structure → Simplify. General review still catches concrete performance defects. |
 | Sec versus review | Dedicated vulnerability/secret/dependency audit → Sec; general changed-code correctness (including security defects) → Review. Do not run both automatically. |
+| Refactor versus simplify / plan / execute / test / review | Complete behavior-preserving structural improvement → Refactor; general complexity assessment → Simplify; plan-only → Plan; existing approved plan → Execute; test-only → Test; general diff review → Review. Respect direct invocation and read-only limits; skip satisfied stages and avoid peer redispatch loops. |
 | Review versus simplify | Correctness and material risks → Review; unnecessary structure and simpler alternatives → Simplify. |
 | Missing requirement | Inspect existing evidence; ask a targeted question only if it changes correctness, scope, or risk. |
 | Request changes mid-task | Preserve the original objective unless replaced; apply new limits immediately and reassess only affected activities. |

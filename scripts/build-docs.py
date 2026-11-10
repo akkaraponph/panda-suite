@@ -27,6 +27,7 @@ SKILLS = [
     ('panda-perf', 'Panda Perf'),
     ('panda-review', 'Panda Review'),
     ('panda-simplify', 'Panda Simplify'),
+    ('panda-refactor', 'Panda Refactor'),
     ('buddhist-method', 'Buddhist Method'),
     ('panda-write', 'Panda Write'),
     ('panda-manual', 'Panda Manual'),
@@ -85,6 +86,7 @@ def build():
         ('integration', 'Upstream maintenance', 'docs/integration.md'),
         ('verification', 'Verification record', 'docs/verification.md'),
         ('release-v1-1-1', 'Release v1.1.1', 'docs/v1.1.1.md'),
+        ('release-v1-2-0', 'Release v1.2.0', 'docs/v1.2.0.md'),
         ('notices', 'Source and license notices', 'SOURCE_NOTICES.md'),
         ('thai', 'ภาพรวมภาษาไทย', 'README.th.md'),
         ('maintaining', 'Maintain this site', 'site/maintaining.md'),
@@ -116,7 +118,7 @@ def build():
     groups = [
         ('Get started', [('index', 'Welcome'), ('installation', 'Installation'), ('skills', 'Skill directory'), ('usage', 'Complete usage guide')]),
         ('Skills', SKILLS),
-        ('Project', [('routing', 'Workflows and routing'), ('architecture', 'Architecture'), ('skill-contract', 'Extend the suite'), ('integration', 'Upstream maintenance'), ('verification', 'Verification record'), ('release-v1-1-1', 'Release v1.1.1'), ('notices', 'Source and licenses'), ('thai', 'ภาษาไทย'), ('maintaining', 'Maintain this site')]),
+        ('Project', [('routing', 'Workflows and routing'), ('architecture', 'Architecture'), ('skill-contract', 'Extend the suite'), ('integration', 'Upstream maintenance'), ('verification', 'Verification record'), ('release-v1-2-0', 'Release v1.2.0'), ('release-v1-1-1', 'Release v1.1.1'), ('notices', 'Source and licenses'), ('thai', 'ภาษาไทย'), ('maintaining', 'Maintain this site')]),
     ]
     search = []
     template = (ROOT / 'site/template.html').read_text()

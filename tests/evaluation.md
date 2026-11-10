@@ -144,3 +144,12 @@ passed all 27 tests. A temporary preparation check exercised all four new cases
 in baseline and Lead arms (eight workspaces), confirmed exact task prompts, and
 confirmed only `capabilities.md` and `TASK.txt` were copied, excluding reviewer
 keys. No model tasks or global installation were performed.
+
+## Refactor candidate
+
+The [Refactor design and protocol](../docs/panda-refactor.md) documents nineteen
+new cases, paired green-suite controls, standalone/peer/routed arms and controlled
+existing-workflow comparison. Reviewer checks live outside task fixtures:
+`python3 -B tests/reviewer/check_refactor.py`. Local fixture validation is not a
+model evaluation. All comparative behavioral arms remain **Not Run** until real
+fresh-context trials with isolated inputs and recorded settings are available.
