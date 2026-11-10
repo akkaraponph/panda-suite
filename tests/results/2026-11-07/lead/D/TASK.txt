@@ -1,3 +1,3 @@
-Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Review the change from before.py to after.py against context.md. Report material findings with precise locations. Do not edit.

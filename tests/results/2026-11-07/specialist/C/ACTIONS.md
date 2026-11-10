@@ -1,5 +1,5 @@
 Instruction paths loaded honestly by cat, not programmatic invocation:
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-execute/SKILL.md
+- skills/panda-execute/SKILL.md
 
 Commands/results:
 - `cat /tmp/panda-suite-evals-specialist/C/TASK.txt` → authorized plan implementation and honest local/external status.

@@ -6,13 +6,12 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
-## Latest release: v1.3.0 — Panda Learn
+## Latest release: v1.4.0 — Panda Craft
 
-The suite contains 21 independent skills, adding
-[Learn](panda-learn.html) for understanding unfamiliar code through source tracing,
-clear mental models and optional guided practice. Read the [release notes](../docs/v1.3.0.md).
-Paired task results and their limits are reported separately from package checks
-in the [design and evaluation](../docs/panda-learn.md).
+The suite contains 22 independent skills. [Craft](panda-craft.html) coordinates
+explicitly selected specialists, preserves authorization and handoffs, and checks
+shared acceptance criteria using Iddhipāda 4. Read the [release notes](../docs/v1.4.0.md)
+and [design and evaluation](../docs/panda-craft.md).
 
 ## Your first request
 
@@ -36,6 +35,7 @@ Using Claude Code or standalone skills? See the [invocation reference](usage.htm
 
 | You want to… | Start here |
 | --- | --- |
+| Coordinate explicitly selected specialists | [Craft](panda-craft.html) |
 | Work out what to build | [Brainstorm](panda-brainstorm.html) or [Requirements](panda-requirements.html) |
 | Check a technical claim | [Research](panda-research.html) |
 | Learn an unfamiliar codebase | [Learn](panda-learn.html) |

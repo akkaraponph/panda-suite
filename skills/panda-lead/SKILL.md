@@ -34,6 +34,7 @@ edit can be handled directly without another skill or a project plan.
 
 | Requested outcome | Skill |
 | --- | --- |
+| Explicitly compose named specialists under a shared outcome contract | `panda-craft` |
 | Explore an idea, assumptions, alternatives | `panda-brainstorm` |
 | Investigate a technical question or verify capabilities from sources | `panda-research` |
 | Learn an unfamiliar codebase through source tracing and adaptive teaching | `panda-learn` |

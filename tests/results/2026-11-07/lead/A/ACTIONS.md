@@ -3,11 +3,11 @@
 Evaluation context is shared across assigned cases; these are not independent samples. All operations use supplied local artifacts. Instructions were loaded by reading files, not by a programmatic skill invocation.
 
 Relevant skill/reference paths read:
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/investigation-guide.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/backend-evidence.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/report-template.md
+- skills/panda-lead/SKILL.md
+- skills/panda-debugger/SKILL.md
+- skills/panda-debugger/references/investigation-guide.md
+- skills/panda-debugger/references/backend-evidence.md
+- skills/panda-debugger/references/report-template.md
 
 Initial case artifact SHA-256:
 - TASK.txt: 10e3ed1e0cdb877e82ba1732560f2fa087b0edad334fb94ed20145a0f6b934ce
@@ -16,7 +16,7 @@ Initial case artifact SHA-256:
 - test_transfer.py: 536f31ce03e7372c5fa62a7f361c807f017f818d4b2dc536c575bef8cc6b6d69
 
 ```sh
-cat /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/SKILL.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/investigation-guide.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/backend-evidence.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/report-template.md
+cat skills/panda-lead/SKILL.md skills/panda-debugger/SKILL.md skills/panda-debugger/references/investigation-guide.md skills/panda-debugger/references/backend-evidence.md skills/panda-debugger/references/report-template.md
 ```
 
 Exit status: 0
@@ -265,7 +265,7 @@ cat TASK.txt README.md transfer.py test_transfer.py
 Exit status: 0
 
 ```text
-Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Investigate why a successful transfer leaves balances unchanged. Run the available local tests and explain the cause with confidence and evidence. Do not change application code or tests.
 # Runnable backend bug: transfer reports success without saving balances
@@ -475,16 +475,16 @@ test_transfer.py 536f31ce03e7372c5fa62a7f361c807f017f818d4b2dc536c575bef8cc6b6d6
 Final hashes above match the initial artifact hashes for the listed read-only source/tests (or, for M, unchanged plan/tests). Python may create local __pycache__ files; no production state was accessed. ANSWER.md is the actual final response for this workspace.
 
 Shared-context instruction provenance: earlier batched reads across assigned cases also loaded these absolute paths; these loads are not independent evaluations:
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/buddhist-method/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-execute/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-review/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-write/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-manual/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/references/handoff.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/investigation-guide.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/backend-evidence.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/report-template.md
+- skills/panda-lead/SKILL.md
+- skills/panda-debugger/SKILL.md
+- skills/buddhist-method/SKILL.md
+- skills/panda-execute/SKILL.md
+- skills/panda-review/SKILL.md
+- skills/panda-write/SKILL.md
+- skills/panda-manual/SKILL.md
+- skills/panda-lead/references/handoff.md
+- skills/panda-debugger/references/investigation-guide.md
+- skills/panda-debugger/references/backend-evidence.md
+- skills/panda-debugger/references/report-template.md
 
 No grading cases, Suite documentation, baseline results, or other evaluator outputs were read. No Suite repository files changed. A requested RTK.md was absent from the current workspace and checked parent locations.

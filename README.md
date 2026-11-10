@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.3.0** · 21 independent skills
+Version **1.4.0** · 22 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -18,7 +18,10 @@ multi-agent execution.
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
 copyable examples and expected outputs for every skill.
 
-Current release: [v1.3.0 — Panda Learn](docs/v1.3.0.md).
+Current release: [v1.4.0 — Panda Craft](docs/v1.4.0.md).
+
+[Panda Craft](docs/panda-craft.md) composes explicitly selected specialists around
+a shared outcome, compact handoffs and acceptance evidence.
 
 ## Skills
 
@@ -30,6 +33,7 @@ Current release: [v1.3.0 — Panda Learn](docs/v1.3.0.md).
 | `panda-release` | Prepare evidence-based release readiness without deployment |
 | `panda-skill-lab` | Design and evaluate skills with honest baseline comparisons |
 | `panda-lead` | Select the smallest workflow and coordinate requested activities |
+| `panda-craft` | Compose explicitly selected specialists with shared acceptance and outcome verification |
 | `panda-brainstorm` | Explore a problem, constraints, assumptions, and alternatives |
 | `panda-research` | Answer technical questions and verify capabilities with traceable evidence |
 | `panda-learn` | Learn unfamiliar code through source tracing, mental models and optional guided practice |
@@ -87,7 +91,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.3.0 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.4.0 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 
@@ -119,7 +123,7 @@ claude plugin install panda-suite@panda-suite
 ```
 
 The local plugin and marketplace manifests were validated with Claude Code
-2.1.251, and its component inventory discovers all 21 skills. Persistent
+2.1.251, and its component inventory discovers all 22 skills. Persistent
 installation and interactive model invocation were not exercised.
 
 ### OpenAI Codex
@@ -299,3 +303,8 @@ Version 1.3.0 adds `panda-learn` from the supplied learning/mentor proposal.
 See [Learn's contract and evaluation](docs/panda-learn.md) for actual paired task
 results and their limits. Learning remains read-only by default; concise questions
 need no mandatory quiz, document or project workflow.
+
+Version 1.4.0 adds `panda-craft` for explicitly selected skill composition. See
+[Craft’s contract and evaluation](docs/panda-craft.md) and [release notes](docs/v1.4.0.md).
+The single direct/Craft trial pair passed in both arms; no incremental benefit is
+established. Stored machine-specific paths are normalized for portability.

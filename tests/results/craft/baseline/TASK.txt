@@ -1,0 +1,1 @@
+Read brief.md and complete its authorized delivery using panda-execute and panda-test.

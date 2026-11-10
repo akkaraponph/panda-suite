@@ -46,6 +46,33 @@ Before suggesting another skill, tool, or component, Lead checks existing covera
 keeping the current approach is a valid recommendation. An explicit creation
 request still authorizes the requested artifact without reopening settled choices.
 
+### Panda Craft
+
+Provide the selected specialists, shared outcome, constraints, allowed changes,
+and acceptance criteria. Craft coordinates their methods and evidence without
+requiring Panda Lead or a separate runtime. Ordinary direct specialist requests
+remain sufficient for focused work.
+
+```text
+$panda-craft $panda-execute $panda-test
+Implement docs/approved-plan.md and verify every material acceptance rule.
+Local code, tests and documentation may change. Preserve API contracts.
+Run local checks and the usage example; report unavailable integration checks.
+```
+
+For a Codex plugin use `$panda-suite:panda-craft` with discovered specialist names.
+An external design skill can be selected as `$panda-craft $impeccable`: refine the
+existing dashboard, preserve business logic, inspect desktop/mobile rendering and
+keyboard navigation within the specialist's verification budget. Discovery and
+tool access depend on the host; selectors do not programmatically invoke agents.
+
+For a read-only investigation, select Craft with Debugger and explicitly prohibit
+source changes. Naming Execute does not override a read-only request.
+
+Expect delivered artifacts, skills actually loaded, observed checks, remaining
+criteria and VERIFIED, PARTIALLY VERIFIED, BLOCKED or NOT VERIFIED status.
+Implementation completeness is reported separately. See [design and evaluation](panda-craft.md).
+
 ## Product discovery and requirements
 
 ### Panda Brainstorm

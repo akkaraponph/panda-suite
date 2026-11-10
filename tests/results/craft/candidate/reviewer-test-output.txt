@@ -1,0 +1,8 @@
+test_blank_labels (test_service.NormalizeLabelsTest.test_blank_labels) ... ok
+test_input_unchanged (test_service.NormalizeLabelsTest.test_input_unchanged) ... ok
+test_trim_and_lowercase (test_service.NormalizeLabelsTest.test_trim_and_lowercase) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

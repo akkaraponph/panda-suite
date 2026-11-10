@@ -50,3 +50,8 @@ Examples:
 Prevent loops: specialists need not invoke Lead, and Lead does not restart itself
 after a handoff. Load each workflow once for its activity; revisit only when new
 evidence changes the task.
+
+When the user explicitly requests Craft to compose selected specialists, load
+`panda-craft` and preserve those selections. Ordinary named-specialist work does
+not require Craft; Lead keeps its existing coordination capability. Craft need
+not route back to Lead.

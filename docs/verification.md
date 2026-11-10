@@ -83,3 +83,15 @@ trials: four selected pairs pass and two initial routing trials remain
 setup-confounded. The sampled baseline already succeeded; no improvement or
 learner-outcome advantage is established. Six further behavioral cases remain
 Not Run. Historical Refactor evaluation limits remain unchanged.
+
+## v1.4.0 — Panda Craft
+
+See the [release verification record](../tests/results/craft/release-verification.md)
+for 22-skill packaging, host discovery, fixture, relative-path and documentation
+checks. The [actual Craft trial](panda-craft.md) passes in both direct-specialist
+and candidate arms, with no demonstrated incremental benefit. Seven additional
+behavioral cases and real external UI composition remain Not Run. The
+[path normalization note](../tests/results/path-normalization.md) records the
+presentation-only edits to historical evidence; results and authorization remain
+unchanged. No upstream license status or prior evaluation limitation is resolved
+by this release.

@@ -164,3 +164,14 @@ host discovery and actual model comparisons. Correct controls and reviewer keys
 live outside task fixtures. Validate the uncovered retry requirement locally with
 `python3 -B tests/reviewer/check_learn.py`; green ordinary tests are deliberately
 insufficient to establish that requirement. See [actual trial answers and limits](results/learn/comparison.md).
+
+## Craft composition
+
+Eight `CRAFT-*` cases cover selected-specialist delivery, read-only investigation,
+missing skills, green-suite contract gaps, conflicting requirements, unavailable
+tools, exhausted specialist verification budgets, and nonactivation. See
+[Craft contract and actual results](../docs/panda-craft.md). Reviewer-only
+`reviewer/check_craft.py` distinguishes the faulty green-suite fixture from the
+correct control and stays outside prepared task workspaces. Run cases in fresh
+contexts; retained direct-specialist and Craft trial artifacts are a small
+observation, not a reliability or improvement estimate.

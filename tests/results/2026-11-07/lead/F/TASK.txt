@@ -1,3 +1,3 @@
-Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 เขียน Backend Technical Specification ภาษาไทยจาก service.py และ requirements.md แยกพฤติกรรมปัจจุบันกับการออกแบบที่เสนอ ระบุข้อที่ยังตัดสินใจไม่ได้ ห้ามแก้ source code

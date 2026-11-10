@@ -10,14 +10,14 @@ Exit code: 0
 
 Exact stdout:
 ```text
-Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Explain what label(request) in service.py does.
 ```
 
 ## 2. Read the selected instructions
 
-Command: `cat /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md`
+Command: `cat skills/panda-lead/SKILL.md`
 
 Exit code: 0
 

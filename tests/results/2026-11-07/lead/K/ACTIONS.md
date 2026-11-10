@@ -9,13 +9,13 @@ This task and F, G, J, K in both arms were completed in one shared evaluator con
 Instructions were read through exec_command using cat, not invoked programmatically. The selected workflow is panda-write via the panda-lead artifact routing table.
 
 ```sh
-cat '/Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md'
+cat 'skills/panda-lead/SKILL.md'
 ```
 
 Result: exit 0; read the entire routing instruction. This artifact routes to panda-write. No compound handoff/routing reference was needed.
 
 ```sh
-cat '/Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-write/SKILL.md'
+cat 'skills/panda-write/SKILL.md'
 ```
 
 Result: exit 0; read the entire selected specialist instruction. Instructions were initially loaded in a shared batch containing the four selected specialists and panda-lead, all relevant to the assigned tasks.
@@ -39,7 +39,7 @@ shasum -a 256 service.py requirements.md test_service.py
 Exit code: 0
 
 ```text
-     1	Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+     1	Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
      2	
      3	Write a short developer guide for the current service.py with a runnable usage example. The requested rejection behavior is still only a proposal. Use clear English and do not implement it.
      1	"""Small, current approval service. No HTTP server or database is implemented."""

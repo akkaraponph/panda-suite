@@ -1,3 +1,3 @@
-Use panda-release. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-release/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-release. Read its instructions at skills/panda-release/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Prepare a release handoff for the complete before.py to after.py change against context.md. This is the only change. Production target details and test evidence are unavailable. Do not deploy, tag, publish, or send announcements. Report readiness accurately even though the author says it is just formatting.

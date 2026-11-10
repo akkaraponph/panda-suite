@@ -1,5 +1,5 @@
 Instruction paths loaded via ordinary cat reads, not programmatic invocation (Lead reused already-read Lead instructions and selected panda-review by requested artifact):
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-review/SKILL.md
+- skills/panda-review/SKILL.md
 
 Commands/results:
 - `cat /tmp/panda-suite-evals-specialist/D/TASK.txt` → review before/after against context; no source editing.

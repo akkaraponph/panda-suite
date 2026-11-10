@@ -1,15 +1,15 @@
 Instruction paths loaded by cat, not a programmatic invocation (Lead reused earlier loaded instructions and routed to panda-simplify):
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-simplify/SKILL.md
-- /Users/akkaraponph/.agents/skills/buddhist-method/SKILL.md
-- /Users/akkaraponph/.agents/skills/buddhist-method/references/extended-principles.md
+- skills/panda-lead/SKILL.md
+- skills/panda-simplify/SKILL.md
+- ../../../.agents/skills/buddhist-method/SKILL.md
+- ../../../.agents/skills/buddhist-method/references/extended-principles.md
 
 Commands/results:
 - `cat /tmp/panda-suite-evals-lead/E/TASK.txt` → complexity recommendation for one admin greeting; preserve behavior; no source editing.
 - `ls -a /tmp/panda-suite-evals-lead/E` → TASK.txt and service.py only (inventory explicitly run for specialist; Lead task/source read directly).
 - `cat /tmp/panda-suite-evals-lead/E/service.py` → four classes; validator admin check, formatting factory, pass-through adapter, constructor wiring.
-- `cat /Users/akkaraponph/.agents/skills/buddhist-method/SKILL.md` → simplify-selected complexity guidance; extended reference needed for Majjhimā Paṭipadā / bounded foresight.
-- `cat /Users/akkaraponph/.agents/skills/buddhist-method/references/extended-principles.md` → consulted appropriate complexity and bounded foresight sections; no additional workflow stages added.
+- `cat ../../../.agents/skills/buddhist-method/SKILL.md` → simplify-selected complexity guidance; extended reference needed for Majjhimā Paṭipadā / bounded foresight.
+- `cat ../../../.agents/skills/buddhist-method/references/extended-principles.md` → consulted appropriate complexity and bounded foresight sections; no additional workflow stages added.
 - `nl -ba service.py` → exit 0; validator lines 1–4, factory 7–9, adapter 12–17, service 20–27.
 - Python current-service probe → exit 0; admin = Hello, Panda; member = PermissionError admin required; missing role = KeyError role; empty admin name = Hello, (with trailing space).
 - Python in-memory proposed-service comparison → exit 0; 12 representative behavior comparisons passed. Exact command appended below.

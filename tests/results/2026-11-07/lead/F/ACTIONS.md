@@ -9,19 +9,19 @@ This task and F, G, J, K in both arms were completed in one shared evaluator con
 Instructions were read through exec_command using cat, not invoked programmatically. The selected workflow is panda-spec via the panda-lead artifact routing table.
 
 ```sh
-cat '/Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md'
+cat 'skills/panda-lead/SKILL.md'
 ```
 
 Result: exit 0; read the entire routing instruction. This artifact routes to panda-spec. No compound handoff/routing reference was needed.
 
 ```sh
-cat '/Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-spec/SKILL.md'
+cat 'skills/panda-spec/SKILL.md'
 ```
 
 Result: exit 0; read the entire selected specialist instruction. Instructions were initially loaded in a shared batch containing the four selected specialists and panda-lead, all relevant to the assigned tasks.
 
 ```sh
-cat /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-spec/references/specification.md
+cat skills/panda-spec/references/specification.md
 ```
 
 Result: exit 0; read the specification section menu and current/proposed/open decision prompts.
@@ -45,7 +45,7 @@ shasum -a 256 service.py requirements.md test_service.py
 Exit code: 0
 
 ```text
-     1	Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+     1	Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
      2	
      3	เขียน Backend Technical Specification ภาษาไทยจาก service.py และ requirements.md แยกพฤติกรรมปัจจุบันกับการออกแบบที่เสนอ ระบุข้อที่ยังตัดสินใจไม่ได้ ห้ามแก้ source code
      1	"""Small, current approval service. No HTTP server or database is implemented."""

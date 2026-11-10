@@ -1,6 +1,6 @@
 # Actions
 
-Read skill instructions using `cat skills/panda-requirements/SKILL.md skills/panda-impact/SKILL.md skills/panda-release/SKILL.md` from /Users/akkaraponph/Workspaces/codespaces/panda-lead (exit 0). Loaded exactly those three absolute paths under that cwd; no specialist references. This was instruction loading, not programmatic skill invocation.
+Read skill instructions using `cat skills/panda-requirements/SKILL.md skills/panda-impact/SKILL.md skills/panda-release/SKILL.md` from . (exit 0). Loaded exactly those three absolute paths under that cwd; no specialist references. This was instruction loading, not programmatic skill invocation.
 
 Initial `pwd && cat RTK.md && for d in N O P; do echo "$d"; cat /tmp/panda-expansion-eval/$d/TASK.txt; done` exited 1: repository-root RTK.md does not exist. Retried `for d in N O P; do echo "$d"; cat /tmp/panda-expansion-eval/$d/TASK.txt; done`, exit 0.
 

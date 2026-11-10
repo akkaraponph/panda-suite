@@ -5,16 +5,16 @@ Working workspace: `/tmp/panda-suite-evals-followup/B`. Planning only. No source
 ## Loaded paths
 
 - `/tmp/panda-suite-evals-followup/B/TASK.txt`
-- `/Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-plan/SKILL.md` (read as instruction text through the shell tool; no programmatic skill invocation claimed)
+- `skills/panda-plan/SKILL.md` (read as instruction text through the shell tool; no programmatic skill invocation claimed)
 - `/tmp/panda-suite-evals-followup/B/requirements.md`
 - `/tmp/panda-suite-evals-followup/B/service.py`
 - `/tmp/panda-suite-evals-followup/B/test_service.py`
 
-Attempted `/Users/akkaraponph/Workspaces/codespaces/panda-lead/RTK.md`; absent. No other Suite documents, scenario grading, prior answers, or other agents were read. No specialist references were needed beyond Panda Plan's own instructions.
+Attempted `RTK.md`; absent. No other Suite documents, scenario grading, prior answers, or other agents were read. No specialist references were needed beyond Panda Plan's own instructions.
 
 ## Exact shell commands and results
 
-1. `python3 /Users/akkaraponph/Workspaces/codespaces/panda-lead/scripts/prepare-evaluation.py --case B --arm specialist --destination /tmp/panda-suite-evals-followup/B`
+1. `python3 scripts/prepare-evaluation.py --case B --arm specialist --destination /tmp/panda-suite-evals-followup/B`
 
 Exit 0, stdout:
 ```text
@@ -25,19 +25,19 @@ Exit 0, stdout:
 
 Exit 0, stdout:
 ```text
-Use panda-plan. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-plan/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-plan. Read its instructions at skills/panda-plan/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Create an implementation plan for requirements.md using the existing service. Include acceptance criteria and verification for each task. Do not implement.
 ```
 
-3. In `/Users/akkaraponph/Workspaces/codespaces/panda-lead`: `cat RTK.md`
+3. In `.`: `cat RTK.md`
 
 Exit 1, output:
 ```text
 cat: RTK.md: No such file or directory
 ```
 
-4. `cat /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-plan/SKILL.md`
+4. `cat skills/panda-plan/SKILL.md`
 
 Exit 0, stdout:
 ```text
@@ -157,7 +157,7 @@ class ApprovalTest(unittest.TestCase):
             approve({"id": 1, "status": "pending"}, {"id": 2, "role": "member"})
 ```
 
-9. `rg --files -g RTK.md -g AGENTS.md /tmp/panda-suite-evals-followup/B /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-plan`
+9. `rg --files -g RTK.md -g AGENTS.md /tmp/panda-suite-evals-followup/B skills/panda-plan`
 
 Exit 1, no output (no matching instruction files).
 

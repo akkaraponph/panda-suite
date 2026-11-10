@@ -1,0 +1,3 @@
+Use panda-craft. Read its instructions at skills/panda-craft/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Read brief.md and complete its authorized delivery using panda-execute and panda-test.

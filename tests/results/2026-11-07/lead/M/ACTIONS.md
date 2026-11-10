@@ -3,11 +3,11 @@
 Evaluation context is shared across assigned cases; these are not independent samples. All operations use supplied local artifacts. Instructions were loaded by reading files, not by a programmatic skill invocation.
 
 Relevant skill/reference paths read:
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-execute/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-review/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-write/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/references/handoff.md
+- skills/panda-lead/SKILL.md
+- skills/panda-execute/SKILL.md
+- skills/panda-review/SKILL.md
+- skills/panda-write/SKILL.md
+- skills/panda-lead/references/handoff.md
 
 Initial case artifact SHA-256:
 - TASK.txt: eb3f0c50652c06e4a38b9b54763588afbf3bdbeff76b996097ef223c2c35d113
@@ -16,7 +16,7 @@ Initial case artifact SHA-256:
 - test_slug.py: 57634c236127b1025c163fa68437f17bfc0d4bcea624c028fcf96c95c64a36a4
 
 ```sh
-cat /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-execute/SKILL.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-review/SKILL.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-write/SKILL.md /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/references/handoff.md
+cat skills/panda-lead/SKILL.md skills/panda-execute/SKILL.md skills/panda-review/SKILL.md skills/panda-write/SKILL.md skills/panda-lead/references/handoff.md
 ```
 
 Exit status: 0
@@ -257,7 +257,7 @@ cat TASK.txt plan.md slug.py test_slug.py
 Exit status: 0
 
 ```text
-Use panda-lead. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-lead. Read its instructions at skills/panda-lead/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Implement plan.md, review your changes for real defects, and update the usage guide. Do not deploy or publish. Report the delivered state and any unverified checks.
 # Approved slug implementation plan
@@ -703,16 +703,16 @@ plan.md fafbd1958a0f2fc7553e3d3cdc5b823bf034ecac711bcd319c218ba120f6b1f7
 Final hashes above match the initial artifact hashes for the listed read-only source/tests (or, for M, unchanged plan/tests). Python may create local __pycache__ files; no production state was accessed. ANSWER.md is the actual final response for this workspace.
 
 Shared-context instruction provenance: earlier batched reads across assigned cases also loaded these absolute paths; these loads are not independent evaluations:
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/buddhist-method/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-execute/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-review/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-write/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-manual/SKILL.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-lead/references/handoff.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/investigation-guide.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/backend-evidence.md
-- /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-debugger/references/report-template.md
+- skills/panda-lead/SKILL.md
+- skills/panda-debugger/SKILL.md
+- skills/buddhist-method/SKILL.md
+- skills/panda-execute/SKILL.md
+- skills/panda-review/SKILL.md
+- skills/panda-write/SKILL.md
+- skills/panda-manual/SKILL.md
+- skills/panda-lead/references/handoff.md
+- skills/panda-debugger/references/investigation-guide.md
+- skills/panda-debugger/references/backend-evidence.md
+- skills/panda-debugger/references/report-template.md
 
 No grading cases, Suite documentation, baseline results, or other evaluator outputs were read. No Suite repository files changed. A requested RTK.md was absent from the current workspace and checked parent locations.

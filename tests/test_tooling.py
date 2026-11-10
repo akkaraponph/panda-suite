@@ -226,6 +226,27 @@ class PackageTest(unittest.TestCase):
                 for check in case["checks"]:
                     self.assertNotIn(check, task)
 
+    def test_craft_preparation_keeps_reviewer_control_out(self):
+        cases = json.loads((self.root / "tests/scenarios/cases.json").read_text())
+        selected = [case for case in cases if case["id"].startswith("CRAFT-")]
+        self.assertEqual(8, len(selected))
+        fixture = self.root / "tests/fixtures/craft-composition"
+        for case in selected:
+            for arm in ("baseline", "specialist", "lead"):
+                with self.subTest(case=case["id"], arm=arm):
+                    dest = Path(self.temp.name) / (case["id"] + arm)
+                    prepare(self.root, dest, case["id"], arm)
+                    self.assertEqual(
+                        {"TASK.txt", *(p.name for p in fixture.iterdir())},
+                        {p.name for p in dest.iterdir()},
+                    )
+                    for source in fixture.iterdir():
+                        self.assertEqual(source.read_bytes(), (dest / source.name).read_bytes())
+                    task = (dest / "TASK.txt").read_text()
+                    self.assertTrue(task.endswith(case["prompt"] + "\n"))
+                    for check in case["checks"]:
+                        self.assertNotIn(check, task)
+
     def test_fixture_preparation_excludes_answer_key(self):
         dest = Path(self.temp.name) / "blind-case"
         prepare(self.root, dest, "B", "baseline")

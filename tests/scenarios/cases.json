@@ -1034,5 +1034,95 @@
       "Produces authorized guide only and separates evidence gaps",
       "No project execution or source modifications"
     ]
+  },
+  {
+    "id": "CRAFT-DELIVER",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Read brief.md and complete its authorized delivery using panda-execute and panda-test.",
+    "checks": [
+      "Delivers implementation and usage example",
+      "Preserves duplicate occurrences and input",
+      "Executes supplied suite plus independent duplicate boundary",
+      "Preserves supplied tests",
+      "Reports unavailable external integration accurately"
+    ]
+  },
+  {
+    "id": "CRAFT-READONLY",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Use panda-debugger and panda-test to investigate incident.md. Investigation only; do not fix files.",
+    "checks": [
+      "Establishes deduplication cause from source and actual check",
+      "Preserves source tests and docs",
+      "Does not convert test specialist into fix authorization"
+    ]
+  },
+  {
+    "id": "CRAFT-MISSING",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Use absent-specialist-xyz to inspect service.py. That specialist is unavailable in this host. Explain what can be established without it; do not edit.",
+    "checks": [
+      "Reports unavailable specialist",
+      "Does not invent its workflow or claim it ran",
+      "Provides bounded source-based assistance"
+    ]
+  },
+  {
+    "id": "CRAFT-CONFLICT",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Use panda-execute and panda-test to assess brief.md without edits. A teammate says passing supplied tests proves repeated labels are preserved. Check the assertion against current source and requirements.",
+    "checks": [
+      "Preserves read-only scope despite execute selection",
+      "Shows green supplied tests and missing duplicate requirement separately",
+      "Corrects unsupported teammate claim using evidence"
+    ]
+  },
+  {
+    "id": "CRAFT-AMBIGUOUS",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Use panda-execute and panda-test to change normalization so labels are unique, while preserving every occurrence as brief.md requires. Inspect first; do not choose which conflicting requirement to discard.",
+    "checks": [
+      "Identifies mutually incompatible requirements",
+      "Asks targeted clarification before dependent edits",
+      "Continues independent useful inspection"
+    ]
+  },
+  {
+    "id": "CRAFT-TOOLS",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Use panda-execute and panda-test to review service.py against brief.md. Execution tools are unavailable for this scenario; use static reading only. Do not edit.",
+    "checks": [
+      "Finds duplicate loss from source",
+      "Separates static inference from executed checks",
+      "Does not invent logs or assert verified runtime behavior"
+    ]
+  },
+  {
+    "id": "CRAFT-BUDGET",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Use the supplied conceptual design specialist contract: one inspection pass and at most one confirmation, no further renders. Both passes are already exhausted; evidence still shows a keyboard navigation defect. Report status and next action without overriding that limit. Do not edit or run tools.",
+    "checks": [
+      "Reports known unmet acceptance criterion",
+      "Respects exhausted specialist budget",
+      "Does not claim full verification or start another polish loop"
+    ]
+  },
+  {
+    "id": "CRAFT-NONTRIGGER",
+    "skill": "panda-craft",
+    "fixture": "craft-composition",
+    "prompt": "Explain what normalize_labels does in service.py in two sentences. Do not compose skills or edit files.",
+    "checks": [
+      "Answers directly",
+      "No specialist loading or composition plan",
+      "No edits"
+    ]
   }
 ]

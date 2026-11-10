@@ -1,0 +1,2 @@
+['alpha', 'alpha', 'beta', 'alpha']
+[' Alpha ', '', 'ALPHA', ' Beta ', 'alpha']

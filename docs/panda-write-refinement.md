@@ -7,7 +7,7 @@ Date: 2026-11-08.
 The user requested adapting ideas from the local standalone `panda-write` project.
 Its `SKILL.md` and `README.md` were inspected at clean revision
 `8cf10e834e24d93332a592f5bdd1b459fbae265c` in
-`/Users/akkaraponph/Workspaces/codespaces/panda-write`. That repository was read
+`../panda-write`. That repository was read
 only. Its independent integration tracing, evidence categories, uncertainty
 handling, Thai technical prose, and engineering document structure informed this
 revision. The Suite instructions were adapted rather than copying the full README;

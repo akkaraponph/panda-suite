@@ -1,3 +1,3 @@
-Use panda-skill-lab. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-skill-lab/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+Use panda-skill-lab. Read its instructions at skills/panda-skill-lab/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
 
 Design a fair evaluation of whether an execution skill catches acceptance rules missed by a green test suite. Use the supplied slug requirement as a candidate task. No separate model runner, raw baseline output, or token telemetry is available in this run. Produce cases and scoring criteria, including when the skill should not activate. Do not create or modify the skill, and do not claim an experimental improvement.
