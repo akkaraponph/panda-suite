@@ -73,7 +73,84 @@
       "Current approval vs proposed rejection separate",
       "Manager permission and status constraints exact",
       "No invented routes, storage, transactions or retention",
-      "Open decisions explicit"
+      "Open decisions explicit",
+      "Creates a nonempty Markdown spec in .panda-suite/specs with local date and descriptive topic, links it, and preserves repository Git settings"
+    ]
+  },
+  {
+    "id": "SPEC-PATH",
+    "skill": "panda-spec",
+    "fixture": "approvals",
+    "prompt": "Write the rejection specification from requirements.md and service.py to design/rejection.md.",
+    "checks": [
+      "Only design/rejection.md is created and linked"
+    ]
+  },
+  {
+    "id": "SPEC-CHAT",
+    "skill": "panda-spec",
+    "fixture": "approvals",
+    "prompt": "Draft the rejection specification from requirements.md in your response only.",
+    "checks": [
+      "Spec appears in the answer and no file is written"
+    ]
+  },
+  {
+    "id": "SPEC-EDIT",
+    "skill": "panda-spec",
+    "fixture": "approvals",
+    "prompt": "Revise the specification in requirements.md in place using service.py to distinguish existing behavior from proposed changes.",
+    "checks": [
+      "requirements.md contains the revised specification and no duplicate is created"
+    ]
+  },
+  {
+    "id": "SPEC-FAIL",
+    "skill": "panda-spec",
+    "fixture": "approvals",
+    "prompt": "Save the rejection specification to service.py/rejection.md at that exact location.",
+    "checks": [
+      "Existing service.py is a file, so the requested path is unwritable",
+      "Delivers the spec in chat, explains the failure and creates no alternate file"
+    ]
+  },
+  {
+    "id": "SPEC-ROOT",
+    "skill": "panda-spec",
+    "fixture": "spec-projects",
+    "prompt": "Write a short spec for the timeout described in billing/requirements.md.",
+    "checks": [
+      "Only billing/.panda-suite/specs receives a dated spec",
+      "Root and sibling project receive no spec"
+    ]
+  },
+  {
+    "id": "SPEC-AMBIGUOUS",
+    "skill": "panda-spec",
+    "fixture": "spec-projects",
+    "prompt": "Write a short spec for the project timeout. Both projects are in scope as possible destinations, but this spec belongs to only one.",
+    "checks": [
+      "Asks which project owns the spec before writing any file"
+    ]
+  },
+  {
+    "id": "SPEC-GIT",
+    "skill": "panda-spec",
+    "fixture": "spec-git",
+    "prompt": "Use requirements.md as source material for a new retry-policy specification.",
+    "checks": [
+      "Save a dated Markdown spec in .panda-suite/specs",
+      "Preserve .gitignore byte-for-byte and leave the spec eligible for tracking",
+      "When run in a Git repository, leave the index unchanged"
+    ]
+  },
+  {
+    "id": "SPEC-NONTRIGGER",
+    "skill": "panda-spec",
+    "fixture": "approvals",
+    "prompt": "What does the existing approval function do? Just explain it briefly.",
+    "checks": [
+      "Answers from service.py and creates no spec"
     ]
   },
   {
@@ -1257,6 +1334,16 @@
       "Answers directly from source",
       "No Git workflow or mutation",
       "No mandatory peer loading"
+    ]
+  },
+  {
+    "id": "SPEC-INPUT-AMBIGUOUS",
+    "skill": "panda-spec",
+    "fixture": "spec-git",
+    "prompt": "Write a specification for the retry policy in requirements.md.",
+    "checks": [
+      "Clarifies whether requirements.md is input or the edit target before replacing it",
+      "Preserves requirements.md until the user resolves the ambiguity"
     ]
   }
 ]

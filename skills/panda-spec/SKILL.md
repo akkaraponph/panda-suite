@@ -12,7 +12,7 @@ for ordered implementation work; a specification defines what must hold.
 ## Inputs and workflow
 
 Read requirements, relevant source and tests, established architecture, constraints,
-and supplied templates. Confirm audience, language, and destination when missing
+and supplied templates. Confirm audience and language when missing
 information materially affects the artifact. Preserve existing terminology.
 
 1. **Inspect requirements and current behavior.** Trace the relevant entry points,
@@ -36,6 +36,22 @@ For the section menu and contract prompts, read
 document. Use the project's own template if supplied; omit irrelevant sections.
 
 ## Output and completion
+
+Save the specification as Markdown at `.panda-suite/specs/YYYY-MM-DD-<topic>.md`,
+under the active project root, using the current local date and a short lowercase
+hyphenated topic. In a workspace with multiple projects, use the project identified
+by the request or its source files. If several roots still fit, clarify the target
+before writing. Follow the repository’s existing Git ignore and tracking policy.
+
+Create the directory when needed. Treat requirements, source files and templates
+as inputs. If wording such as “write a spec for the policy in requirements.md”
+could identify either an input or an edit target, ask which meaning is intended
+before replacing that file. Write a separate spec unless the user identifies an existing document
+as the edit target. Edit that document in place by default. An explicit output
+path or move request takes precedence. Avoid overwriting an unrelated spec by choosing a
+distinct descriptive filename. Honor requests for chat-only output. If the
+workspace cannot be written, provide the spec in the response and explain the
+limitation. After a successful write, verify the saved spec and link it in the response.
 
 Deliver a professional document with scope, evidence-supported current behavior,
 clearly labeled proposed design, relevant contracts and failure paths, verification

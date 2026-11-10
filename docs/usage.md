@@ -200,6 +200,11 @@ errors; for example, a required Python argument omitted by a caller normally rai
 ### Panda Spec
 
 Provide requirements, source, audience/language, and an existing template if available.
+Specifications default to `.panda-suite/specs/YYYY-MM-DD-<topic>.md` under the
+project root. In a multi-project workspace, the request or source files identify
+the target project. If several projects fit, Panda Spec asks which one to use.
+The repository controls whether specs are ignored or tracked. An explicit destination
+(as below) or chat-only request takes precedence. Existing specs are edited in place.
 
 ```text
 $panda-spec เขียน Backend Technical Specification ภาษาไทยจาก
