@@ -1,6 +1,6 @@
 # Panda Suite architecture
 
-Panda Suite is twenty independent instruction skills. Panda Lead is a small
+Panda Suite is twenty-one independent instruction skills. Panda Lead is a small
 router; the host model and its existing tools perform work. There is no server,
 database, scheduler, agent loop, or programmatic skill invocation API.
 
@@ -21,7 +21,7 @@ The supplied briefs are the implementation specification. The initial catalog an
    discovery; delegate only when available, authorized, and useful. Reading a
    file is described as instruction loading, not a simulated tool invocation.
 5. **Use one portable manifest and a Claude compatibility manifest.** Both point
-   to the same twenty folders. A Codex fallback is added only if local testing
+   to the same twenty-one folders. A Codex fallback is added only if local testing
    demonstrates that this installed CLI needs it. No MCP or hooks are needed.
 6. **Evaluate claims at the correct level.** Validators prove package invariants;
    real fixture tasks test behavior. No performance or token-saving claim follows
@@ -47,3 +47,9 @@ and compatibility verification. Simplify retains general complexity assessment;
 Plan, Execute, Test and Review retain their focused deliverables. Direct Refactor
 requests can stop at analysis or planning. Peer guidance is optional, with no
 mandatory chain or new runtime. See the [Refactor design and evaluation](panda-refactor.md).
+
+Learn owns understanding unfamiliar existing code through source tracing, adaptive
+teaching and optional practice. Research owns bounded evidence questions; Write
+owns requested engineering documents; Debugger owns causal failures. A tiny
+explanation stays direct unless a specialist is explicitly selected. Learning does
+not authorize application edits or execution. See [Learn design and trials](panda-learn.md).

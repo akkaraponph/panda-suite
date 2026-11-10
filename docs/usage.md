@@ -86,6 +86,40 @@ notes; small answers need no saved file. Use Brainstorm to explore a direction,
 Debugger for a causal failure, Impact for a proposed change, and Write for a guide.
 See [scope and verification](panda-research.md).
 
+### Panda Learn
+
+Provide an accessible repository, directory, file, symbol or source snippet, your
+learning goal and any useful background. A repository path alone starts with an
+overview. A focused question gets a direct explanation. Mode names are optional:
+overview, explore, deep dive, trace, architecture, concept, guided learning and quick.
+
+```text
+$panda-learn ./src Teach me how an order moves from the public API to storage
+and notification. I know Go but am new to this language. Start with a mental model
+and trace the actual code, including failure paths. Static inspection only.
+```
+
+Expect a source-backed explanation, verified file/symbol references, a concrete
+execution example and explicit unknowns. Design rationale is confirmed only when
+documented; otherwise it is interpretation. Tests, source and observed runtime
+are separate evidence, and a passing test suite does not prove every contract.
+
+For interactive practice: “Teach one concept, give me one prediction question,
+and wait without revealing the answer.” For a quick answer: “Explain this function
+directly, without a quiz or overview.” Concept translation uses qualified analogies
+to languages you know. No depth-selector UI, mandatory quiz or saved document is
+required. Learning requests leave the target repository unchanged and do not
+authorize dependency installation, scripts, migrations or fixes. Existing explicit
+authorization for a bounded local demonstration carries forward.
+
+Standalone Codex uses `$panda-learn`; Codex plugin uses
+`$panda-suite:panda-learn`; Claude plugin uses `/panda-suite:panda-learn`;
+standalone Claude uses `/panda-learn`. A public URL is investigated only with
+available authorized retrieval; an inaccessible path remains a stated limitation.
+Use Research for a bounded evidence question, Write for a developer guide, Debugger
+for causal defect investigation, and Refactor for structural changes. A tiny
+explanation needs no specialist unless you select one. See [design and trials](panda-learn.md).
+
 ### Panda Requirements
 
 Provide stakeholder requests, current workflow, actors, known policy, and constraints.

@@ -1,0 +1,1 @@
+`list(items)` gives the queued order its own list. If the caller later adds, removes, or replaces items in the original list, those changes won’t affect the order waiting for the worker. It’s a shallow copy: mutable objects inside the list are still shared. See [orders.py](input/orders.py:6) and [worker.py](input/worker.py:10).

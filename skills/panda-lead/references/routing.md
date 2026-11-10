@@ -6,6 +6,7 @@
 | Research versus brainstorm | Establish what evidence supports → Research; explore which direction to take → Brainstorm. Ordinary evidence gathering stays within the active workflow. |
 | Research versus debugger versus impact | Standalone technical question → Research; causal defect investigation → Debugger; proposed change dependencies → Impact. |
 | Research versus write | Evidence-backed answer or research note → Research; developer/operator documentation → Write. A focused explanation needs neither automatically. |
+| Learn versus research / write / debugger | Codebase learning, source walkthroughs and guided practice → Learn; bounded evidence question → Research; requested developer guide → Write; causal failure investigation → Debugger. A tiny direct explanation needs no specialist unless explicitly named. Learning does not authorize fixes. |
 | Spec versus plan | Spec defines contracts and design; plan defines ordered changes. Produce the requested artifact. |
 | Write versus spec versus manual | General developer/operator docs → Write; implementation-oriented design → Spec; user interactions → Manual. |
 | Debug versus review | Existing failure needing causal explanation → Debugger; defects in a diff → Review. |
@@ -38,6 +39,7 @@ Examples:
 
 - “Check whether this SDK version supports our authentication flow” → Research.
 - “Explain this function” → inspect and explain directly.
+- “Teach me this unfamiliar codebase, one execution path at a time” → Learn.
 - “Investigate this payment failure. Do not edit” → Debugger, read-only.
 - “Build this feature, review it, update the README” → Plan if needed, Execute,
   Review, Write. No brainstorm when requirements are already clear.

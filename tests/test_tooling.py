@@ -237,6 +237,25 @@ class PackageTest(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             prepare(self.root, dest, "B", "lead")
 
+    def test_learn_preparation_keeps_reviewer_control_out(self):
+        cases = json.loads((self.root / "tests/scenarios/cases.json").read_text())
+        for case in cases:
+            if not case["id"].startswith("LEARN-"):
+                continue
+            for arm in ("baseline", "specialist", "lead"):
+                with self.subTest(case=case["id"], arm=arm):
+                    dest = Path(self.temp.name) / (case["id"] + arm)
+                    prepare(self.root, dest, case["id"], arm)
+                    self.assertFalse((dest / "reviewer").exists())
+                    self.assertFalse((dest / "learn-control").exists())
+                    self.assertFalse((dest / "check_learn.py").exists())
+                    self.assertFalse((dest / "cases.json").exists())
+                    self.assertEqual((self.root / "tests/fixtures/learn-orders/storage.py").read_bytes(),
+                                     (dest / "storage.py").read_bytes())
+                    task = (dest / "TASK.txt").read_text()
+                    for check in case["checks"]:
+                        self.assertNotIn(check, task)
+
 
 if __name__ == "__main__":
     unittest.main()

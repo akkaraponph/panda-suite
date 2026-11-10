@@ -1,0 +1,17 @@
+{
+  "method": "Static inspection only",
+  "loaded_paths": ["TASK.txt", "input/app.py", "input/orders.py", "input/storage.py", "input/worker.py", "input/contract.md", "input/README.md", "input/demo.py"],
+  "commands_and_results": [
+    {"command": "cat TASK.txt", "result": "Read the requested teaching task and static-only restriction."},
+    {"command": "ls -la", "result": "Only TASK.txt and input/ were present; no instructions/ directory."},
+    {"command": "rg --files input", "result": "Listed eight source/documentation files."},
+    {"command": "nl -ba input/{app.py,orders.py,storage.py,worker.py,contract.md}", "note": "Executed as separate reads in one parallel tool batch.", "result": "Verified synchronous submission queues data, explicit tick performs in-memory save, and contract separates acceptance from completed processing."},
+    {"command": "nl -ba input/{README.md,demo.py}", "note": "Executed as separate reads in one parallel tool batch.", "result": "README warns its old overview is unreliable; demo calls tick explicitly and writes a file. Demo was inspected but not executed."},
+    {"command": "ls -l result.md evidence.json", "result": "Confirmed both permitted artifacts exist."}
+  ],
+  "assumptions": ["The teaching scenario starts with a fresh build and uses a notification callback that returns normally."],
+  "unperformed_checks": ["No project code or demo was run.", "Tests were not run or loaded; this lesson follows directly from the inspected request, queue, worker and storage code.", "No production behavior or notification delivery guarantee was inferred."],
+  "writes": ["result.md", "evidence.json"],
+  "tool_limitations": "None encountered for static inspection; runtime behavior was deliberately not tested.",
+  "usage_metrics": "Unavailable; not estimated."
+}

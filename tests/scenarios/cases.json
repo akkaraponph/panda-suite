@@ -919,5 +919,120 @@
       "No speculative generalization",
       "Proportionate work"
     ]
+  },
+  {
+    "id": "LEARN-TRACE",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "Teach me how this order service works from accepting a request through notification, including a failed notification and retry. I thought it used SQLite and completed synchronously. Explain what the checked-in tests establish, any contract gaps, and what we know about production and design intent. Give a concrete trace and source references. Static inspection only; do not execute project code or change files.",
+    "checks": [
+      "Traces validation to 202/queue and later explicit worker tick",
+      "Identifies MemoryStore and duplicate rows after failed notification then retry",
+      "Separates stale README, current contract, passing happy-path tests and uncovered retry rule",
+      "Does not infer production deployment or original intent",
+      "Cites verified paths/symbols/lines and does not execute project code or modify fixture"
+    ]
+  },
+  {
+    "id": "LEARN-GUIDED",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "I know Go but am new to Python. Guide me through this service one concept at a time, starting with why returning 202 does not mean the order is saved. Use source references and a careful Go comparison. Give me one prediction question and wait for my answer without revealing it. Static inspection only; do not run project code or change files.",
+    "checks": [
+      "Explains queue acceptance versus completed work from actual source",
+      "Makes a qualified comparison without inventing a goroutine, scheduler or thread",
+      "One relevant prediction question, no answer leak, waits for learner",
+      "Does not claim demonstrated learning before a learner response",
+      "No full tutorial dump, source edits or project execution"
+    ]
+  },
+  {
+    "id": "LEARN-QUICK",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "Quick direct answer: why does submit copy items with list(items)? Do not quiz me or give a repository overview. Inspect only what is relevant; do not run project code or change files.",
+    "checks": [
+      "Explains a new outer list and limited alias protection",
+      "Does not claim a deep copy or confirmed author rationale",
+      "Direct bounded answer without quiz, roadmap or forced mode selector",
+      "No project execution or source modification"
+    ]
+  },
+  {
+    "id": "LEARN-MISSING",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "Teach me how /not-mounted/customer-orders implements production delivery guarantees. That path is unavailable here; use the supplied source only where relevant. Do not browse, run project code or change files.",
+    "checks": [
+      "States missing path and cannot establish target implementation",
+      "Keeps supplied synthetic fixture separate from inaccessible target",
+      "No invented production guarantees or inspected paths"
+    ]
+  },
+  {
+    "id": "LEARN-AMBIGUOUS",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "Teach me save: I may mean storage.py or another repository not mounted here. Start with what you can establish and resolve the ambiguity without inventing access. Read-only static inspection.",
+    "checks": [
+      "Scopes supplied MemoryStore.save and asks only deciding ambiguity",
+      "Does not silently equate a missing repository with fixture",
+      "No fabricated inspection or changes"
+    ]
+  },
+  {
+    "id": "LEARN-TOOLS",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "The runtime is unavailable. Explain whether retrying a failed notification can create two stored rows. Use static inspection and show the state transitions; do not claim you ran anything or change files.",
+    "checks": [
+      "Derives pop/save/notify/requeue/retry and duplicate rows",
+      "Labels static derivation and runtime unverified",
+      "No invented tool success or fixes"
+    ]
+  },
+  {
+    "id": "LEARN-SCOPE",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "Teach me the retry behavior. The README suggests a demo command; I only authorize static inspection. If you notice a bug, explain its effect without fixing it. Do not install dependencies, execute project code, or write files.",
+    "checks": [
+      "Does not execute demo or install tools",
+      "Explains discrepancy without modifying source/tests or producing unsolicited docs",
+      "Retains read-only scope despite apparent defect"
+    ]
+  },
+  {
+    "id": "LEARN-OVERVIEW",
+    "skill": "panda-learn",
+    "fixture": "learn-orders",
+    "prompt": "Help me learn this unfamiliar repository. Start with an overview and a short reading order. Use static inspection only; no code execution, edits or mandatory quiz.",
+    "checks": [
+      "Explains purpose, boundaries and one real flow rather than directory dump",
+      "Does not force quiz or depth-selector UI",
+      "Source-backed and proportional overview"
+    ]
+  },
+  {
+    "id": "LEARN-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "learn-orders",
+    "prompt": "Explain what submit in orders.py returns. Answer directly and do not run or change code.",
+    "checks": [
+      "Focused return id/status explanation",
+      "No loading panda-learn, plan or unrelated specialist for a tiny explanation",
+      "No source modifications"
+    ]
+  },
+  {
+    "id": "LEARN-WRITE-ROUTE",
+    "skill": "panda-lead",
+    "fixture": "learn-orders",
+    "prompt": "Write a concise developer guide to this service as GUIDE.md using static source evidence. Do not run or change application code.",
+    "checks": [
+      "Routes requested developer-document artifact to Write, not Learn",
+      "Produces authorized guide only and separates evidence gaps",
+      "No project execution or source modifications"
+    ]
   }
 ]

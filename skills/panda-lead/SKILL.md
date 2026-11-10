@@ -36,6 +36,7 @@ edit can be handled directly without another skill or a project plan.
 | --- | --- |
 | Explore an idea, assumptions, alternatives | `panda-brainstorm` |
 | Investigate a technical question or verify capabilities from sources | `panda-research` |
+| Learn an unfamiliar codebase through source tracing and adaptive teaching | `panda-learn` |
 | Clarify business rules, actors, acceptance | `panda-requirements` |
 | Design, add, run, or assess tests | `panda-test` |
 | Trace proposed change dependencies | `panda-impact` |

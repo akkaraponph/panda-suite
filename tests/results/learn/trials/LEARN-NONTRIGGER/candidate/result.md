@@ -1,0 +1,1 @@
+`OrderService.submit(order_id, items)` returns `{"id": order_id, "status": "queued"}`. Before returning, it appends `{"id": order_id, "items": list(items)}` to `self.pending` ([orders.py](/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-NONTRIGGER/candidate/input/orders.py:5)).

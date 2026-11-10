@@ -1,0 +1,1 @@
+Quick direct answer: why does submit copy items with list(items)? Do not quiz me or give a repository overview. Inspect only what is relevant; do not run project code or change files.

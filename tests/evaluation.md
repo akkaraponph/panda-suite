@@ -153,3 +153,14 @@ existing-workflow comparison. Reviewer checks live outside task fixtures:
 `python3 -B tests/reviewer/check_refactor.py`. Local fixture validation is not a
 model evaluation. All comparative behavioral arms remain **Not Run** until real
 fresh-context trials with isolated inputs and recorded settings are available.
+
+## Learn candidate
+
+Ten `LEARN-*` cases exercise evidence-backed codebase teaching, guided checkpoints,
+language comparisons, quick answers, inaccessible/ambiguous targets, runtime gaps,
+read-only pressure, overview and routing exclusions. The
+[Learn contract and protocol](../docs/panda-learn.md) separates fixture validation,
+host discovery and actual model comparisons. Correct controls and reviewer keys
+live outside task fixtures. Validate the uncovered retry requirement locally with
+`python3 -B tests/reviewer/check_learn.py`; green ordinary tests are deliberately
+insufficient to establish that requirement. See [actual trial answers and limits](results/learn/comparison.md).

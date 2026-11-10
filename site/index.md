@@ -6,13 +6,13 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
-## Latest release: v1.2.0 — Panda Refactor
+## Latest release: v1.3.0 — Panda Learn
 
-The suite contains 20 independent skills, adding
-[Refactor](panda-refactor.html) for structural improvements with baseline checks
-and incremental compatibility verification. Read the [release notes](../docs/v1.2.0.md).
-Behavioral comparisons remain Not Run; package checks and host discovery are
-reported separately in the [design and evaluation](../docs/panda-refactor.md).
+The suite contains 21 independent skills, adding
+[Learn](panda-learn.html) for understanding unfamiliar code through source tracing,
+clear mental models and optional guided practice. Read the [release notes](../docs/v1.3.0.md).
+Paired task results and their limits are reported separately from package checks
+in the [design and evaluation](../docs/panda-learn.md).
 
 ## Your first request
 
@@ -38,6 +38,7 @@ Using Claude Code or standalone skills? See the [invocation reference](usage.htm
 | --- | --- |
 | Work out what to build | [Brainstorm](panda-brainstorm.html) or [Requirements](panda-requirements.html) |
 | Check a technical claim | [Research](panda-research.html) |
+| Learn an unfamiliar codebase | [Learn](panda-learn.html) |
 | Understand what a change affects | [Impact](panda-impact.html) |
 | Turn agreed work into tasks | [Plan](panda-plan.html) |
 | Define a technical contract | [Spec](panda-spec.html) |

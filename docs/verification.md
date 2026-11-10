@@ -73,3 +73,13 @@ production workflows, and statistically controlled performance comparisons were
 not tested. Native discovery and instruction-loaded task runs are separate evidence.
 Panda Debugger's pinned revision has no LICENSE file; public redistribution terms
 remain unresolved. Neither that omission nor any unrun check is presented as solved.
+
+## v1.3.0 — Panda Learn
+
+See the [release verification record](../tests/results/learn/verification.md) for
+21-skill packaging, host discovery, fixtures and documentation checks. The
+[actual comparison](../tests/results/learn/comparison.md) retains ten native task
+trials: four selected pairs pass and two initial routing trials remain
+setup-confounded. The sampled baseline already succeeded; no improvement or
+learner-outcome advantage is established. Six further behavioral cases remain
+Not Run. Historical Refactor evaluation limits remain unchanged.

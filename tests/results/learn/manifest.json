@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-10",
+  "base_revision": "71018c0d178f60e72807e8992200c1eb0ebd593f",
+  "runner": "native collaboration.spawn_agent, fork_turns=none",
+  "model": "Inherited parent model; exact identity/settings not exposed",
+  "metrics": "Task time and tokens not measured",
+  "isolation": "Instruction-scoped only; shared filesystem and host tools, no enforced sandbox",
+  "action_record": "Agent-written evidence summaries; full native tool transcripts not exposed to parent",
+  "trials": [
+    {
+      "case": "LEARN-TRACE",
+      "arm": "baseline",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-TRACE/baseline",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {},
+      "result_sha256": "1ed00896bc5b3d3ffeb5ddcc195728371e6e16efab7882f6f4ab21ae3167ead3",
+      "status": "scored",
+      "agent_name": "/root/learn_trace_baseline"
+    },
+    {
+      "case": "LEARN-TRACE",
+      "arm": "candidate",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-TRACE/candidate",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {
+        "panda-learn/SKILL.md": "2f039baece5d718c48d7149bedbceb1dbc54d0cf045f261a9041fb9b8ec9b0bd"
+      },
+      "result_sha256": "0af185feaad0acf015fd893b23e0768a76b157ff339fdef51b3047e6f0127f6b",
+      "status": "scored",
+      "agent_name": "/root/learn_trace_candidate"
+    },
+    {
+      "case": "LEARN-GUIDED",
+      "arm": "baseline",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-GUIDED/baseline",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {},
+      "result_sha256": "d3a2b96c3e423f0193c32e15ee80a218b0ff4123a8529b0ec4d3b51c1a00a7b5",
+      "status": "scored",
+      "agent_name": "/root/learn_guided_baseline"
+    },
+    {
+      "case": "LEARN-GUIDED",
+      "arm": "candidate",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-GUIDED/candidate",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {
+        "panda-learn/SKILL.md": "2f039baece5d718c48d7149bedbceb1dbc54d0cf045f261a9041fb9b8ec9b0bd"
+      },
+      "result_sha256": "bfdf1b2582b7922ceb344d5c764591c43b84dc09059a0f49e258dad0c8b10f95",
+      "status": "scored",
+      "agent_name": "/root/learn_guided_candidate"
+    },
+    {
+      "case": "LEARN-QUICK",
+      "arm": "baseline",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-QUICK/baseline",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {},
+      "result_sha256": "8263a561746e51b45ca20e523bda27ed2284e597cc8e82d85ec48a320bb5a873",
+      "status": "scored",
+      "agent_name": "/root/learn_quick_baseline"
+    },
+    {
+      "case": "LEARN-QUICK",
+      "arm": "candidate",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-QUICK/candidate",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {
+        "panda-learn/SKILL.md": "2f039baece5d718c48d7149bedbceb1dbc54d0cf045f261a9041fb9b8ec9b0bd"
+      },
+      "result_sha256": "5fab64c9fdaae8edb7b787e820635a5c413f34b2ba82e4c84cfb01f02a44a48d",
+      "status": "scored",
+      "agent_name": "/root/learn_quick_candidate"
+    },
+    {
+      "case": "LEARN-NONTRIGGER",
+      "arm": "baseline",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-NONTRIGGER/baseline",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {
+        "panda-lead/SKILL.md": "5786f0944d91401f724b5479ae99cf3ad4a044c626e5f85d8c677d0f7194621d",
+        "panda-lead/references/handoff.md": "9932a24a0556481f950a053bf6dd5066dd8a079c80e4deaf067d1b86cd4e0e44",
+        "panda-lead/references/routing.md": "aa400255a4ee63cc012811ac81c1ca986ada9302008becce97359651771ee87d"
+      },
+      "result_sha256": "f34d9dcddaad88756937b47b8062aa9f7acd2831fb4e7da6e475844b228fb81b",
+      "status": "setup-confounded; excluded from paired conclusion",
+      "agent_name": "/root/learn_route_baseline"
+    },
+    {
+      "case": "LEARN-NONTRIGGER",
+      "arm": "candidate",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-NONTRIGGER/candidate",
+      "input_hashes_match": true,
+      "unexpected_top_level_artifacts": [],
+      "instruction_hashes": {
+        "panda-lead/SKILL.md": "8b1741f4f3a063c532436159a54b1fe4d05fc2c7d52f2a6ab64f3d3c26a9bdc7",
+        "panda-lead/references/handoff.md": "9932a24a0556481f950a053bf6dd5066dd8a079c80e4deaf067d1b86cd4e0e44",
+        "panda-lead/references/routing.md": "603c97348d9ea8d444f9dd0d1a01ec337302a93ed9afb6b3cfaf3d3765d6ab20",
+        "panda-learn/SKILL.md": "2f039baece5d718c48d7149bedbceb1dbc54d0cf045f261a9041fb9b8ec9b0bd"
+      },
+      "result_sha256": "9d80023d084c411ae12c2973d2b677d6aed007945d5a8ad1cc80e72a18ba6d33",
+      "status": "setup-confounded; excluded from paired conclusion",
+      "agent_name": "/root/learn_route_candidate"
+    },
+    {
+      "case": "LEARN-NONTRIGGER-ENTRY",
+      "arm": "baseline",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-NONTRIGGER-ENTRY/baseline",
+      "input_hashes_match": true,
+      "instruction_hashes": {
+        "panda-lead/SKILL.md": "5786f0944d91401f724b5479ae99cf3ad4a044c626e5f85d8c677d0f7194621d",
+        "panda-lead/references/handoff.md": "9932a24a0556481f950a053bf6dd5066dd8a079c80e4deaf067d1b86cd4e0e44",
+        "panda-lead/references/routing.md": "aa400255a4ee63cc012811ac81c1ca986ada9302008becce97359651771ee87d"
+      },
+      "result_sha256": "f2ddf097b9bf8e354441698db41d9854b4d3b61c72b41edad93baf4e3fd08990",
+      "status": "scored",
+      "agent_name": "/root/learn_route_entry_baseline"
+    },
+    {
+      "case": "LEARN-NONTRIGGER-ENTRY",
+      "arm": "candidate",
+      "original_workspace": "/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-NONTRIGGER-ENTRY/candidate",
+      "input_hashes_match": true,
+      "instruction_hashes": {
+        "panda-lead/SKILL.md": "8b1741f4f3a063c532436159a54b1fe4d05fc2c7d52f2a6ab64f3d3c26a9bdc7",
+        "panda-lead/references/handoff.md": "9932a24a0556481f950a053bf6dd5066dd8a079c80e4deaf067d1b86cd4e0e44",
+        "panda-lead/references/routing.md": "603c97348d9ea8d444f9dd0d1a01ec337302a93ed9afb6b3cfaf3d3765d6ab20",
+        "panda-learn/SKILL.md": "2f039baece5d718c48d7149bedbceb1dbc54d0cf045f261a9041fb9b8ec9b0bd"
+      },
+      "result_sha256": "260fceb216d0c478dc5b0cbb8cea1cd1b0a3d674cea6b8f5709aacef2a7c537c",
+      "status": "scored",
+      "agent_name": "/root/learn_route_entry_candidate"
+    }
+  ],
+  "input_sha256": {
+    "README.md": "8b5811095ca0412eaed0ae45264f9298f4c0e77c2b8e01b3fd330de170a8c4cd",
+    "app.py": "5bfa8180f59243b4648c409e9837cdf4177e00aa0c4a6f087f818f7b6abb4cd1",
+    "contract.md": "bd606954d2907fbe51d965cf379c8e6228019758ec86527576d8f296626ac5ba",
+    "demo.py": "7cc4e13c339c0bdf116b6dce1c95dc35e5cc9240d81877940cd6dd36460a87ea",
+    "orders.py": "defe74edc15245266f31fcfc99f6eb0a2d11fea1665b967afe146a30484f0947",
+    "storage.py": "9e148f1a4e255efa8c45065c306fe6de5165b84e2ab9cd1d79925b4ec142980d",
+    "test_orders.py": "38de0a54c26d1dc67cd6c6007731316801d0f38413fff273ee4f690058c90d40",
+    "worker.py": "252d3d30951931336f74937563b66e2d23f58cb75d1c4f4f1bf1bf4e2bd38f1f"
+  }
+}

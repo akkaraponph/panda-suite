@@ -26,3 +26,9 @@ and compatibility verification. Simplify retains general complexity assessment;
 Plan, Execute, Test and Review retain their focused deliverables. Direct Refactor
 requests can stop at analysis or planning. Peer guidance is optional, with no
 mandatory chain or new runtime. See the [Refactor design and evaluation](panda-refactor.md).
+
+Learn owns understanding unfamiliar existing code through source tracing, adaptive
+teaching and optional practice. Research owns bounded evidence questions; Write
+owns requested engineering documents; Debugger owns causal failures. A tiny
+explanation stays direct unless a specialist is explicitly selected. Learning does
+not authorize application edits or execution. See [Learn design and trials](panda-learn.md).

@@ -1,0 +1,1 @@
+I know Go but am new to Python. Guide me through this service one concept at a time, starting with why returning 202 does not mean the order is saved. Use source references and a careful Go comparison. Give me one prediction question and wait for my answer without revealing it. Static inspection only; do not run project code or change files.

@@ -1,0 +1,4 @@
+Available optional skill metadata:
+name: panda-learn
+description: Use when learning an unfamiliar codebase, tracing existing execution paths, understanding architecture or language concepts in source, or requesting an adaptive engineering walkthrough with optional guided practice.
+Path: instructions/panda-learn/SKILL.md

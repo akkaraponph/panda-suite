@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.2.0** · 20 independent skills
+Version **1.3.0** · 21 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -18,7 +18,7 @@ multi-agent execution.
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
 copyable examples and expected outputs for every skill.
 
-Current release: [v1.2.0 — Panda Refactor](docs/v1.2.0.md).
+Current release: [v1.3.0 — Panda Learn](docs/v1.3.0.md).
 
 ## Skills
 
@@ -32,6 +32,7 @@ Current release: [v1.2.0 — Panda Refactor](docs/v1.2.0.md).
 | `panda-lead` | Select the smallest workflow and coordinate requested activities |
 | `panda-brainstorm` | Explore a problem, constraints, assumptions, and alternatives |
 | `panda-research` | Answer technical questions and verify capabilities with traceable evidence |
+| `panda-learn` | Learn unfamiliar code through source tracing, mental models and optional guided practice |
 | `panda-plan` | Define ordered tasks, dependencies, acceptance, and verification |
 | `panda-execute` | Implement authorized work and report actual verification |
 | `panda-debugger` | Investigate a failure and establish causal confidence; preserved upstream |
@@ -86,7 +87,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.2.0 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.3.0 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 
@@ -118,7 +119,7 @@ claude plugin install panda-suite@panda-suite
 ```
 
 The local plugin and marketplace manifests were validated with Claude Code
-2.1.251, and its component inventory discovers all sixteen skills. Persistent
+2.1.251, and its component inventory discovers all 21 skills. Persistent
 installation and interactive model invocation were not exercised.
 
 ### OpenAI Codex
@@ -134,7 +135,7 @@ Use the installed skill selector. Codex 0.159.2's plugin inventory exposes
 `panda-suite:panda-lead` and `panda-suite:panda-review`; select those names, or
 reference `$panda-suite:panda-lead` in your request.
 
-The portable root manifest and all sixteen plugin skill paths were read by the
+The portable root manifest and all 21 plugin skill paths were read by the
 actual Codex app-server. Standalone discovery below was also tested. Persistent
 plugin installation and interactive invocation were not exercised, and no global
 user configuration was changed during validation.
@@ -177,6 +178,9 @@ These prompts use standalone Codex names; use your installation's selector above
 
 ```text
 $panda-lead Explain what this function does.
+
+$panda-learn ./src Teach me how a request reaches storage. Start with the
+mental model and trace actual code. Read-only; offer guided practice only if useful.
 
 $panda-sec Audit src and the supplied dependency report. Rank supported
 vulnerabilities, redact secrets, and give fixes and checks. Do not edit or scan externally.
@@ -290,5 +294,8 @@ Suite-specific research and trade-offs are in [repository findings](docs/researc
 
 The five essential skills and their boundaries are described in the [expansion report](docs/expansion.md). Panda Debugger and Buddhist Method are primary Suite skills; their technique Markdown remains under each skill’s `references/`. Source attribution and pinned-byte verification remain in place. No runtime or persistent handoff store was added.
 
-Version 1.2.0 adds `panda-refactor`. See the [design and evaluation](docs/panda-refactor.md).
-Behavioral comparisons are **Not Run**; structural validation is separate.
+Version 1.2.0 added `panda-refactor`; its behavioral comparisons remain **Not Run**.
+Version 1.3.0 adds `panda-learn` from the supplied learning/mentor proposal.
+See [Learn's contract and evaluation](docs/panda-learn.md) for actual paired task
+results and their limits. Learning remains read-only by default; concise questions
+need no mandatory quiz, document or project workflow.

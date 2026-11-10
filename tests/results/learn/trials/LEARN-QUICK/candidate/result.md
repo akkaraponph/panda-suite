@@ -1,0 +1,3 @@
+`list(items)` creates a fresh outer list for the queued order, so later changes to the caller’s list—such as appending or removing items—won’t change what was submitted. The order is queued in [`submit`](/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-QUICK/candidate/input/orders.py:6) and consumed later by [`tick`](/var/folders/dh/pyhpwt7x3y785l65wcc6gymh0000gn/T/panda-learn-eval-yrtv3w0m/LEARN-QUICK/candidate/input/worker.py:10).
+
+It’s a **shallow copy**: mutable objects inside the list are still shared. It also accepts other iterables and materializes them as a list. This explanation comes from static inspection; no project code was run.

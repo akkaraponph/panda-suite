@@ -1,3 +1,5 @@
 # Retained model answers contain unified diffs whose blank context lines are spaces.
 # Preserve exact evidence bytes while keeping other whitespace checks enabled.
 tests/results/v1.1.0/**/ANSWER.md whitespace=-blank-at-eol
+# Learn trial answers retain original trailing blank lines for hash verification.
+tests/results/learn/trials/**/result.md whitespace=-blank-at-eof
