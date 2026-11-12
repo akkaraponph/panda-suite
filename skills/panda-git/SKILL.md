@@ -10,6 +10,21 @@ Own Git operations and commit conventions; ordinary implementation, code review,
 release readiness and deployment retain their own scope. A coding task alone
 does not authorize a commit or activate a full Git workflow.
 
+## Keep commit work in Git scope
+
+A request to commit, review a commit, or write a commit message authorizes Git
+work only. Inspect and describe code issues that affect the requested commit,
+but do not edit, refactor, repair, or otherwise amend source code unless the user
+also explicitly asks for those code changes. If a fix is needed before a safe or
+accurate commit, report the finding and ask whether to make that fix; do not
+silently change the purpose or contents of the request. Preserve user-provided
+scope, intent, and constraints when selecting files and writing the message.
+
+Never use `git commit --amend`, rewrite an existing commit, or fold changes into
+an earlier commit unless the user explicitly requests that history change. A
+plain request to “commit my code” means create a new commit for the requested
+changes, subject to the scope and index checks below.
+
 ## Establish scope and state
 
 Identify the repository, desired operation, intended paths or revisions, applicable
@@ -35,7 +50,8 @@ failed commands limit the result; report the failure instead of inventing state.
   invocation alone does not supply execution permission. Stage only intended
   paths/hunks, inspect the full resulting index, and check it matches the approved
   scope before committing. Unexpected staged content requires resolving scope,
-  not silently committing it or unstaging someone else's work.
+  not silently committing it or unstaging someone else's work. Commit execution
+  does not authorize source edits, fixes, or `--amend`.
 - **Conflicts:** use [conflict resolution](references/conflict-resolution.md) for
   authorized merges, rebases or cherry-picks. Preserve both sides' requirements;
   unresolved semantic conflicts need a decision before continuing.
@@ -63,10 +79,29 @@ already covering each operation, including an explicit combined delivery request
 Review cannot authorize execution by itself.
 
 Preserve unrelated edits and existing staging. Use explicit paths or hunks rather
-than blind `git add .`. Inspect intended content for accidental credentials,
-generated artifacts and unrelated changes; redact any sensitive finding in output.
-If a secret is present, keep it out of the commit and resolve the intended content.
-Do not claim this review is a comprehensive secret scan. Run normal hooks; diagnose
+than blind `git add .`. Before committing, inspect the exact proposed index and
+check paths, file sizes, ignore rules and file contents for sensitive material.
+
+Do not commit a file over 10 MiB without explicit user confirmation naming that
+file. Report its path and size and pause before staging or committing it. Treat
+the threshold as a review trigger, not proof that smaller files are safe.
+
+Never include a detected secret or credential (for example, a populated `.env`,
+private key, token, password or credential store) in a commit. Keep it out of the
+index, do not print its value, and tell the user the path and type of concern. Ask
+the user how to proceed; confirmation to commit does not make a secret safe to
+publish. For sensitive configuration or credential-like files whose contents or
+purpose are uncertain, exclude them and request explicit path-specific confirmation
+before including them. Do not expose values when summarizing the concern.
+
+Check proposed files against applicable `.gitignore` rules and review whether
+unignored generated, local, cache, build, data, or environment-specific files
+appear to belong there. List each such candidate with a short reason and ask the
+user to confirm its inclusion before committing it. Do not add or force-add these
+files while confirmation is pending. Existing tracking or staging is not consent.
+
+Also inspect intended content for unrelated changes; redact sensitive findings in
+output. Do not claim this is a comprehensive secret scan. Run normal hooks; diagnose
 a failure before a bounded retry and never bypass hooks without explicit permission.
 Avoid raw remote URLs or configuration dumps that could disclose credentials.
 

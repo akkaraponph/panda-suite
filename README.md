@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.6.0** · 23 independent skills
+Version **1.6.1** · 23 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -18,7 +18,7 @@ multi-agent execution.
 Start with the [complete usage guide](docs/usage.md): invocation syntax, inputs,
 copyable examples and expected outputs for every skill.
 
-Current release: [v1.6.0 — Plan handoff and Write clarification](docs/v1.6.0.md).
+Current release: [v1.6.1](docs/v1.6.1.md).
 
 [Panda Craft](docs/panda-craft.md) composes explicitly selected specialists around
 a shared outcome, compact handoffs and acceptance evidence.
@@ -92,7 +92,7 @@ documentation; Spec defines proposed contracts and design.
 Use one method to avoid duplicate skill names. Check out the versioned release:
 
 ```sh
-git clone --branch v1.6.0 https://github.com/akkaraponph/panda-suite.git
+git clone --branch v1.6.1 https://github.com/akkaraponph/panda-suite.git
 cd panda-suite
 ```
 

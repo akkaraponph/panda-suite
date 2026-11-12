@@ -37,17 +37,32 @@ rewrite, tag and release authorization is retained. Inspect exact index content,
 preserve unrelated staging/edits, exclude secrets and run normal hooks. Report
 actual checks and blockers rather than claiming unobserved success.
 
+Before commit execution, files over 10 MiB require explicit path-specific
+confirmation. Detected secrets stay out of commits and are reported without
+exposing values. Sensitive or credential-like configuration and files that match
+ignore rules or appear generated/local are listed with reasons and require
+path-specific confirmation before inclusion; existing staging is not consent.
+
+A commit or message request grants Git-operation scope only: it does not authorize
+source fixes, refactors or other code edits. Report relevant concerns separately
+and seek direction if a fix is needed. Create a new commit unless the user explicitly
+requests amend or another history rewrite. `GIT-COMMIT-SCOPE` adds a regression
+case for suspected-bug pressure, preserving a new-commit-only request and unrelated
+draft content. `GIT-LARGE-FILE`, `GIT-SECRET-FILE`, and
+`GIT-IGNORE-CANDIDATE` cover the new commit gates.
+
 Lead routes Git requests. Craft, Refactor and Execute optionally load this guidance
 at their Git boundary, while retaining local safety and an unavailable-peer fallback.
 There is no mandatory dependency or pretend programmatic skill invocation.
 
 ## Cases and protocol
 
-Twelve `GIT-*` cases in `tests/scenarios/cases.json` cover breaking-change
+Sixteen `GIT-*` cases in `tests/scenarios/cases.json` cover breaking-change
 classification, review, execution, mixed staging, repository convention override,
 unverified issue references, failed hooks, missing evidence, unavailable tools,
-remote ambiguity, recovery and nonactivation. Reviewer expectations remain outside
-the fixture. Prepare baseline/specialist/Lead workspaces using the existing
+large-file/secret/ignore confirmation gates, remote ambiguity, recovery and
+nonactivation. Reviewer expectations remain outside the fixture. Prepare
+baseline/specialist/Lead workspaces using the existing
 `scripts/prepare-evaluation.py`; read only TASK.txt in a fresh task context.
 
 The synthetic fixture's setup.py creates a new child repository on explicit request.
