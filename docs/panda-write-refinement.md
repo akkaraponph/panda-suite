@@ -135,3 +135,34 @@ After adding the Refine rule that deletes "limits/not covered/does not define"
 notes, two reruns of `WRITE-EXACT-CODE` (new) produced no limits section and
 reported transport gaps in chat. Both still added a placeholder `export` example;
 one added "Keep the value secret".
+
+## Saved output under `.panda-suite/docs/` (2026-11-12)
+
+Request: save new documents under `.panda-suite/` like Panda Spec, support
+user-requested `.docx`/`.pdf`, and keep outputs out of commits because exports
+can be large. Earlier instructions named no default destination, so new guides
+landed at the project root or only in chat.
+
+Contract: new documents go to `.panda-suite/docs/YYYY-MM-DD-<topic>.<ext>`;
+Markdown by default, requested exports kept beside their Markdown source;
+convert only with existing tools and ask before installing; explicit path,
+in-place update, and chat-only requests take precedence; never stage or commit
+`.panda-suite/` output or edit ignore files unasked; say when Git would track it.
+Ignoring `.panda-suite/` stays the user's decision.
+
+Evaluation: same method as above, old = `9c53436`. `WRITE-SAVE-GIT` workspaces
+were initialized as Git repositories with the fixture committed and no ignore file.
+No docx/pdf converter (pandoc, python-docx, LibreOffice) was installed on the host.
+
+| Case | old | new |
+| --- | --- | --- |
+| `WRITE-SAVE-DEFAULT` | `integrations-guide.md` at root | `.panda-suite/docs/2026-11-12-integrations-guide.md` |
+| `WRITE-SAVE-DOCX` | `integrations-handover.docx` at root, hand-built from stdlib XML, no Markdown source | `.docx` (via macOS `textutil`) plus `.md` source in `.panda-suite/docs/`; no installs |
+| `WRITE-SAVE-PATH` | `docs/integrations.md` only | Same |
+| `WRITE-SAVE-GIT` | Guide in chat only; asked where to save | Saved in `.panda-suite/docs/`; index and history unchanged; ignore files untouched; reported Git would track `.panda-suite/` |
+| `WRITE-UPDATE` (regression) | Edited `guide.md` in place | Same; nothing created under `.panda-suite/` |
+
+Observed weakness: in the non-Git default case the new arm still advised adding
+`.panda-suite/` to an ignore file without checking Git. The docx run also used
+`template.md` and listed deployment and encryption as Pending items although the
+user named only the code as source. One sample per arm.

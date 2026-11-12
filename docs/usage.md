@@ -388,8 +388,13 @@ Use clear English. Do not modify application code.
 Expect the requested document, evidence anchors, checked examples and explicit gaps.
 Thai documentation is supported. Each integration is traced independently;
 implementation, configuration, deployed state, and remote contracts stay distinct.
-Exact unresolved facts use `Pending Confirmation` with the evidence needed.
-Review-only requests return findings without edits. Substantial architecture
+Unclear sources or facts produce a question first; `Pending Confirmation` is used
+when you allow continuing with gaps. New documents default to
+`.panda-suite/docs/YYYY-MM-DD-<topic>.md`, or `.docx`/`.pdf` beside the Markdown
+source when you ask for that format and a local converter exists. Panda Write
+does not stage or commit them; it tells you when Git would track `.panda-suite/`.
+An explicit path, an existing document to update, or chat-only output takes
+precedence. Review-only requests return findings without edits. Substantial architecture
 explanations and handovers use conditional guidance without imposing chapters
 on short guides. See the [Write refinement report](panda-write-refinement.md).
 Use Spec for implementation-oriented design and

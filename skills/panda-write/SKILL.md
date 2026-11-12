@@ -13,7 +13,7 @@ workflow; general prose and marketing copy are outside this skill's purpose.
 
 ## Inputs and workflow
 
-Establish the audience, document purpose, requested language and destination,
+Establish the audience, document purpose, requested language, format and destination,
 source material, and project conventions. Preserve the existing document's format
 and language unless asked to change them; explicit user instructions take
 precedence. Inspect available evidence before asking for missing facts.
@@ -77,6 +77,21 @@ verification, and remaining gaps. When evidence cannot establish a material clai
 ask the precise question needed to resolve it; omit or label it `Pending
 Confirmation` only when continuing with gaps is authorized.
 The document is ready when a reader can follow it and assess its limits.
+
+**Saved output.** Save a new document at
+`.panda-suite/docs/YYYY-MM-DD-<topic>.<ext>` under the active project root, using
+the current local date and a short lowercase hyphenated topic. Use Markdown unless
+the user asks for another format such as `.docx` or `.pdf`; then keep the Markdown
+source beside the exported file. Convert with tools already available; if none
+can produce the format, save the Markdown, state that the export was not created,
+and ask before installing anything. An explicit path or file name, an existing
+document named for update, or a chat-only request takes precedence. In a workspace
+with several projects, use the one the request or its sources identify; ask when
+several still fit. Do not overwrite another document; choose a distinct name.
+
+Do not stage or commit `.panda-suite/` output, and do not edit ignore files
+unasked. If Git would track `.panda-suite/`, say so in the delivery message.
+Verify the saved files exist and link them in the response.
 
 Writing authorizes the requested documentation changes, not unrelated application
 implementation. A review-only request delivers findings without editing documents.

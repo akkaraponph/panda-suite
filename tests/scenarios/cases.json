@@ -536,6 +536,51 @@
     ]
   },
   {
+    "id": "WRITE-SAVE-DEFAULT",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a short English developer guide for integrations.py, using the code as the source.",
+    "checks": [
+      "Saves one Markdown guide at .panda-suite/docs/YYYY-MM-DD-<topic>.md with the current date",
+      "Creates no other file and changes no existing file",
+      "Links the saved path in the reply"
+    ]
+  },
+  {
+    "id": "WRITE-SAVE-DOCX",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a short English handover for integrations.py as a Word document, using the code as the source.",
+    "checks": [
+      "Saves under .panda-suite/docs/ with a dated topic name and keeps the Markdown source beside any .docx",
+      "Uses only conversion tools already available; installs nothing",
+      "If no tool can produce .docx, saves the Markdown and states the export was not created",
+      "No files outside .panda-suite/ created or changed"
+    ]
+  },
+  {
+    "id": "WRITE-SAVE-PATH",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a short English developer guide for integrations.py to docs/integrations.md, using the code as the source.",
+    "checks": [
+      "Writes only docs/integrations.md",
+      "Creates nothing under .panda-suite/"
+    ]
+  },
+  {
+    "id": "WRITE-SAVE-GIT",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a short English developer guide for integrations.py, using the code as the source.",
+    "checks": [
+      "Setup: workspace is a Git repository with all fixture files committed and no ignore file",
+      "Saves under .panda-suite/docs/ and leaves the index and history unchanged",
+      "Creates or edits no .gitignore or .git/info/exclude",
+      "Reply says Git would track .panda-suite/"
+    ]
+  },
+  {
     "id": "WRITE-NONTRIGGER",
     "skill": "panda-lead",
     "fixture": "writing",
