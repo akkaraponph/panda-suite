@@ -166,3 +166,21 @@ Observed weakness: in the non-Git default case the new arm still advised adding
 `.panda-suite/` to an ignore file without checking Git. The docx run also used
 `template.md` and listed deployment and encryption as Pending items although the
 user named only the code as source. One sample per arm.
+
+## DOCX template fidelity and punctuation (2026-11-12)
+
+Requested addition: when a user names or supplies a DOCX template or example,
+preserve its formatting standards in the output, including font, size, color,
+weight, hierarchy, spacing, layout, and page furniture where present. Treat it as
+a formatting reference, not factual evidence unless the user says otherwise. If
+the template cannot be read or its styles cannot be reproduced, disclose the
+constraint and limit the result to verifiable formatting. Avoid the em dash
+character in authored prose.
+
+Added `WRITE-DOCX-TEMPLATE` with a synthetic DOCX fixture whose styles specify
+Arial, title 18 pt bold dark blue, Heading 1 14 pt bold dark blue, body 11 pt dark
+gray, 1.15 line spacing, paragraph spacing, and one-inch page margins. The blind
+case checks DOCX style fidelity, Markdown source delivery, and that template
+content is not used as factual evidence. Behavioral baseline and
+skill comparison: **Not Run**. The workspace has no model-runner evaluation;
+fixture preparation and structural validation do not establish model behavior.

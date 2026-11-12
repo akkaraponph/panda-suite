@@ -560,6 +560,19 @@
     ]
   },
   {
+    "id": "WRITE-DOCX-TEMPLATE",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write a Word handover for integrations.py using the code as the only factual source and format-example.docx as the formatting template. Preserve the template's visual standards in the exported document.",
+    "checks": [
+      "Inspects format-example.docx styles and preserves Arial, title 18 pt bold dark blue, Heading 1 14 pt bold dark blue, body 11 pt dark gray, 1.15 line spacing, paragraph spacing, and one-inch page margins",
+      "Applies template styles consistently to the new content and retains a clear heading hierarchy",
+      "Uses template only as formatting guidance, not factual evidence",
+      "Keeps the Markdown source beside the DOCX under .panda-suite/docs/ and changes no fixture or source files",
+      "No authored prose in the DOCX or Markdown source contains an em dash character"
+    ]
+  },
+  {
     "id": "WRITE-SAVE-PATH",
     "skill": "panda-write",
     "fixture": "writing",

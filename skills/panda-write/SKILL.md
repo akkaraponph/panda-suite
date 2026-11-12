@@ -18,6 +18,17 @@ source material, and project conventions. Preserve the existing document's forma
 and language unless asked to change them; explicit user instructions take
 precedence. Inspect available evidence before asking for missing facts.
 
+When the user names or supplies a DOCX template or example, inspect it before
+drafting and use it as the formatting reference. Match its page layout and
+document styles, including font family, size, color, weight, heading hierarchy,
+paragraph spacing, tables, headers, and footers where present. Apply the template's
+styles consistently to the new content; do not treat example wording as factual
+source material unless the user identifies it as such. If the template cannot be
+read or its formatting cannot be carried into the requested output, explain that
+constraint and use only formatting the available tools can verify. In authored
+prose, do not use the em dash character (—); use punctuation such as commas,
+parentheses, colons, or a period instead.
+
 **Ask before guessing.** Each section needs a named source of truth: current
 code, a document or system the user references, or the user's answer. Before
 drafting, ask one precise question when the source of truth, scope, audience, or
