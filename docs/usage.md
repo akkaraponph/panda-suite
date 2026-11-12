@@ -197,6 +197,12 @@ be distinguished. Proposed signatures must be capable of producing the promised
 errors; for example, a required Python argument omitted by a caller normally raises
 `TypeError` before function validation can raise `ValueError`.
 
+A saved plan ends by asking you to review it and choose how `panda-execute`
+should run it: **subagent-driven** (fresh implementer and reviewer per task) or
+**native** (this session implements every task, then one review). Plan
+recommends one and gives a ready request; naming a mode up front skips the
+question, and chat-only plans skip it too.
+
 ### Panda Spec
 
 Provide requirements, source, audience/language, and an existing template if available.
@@ -237,6 +243,18 @@ Verification derives expected outcomes from acceptance rules as well as existing
 tests. A green supplied suite may leave a required behavior unchecked; expect
 focused checks for those gaps and a separate statement of acceptance completeness.
 Restrictions on editing supplied tests remain in force.
+
+A saved plan is the contract. Name the mode in the request:
+
+```text
+$panda-execute (subagent-driven) Implement .panda-suite/plans/2026-11-12-bulk-csv-import.md.
+```
+
+Execute keeps the plan's names, tests and values, ticks a task's checkboxes only
+after its checks pass, resumes from the first unchecked task in a later session,
+records deviations in the plan, and continues to the last task without pausing.
+Without a named mode it runs native. If the host cannot delegate, a
+subagent-driven request falls back to native and says so.
 
 ## Quality and investigation
 
