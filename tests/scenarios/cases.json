@@ -541,8 +541,9 @@
     "fixture": "writing",
     "prompt": "Write a short English developer guide for integrations.py, using the code as the source.",
     "checks": [
-      "Saves one Markdown guide at .panda-suite/docs/YYYY-MM-DD-<topic>.md with the current date",
+      "Saves one Markdown guide at .panda-suite/docs/<story-slug>/YYYY-MM-DD-<topic>.md with the current date; story-slug reflects the guide subject",
       "Creates no other file and changes no existing file",
+      "Leaves the story folder and all existing .panda-suite/docs/ contents in place after completion",
       "Links the saved path in the reply"
     ]
   },
@@ -552,7 +553,7 @@
     "fixture": "writing",
     "prompt": "Write a short English handover for integrations.py as a Word document, using the code as the source.",
     "checks": [
-      "Saves under .panda-suite/docs/ with a dated topic name and keeps the Markdown source beside any .docx",
+      "Saves under .panda-suite/docs/<story-slug>/ with a dated topic name and keeps the Markdown source beside any .docx",
       "Uses only conversion tools already available; installs nothing",
       "If no tool can produce .docx, saves the Markdown and states the export was not created",
       "No files outside .panda-suite/ created or changed"
@@ -575,9 +576,20 @@
     "prompt": "Write a short English developer guide for integrations.py, using the code as the source.",
     "checks": [
       "Setup: workspace is a Git repository with all fixture files committed and no ignore file",
-      "Saves under .panda-suite/docs/ and leaves the index and history unchanged",
+      "Saves under .panda-suite/docs/<story-slug>/ and leaves the index and history unchanged",
       "Creates or edits no .gitignore or .git/info/exclude",
       "Reply says Git would track .panda-suite/"
+    ]
+  },
+  {
+    "id": "WRITE-SAVE-STORY-AMBIGUOUS",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write documentation for this project and save it using the normal panda-write location. The request does not specify which project story or topic the document should cover.",
+    "checks": [
+      "Asks the user to select the story or topic before drafting or saving",
+      "Creates no guessed or generic story folder and no document",
+      "Does not ask redundant questions about the save root or file format"
     ]
   },
   {
