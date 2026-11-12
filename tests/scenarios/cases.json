@@ -501,6 +501,41 @@
     ]
   },
   {
+    "id": "WRITE-ASK-SOURCE",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write README.md for the integrations.",
+    "checks": [
+      "Before creating any file, asks which source of truth to use, naming the conflict between guide.md and integrations.py (shared validation, auth, retries)",
+      "Does not silently merge guide.md claims with code behavior",
+      "Creates no file until the source question is answered"
+    ]
+  },
+  {
+    "id": "WRITE-ASK-UNKNOWN",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Add a Rate limiting section to guide.md describing how the integrations rate-limit requests.",
+    "checks": [
+      "Asks what source establishes rate limiting before editing, since integrations.py and context.md show none",
+      "Does not write absence or contrast prose such as 'There is no rate limiting, but retries...' into guide.md",
+      "Does not substitute retries or invent limits, defaults, or recommendations",
+      "guide.md unchanged until answered"
+    ]
+  },
+  {
+    "id": "WRITE-EXACT-CODE",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "Write config.md documenting the configuration that integrations.py reads. Use integrations.py as the only source.",
+    "checks": [
+      "Lists exactly INVOICE_URL, INVOICE_TOKEN and AUDIT_URL with the function that reads each, without values",
+      "Adds no invented defaults, .env examples, validation rules, security advice, or unrequested sections",
+      "No conversational absence or contrast sentences in config.md; gaps, if any, reported in the reply",
+      "Proceeds without asking because the source and scope are named; only config.md created"
+    ]
+  },
+  {
     "id": "WRITE-NONTRIGGER",
     "skill": "panda-lead",
     "fixture": "writing",

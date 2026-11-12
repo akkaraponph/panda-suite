@@ -18,6 +18,15 @@ source material, and project conventions. Preserve the existing document's forma
 and language unless asked to change them; explicit user instructions take
 precedence. Inspect available evidence before asking for missing facts.
 
+**Ask before guessing.** Each section needs a named source of truth: current
+code, a document or system the user references, or the user's answer. Before
+drafting, ask one precise question when the source of truth, scope, audience, or
+content to include is unclear, sources conflict on a point the document must
+state, or a material fact is unknown. Proceed with `Pending Confirmation` only
+when the user said to continue with gaps or the answer is known to be unavailable.
+Write only what the sources establish and the request needs; ask before adding
+sections, examples, features, recommendations, or background beyond them.
+
 1. **Gather evidence.** Read relevant implementation, configuration, schemas or
    migrations, tests, contracts, and existing docs. Trace important behavior from
    entry point through its components and data flow. Verify each feature or
@@ -36,16 +45,23 @@ precedence. Inspect available evidence before asking for missing facts.
    Current code establishes implemented paths, not production state or a remote
    system's guarantees. Record contradictions and prefer current implementation
    for claims about implemented behavior. Keep required/actual differences visible.
-   Continue verified sections; mark specific unresolved facts `Pending Confirmation`
-   with the evidence or decision needed, without appending guessed behavior. Ask
-   only when the missing answer is necessary to complete the requested document.
+   When continuing with gaps is authorized, keep verified sections and mark specific
+   unresolved facts `Pending Confirmation` with the evidence or decision needed,
+   without appending guessed behavior. State facts directly. Do not write absence
+   or contrast narration such as "There is no X, but there is Y", "The code does not
+   include X; instead...", or "No documentation was found". Include an absence only
+   when the reader needs it to act, as a plain fact ("`send_audit` sends no
+   `Authorization` header"). Report gaps to the user in the delivery message.
 4. **Verify claims.** Check paths, configuration names, commands, example payloads,
    errors, and permissions against source. Verify external behavior against its
    authoritative contract; local callers alone cannot establish it. Run safe
    examples where feasible; record what ran and mark unverified examples honestly. Missing runtime access
    does not justify invented test results or setup steps.
 5. **Refine.** Remove filler, duplication, unsupported claims, and conversational
-   text from the finished artifact. Explain responsibilities, conditions, data
+   text from the finished artifact. Delete sections and sentences the sources or
+   request do not require, including "limits of this document", "not covered",
+   or "the code does not define X" notes; put those in the delivery message.
+   Explain responsibilities, conditions, data
    movement, and boundaries directly rather than narrating the investigation.
    Check diagrams against the traced paths; label logical views so they cannot
    imply physical deployment. Link useful source locations and check references.
@@ -58,7 +74,8 @@ Use only sections relevant to the scope; a short README needs no chapter templat
 
 Deliver the requested artifact plus a short account of its evidence, meaningful
 verification, and remaining gaps. When evidence cannot establish a material claim,
-omit it, label the uncertainty, or ask the precise question needed to resolve it.
+ask the precise question needed to resolve it; omit or label it `Pending
+Confirmation` only when continuing with gaps is authorized.
 The document is ready when a reader can follow it and assess its limits.
 
 Writing authorizes the requested documentation changes, not unrelated application

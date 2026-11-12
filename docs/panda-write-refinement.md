@@ -95,3 +95,43 @@ isolated comparison on `WRITE-REVIEW`, followed by K and the nonactivation case.
 These checks verify packaging and evaluation preparation, not generated document
 quality. Installed plugin cache, standalone source project, and global settings
 were not updated.
+
+## Ask-first and document prose (2026-11-12)
+
+User-reported failure: drafts filled unknown facts or unrequested content instead
+of asking, and placed conversational absence/contrast sentences ("There is no X,
+but there is Y") in the finished document. Earlier text said to ask only when an
+answer was necessary and otherwise mark `Pending Confirmation`, which defaulted
+toward writing through gaps.
+
+| Change | Instruction |
+| --- | --- |
+| Named source of truth | Each section comes from code, a user-referenced source, or the user's answer |
+| Ask first | Ask before drafting when source, scope, audience, content, or a material fact is unclear or conflicting |
+| Gaps | `Pending Confirmation` only when the user authorized continuing or the answer is known to be unavailable |
+| No extras | Ask before adding sections, examples, features, recommendations, or background beyond the sources |
+| Prose | No absence/contrast narration in the document; material absences as plain facts; gaps reported in the reply |
+
+New blind cases: `WRITE-ASK-SOURCE`, `WRITE-ASK-UNKNOWN`, `WRITE-EXACT-CODE`.
+Existing `WRITE-MISSING`, `WRITE-UPDATE`, and `WRITE-THAI-PATHS` authorize or
+establish unavailable gaps, so they keep the `Pending Confirmation` path.
+Behavioral baseline/skill comparison: **Not Run**.
+
+### Evaluation (2026-11-12)
+
+Arms: `old` = `SKILL.md` at `d27c10a`; `new` = this revision. One fresh Sonnet
+subagent per case/arm, workspaces from `scripts/prepare-evaluation.py`, answer
+keys withheld. Single turn, so asking ends the run. One sample per arm, so
+model variance is not controlled.
+
+| Case | old | new |
+| --- | --- | --- |
+| `WRITE-ASK-SOURCE` | Wrote README.md, chose code over guide.md and imported Operator notes without asking | Asked which source of truth; named the three conflicts; no file |
+| `WRITE-ASK-UNKNOWN` | Edited guide.md with "do not implement rate limiting: there is no throttling... This is a retry count, not a rate limit" | Asked for the rate-limit source; guide.md unchanged |
+| `WRITE-EXACT-CODE` | Proceeded; added secret-store advice, "reads no files...", "does not validate", Scope and limits section, invented Pending items | Proceeded; tighter, but kept a "Limits of this document" section with absence prose |
+| `WRITE-MISSING` (regression) | Continued with Pending Confirmation, no file changes | Same; no blocking question |
+
+After adding the Refine rule that deletes "limits/not covered/does not define"
+notes, two reruns of `WRITE-EXACT-CODE` (new) produced no limits section and
+reported transport gaps in chat. Both still added a placeholder `export` example;
+one added "Keep the value secret".
