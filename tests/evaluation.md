@@ -58,6 +58,13 @@ The [Write refinement](../docs/panda-write-refinement.md) adds six `WRITE-*` cas
 for per-integration accuracy, review-only scope, conservative updates, missing
 deployment evidence, unavailable execution tools, and nonactivation.
 
+The [Plan refinement](../docs/panda-plan-refinement.md) adds `PLAN-INTERFACES`,
+`PLAN-PROPORTION`, and `PLAN-NONTRIGGER` for cross-task interfaces, review
+focus, step proportion, and nonactivation.
+Its execution-handoff revision adds `PLAN-HANDOFF`, `PLAN-HANDOFF-PRESET`,
+`EXEC-PLAN-RESUME`, and `EXEC-PLAN-SUBAGENT`; grade execution workspaces with
+[verify_exec.py](results/plan-handoff/verify_exec.py).
+
 ## Run and score fairly
 
 The [Research addition](../docs/panda-research.md) documents nine `RESEARCH-*`

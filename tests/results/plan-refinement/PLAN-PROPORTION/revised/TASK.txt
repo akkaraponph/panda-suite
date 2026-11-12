@@ -1,0 +1,3 @@
+Use panda-plan. Read its instructions at <repo>/skills/panda-plan/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Give a short implementation plan only in chat for adding manager rejection from requirements.md. Do not implement, create files, or change repository configuration.

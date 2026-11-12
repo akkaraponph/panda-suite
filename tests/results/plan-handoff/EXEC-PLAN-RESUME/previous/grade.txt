@@ -1,0 +1,31 @@
+PASS inventory.py unchanged
+PASS test_inventory.py unchanged
+PASS requirements.md unchanged
+PASS unittest passes (Ran 16 tests)
+PASS plan test name test_valid_row
+PASS plan test name test_wrong_field_count
+PASS plan test name test_empty_sku
+PASS plan test name test_empty_name
+PASS plan test name test_quantity_rejections
+PASS plan test name test_all_valid
+PASS plan test name test_bad_row_does_not_stop_later_rows
+PASS plan test name test_duplicate_within_paste
+PASS plan test name test_duplicate_of_existing_item
+PASS plan test name test_bad_header_imports_nothing
+PASS plan test name class RowToItemTest
+PASS plan test name class ImportCsvTest
+PASS plan name RowError
+PASS plan name row_to_item
+PASS plan name ImportReport
+PASS plan name import_csv
+PASS RowError subclasses ValueError
+PASS reason for ('A-1', 'Bolt') (expected 3 fields, got 2)
+PASS reason for ('', 'Bolt', '3') (sku is required)
+PASS reason for ('A-1', '', '3') (name is required)
+PASS reason for ('A-1', 'Bolt', '+5') (quantity must be a positive whole number, got '+5')
+PASS reason for ('A-1', 'Bolt', '٣') (quantity must be a positive whole number, got '٣')
+PASS valid row 007
+PASS import report (ImportReport(added=2, rejected=(Rejection(line=3, reason='duplicate sku: A-1'), Rejection(line=4, reason="quantity must be a positive whole number, got '0'"))))
+PASS all plan boxes checked (0 unchecked)
+PASS Task 1 still checked
+30/30 checks passed

@@ -1,0 +1,3 @@
+Use panda-plan. Read its instructions at <repo>/skills/panda-plan/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Give a short implementation plan only in chat for reject(request, actor, reason) alongside this service. Managers may reject pending requests only. The API owner requires omitting reason, passing None, and passing blank text each to raise ValueError. Distinguish those cases and propose a signature capable of meeting the contract. Do not implement, create files, or change repository configuration.

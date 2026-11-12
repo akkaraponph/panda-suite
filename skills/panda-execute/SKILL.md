@@ -17,6 +17,32 @@ or fix counts as authorization for relevant reversible changes; do not ask again
 For a clear small change without a plan file, state a compact task sequence and
 proceed. Ask when missing requirements materially change correctness or scope.
 
+## Executing a saved plan
+
+A saved plan is the contract. Implement every task in order with the files,
+names, signatures, tests, and values it states; do not rename, merge, or redesign
+silently. Track progress in the plan file itself: check off a task's boxes only
+after its checks pass, so a later session can resume. On resume, re-run the
+checks of tasks already marked done, then continue from the first unchecked
+task. Record any necessary deviation under a "Deviations" heading in the plan
+with its reason, following the contradiction rule below. Keep going until every
+task is verified or a precise blocker remains; do not pause between tasks to ask
+whether to continue.
+
+Use the mode the user chose. With none named, run native and mention that a
+subagent-driven run is available.
+
+- **Native:** run the execution loop below for each task in this session, then
+  review the whole diff against the plan, using a fresh reviewer when the host
+  can delegate.
+- **Subagent-driven:** for each task, give a fresh implementer only that task's
+  text, its interfaces note, the plan's constraints, and the relevant paths.
+  Re-run the task's checks yourself; a subagent's report is not evidence. Then
+  give a fresh reviewer the task, the plan's acceptance criteria, and the diff;
+  fix material findings before the next task. Run tasks that touch the same
+  files one at a time. Finish with one whole-change review. If the host cannot
+  delegate, say so and run native.
+
 ## Execution loop
 
 1. Select the next unblocked task in dependency order. Name its objective and

@@ -1,0 +1,1 @@
+Create an implementation plan for requirements.md that a different engineer will execute task by task without seeing this conversation. Use the existing inventory code. Do not implement.

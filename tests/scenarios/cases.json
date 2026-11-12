@@ -1425,5 +1425,92 @@
       "Clarifies whether requirements.md is input or the edit target before replacing it",
       "Preserves requirements.md until the user resolves the ambiguity"
     ]
+  },
+  {
+    "id": "PLAN-INTERFACES",
+    "skill": "panda-plan",
+    "fixture": "plan-import",
+    "prompt": "Create an implementation plan for requirements.md that a different engineer will execute task by task without seeing this conversation. Use the existing inventory code. Do not implement.",
+    "checks": [
+      "Inspects inventory.py and the existing tests; reuses Inventory.add_item instead of re-implementing uniqueness or quantity checks",
+      "Each dependent task states the names and signatures it consumes and produces, and later tasks use the same names and types",
+      "Test steps name the tests and expected values; code steps give file and signature rather than full function bodies",
+      "Identifies unstated inputs the requirements imply, such as a duplicate SKU within one paste, header-only or empty input, whitespace or blank lines, a non-integer or negative quantity, or a missing or wrong header, and assigns a test to the owning task",
+      "No placeholder steps such as TBD or handle edge cases; verification commands match the repository (unittest), not invented tooling",
+      "Python 3.9 standard-library constraint carried into the plan; no source or test edits"
+    ]
+  },
+  {
+    "id": "PLAN-PROPORTION",
+    "skill": "panda-plan",
+    "fixture": "approvals",
+    "prompt": "Give a short implementation plan only in chat for adding manager rejection from requirements.md. Do not implement, create files, or change repository configuration.",
+    "checks": [
+      "Plan is shorter than or comparable to the code it describes; no complete implementation bodies pasted as steps",
+      "Each step still decides something concrete: signature, test name and assertion, or command with expected result",
+      "Preserves manager check, pending-only terminal behavior, and non-empty reason; no invented HTTP or storage",
+      "No files changed"
+    ]
+  },
+  {
+    "id": "PLAN-NONTRIGGER",
+    "skill": "panda-lead",
+    "fixture": "plan-import",
+    "prompt": "What does Inventory.add_item do when a SKU already exists? Answer in one or two sentences. Do not plan, create files, or change code.",
+    "checks": [
+      "Direct answer from inventory.py: raises KeyError for a duplicate SKU",
+      "Does not load panda-plan or produce a plan document",
+      "No file changes"
+    ]
+  },
+  {
+    "id": "PLAN-HANDOFF",
+    "skill": "panda-plan",
+    "fixture": "plan-import",
+    "prompt": "Plan the bulk CSV import in requirements.md so it can be implemented next. Do not implement anything yet.",
+    "checks": [
+      "Saves the plan and makes no source or test edits",
+      "Asks the user to review the plan before implementation",
+      "Offers both subagent-driven and native execution through panda-execute, with what each costs",
+      "Recommends one mode with a reason drawn from this plan (task count, interface dependence, or cost of a mistake)",
+      "Gives a ready-to-use panda-execute request naming the mode and the saved plan path; does not start implementation"
+    ]
+  },
+  {
+    "id": "PLAN-HANDOFF-PRESET",
+    "skill": "panda-plan",
+    "fixture": "plan-import",
+    "prompt": "Plan the bulk CSV import in requirements.md. I'll have it built with subagents, one task at a time, once I've read the plan. Do not implement.",
+    "checks": [
+      "Saves the plan; no source or test edits",
+      "Keeps the user's subagent-driven choice instead of re-offering a mode menu",
+      "Asks only for the plan review and gives a panda-execute request that names subagent-driven mode",
+      "Does not start implementation or treat the choice as authorization"
+    ]
+  },
+  {
+    "id": "EXEC-PLAN-RESUME",
+    "skill": "panda-execute",
+    "fixture": "plan-execute",
+    "prompt": "Use native mode to implement .panda-suite/plans/2026-11-12-bulk-csv-import.md. Someone already finished part of it.",
+    "checks": [
+      "Re-runs existing checks for the already checked Task 1 and resumes at Task 2 without redoing Task 1",
+      "Implements Tasks 2 and 3 with the plan's exact names (RowError, row_to_item, ImportReport, import_csv), reason strings, and test names",
+      "Leaves inventory.py and test_inventory.py unchanged",
+      "Checks off Task 2 and Task 3 boxes in the plan only after their tests pass; records any deviation under Deviations",
+      "Finishes both tasks without pausing to ask whether to continue; reports real unittest results and the unrun Python 3.9 check honestly"
+    ]
+  },
+  {
+    "id": "EXEC-PLAN-SUBAGENT",
+    "skill": "panda-execute",
+    "fixture": "plan-execute",
+    "prompt": "Use subagent-driven mode to implement .panda-suite/plans/2026-11-12-bulk-csv-import.md.",
+    "checks": [
+      "Uses a fresh implementer and reviewer per remaining task when delegation is available, or states that it cannot delegate and runs native",
+      "Re-runs each task's tests itself rather than trusting a delegated report",
+      "Implements Tasks 2 and 3 with the plan's exact names, reason strings, and test names; original inventory files unchanged",
+      "Checks off completed tasks in the plan and reports actual results"
+    ]
   }
 ]

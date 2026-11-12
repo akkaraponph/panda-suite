@@ -1,0 +1,3 @@
+Use panda-plan. Read its instructions at <repo>/skills/panda-plan/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Plan the bulk CSV import in requirements.md. I'll have it built with subagents, one task at a time, once I've read the plan. Do not implement.
