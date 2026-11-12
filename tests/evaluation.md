@@ -64,6 +64,13 @@ focus, step proportion, and nonactivation.
 Its execution-handoff revision adds `PLAN-HANDOFF`, `PLAN-HANDOFF-PRESET`,
 `EXEC-PLAN-RESUME`, and `EXEC-PLAN-SUBAGENT`; grade execution workspaces with
 [verify_exec.py](results/plan-handoff/verify_exec.py).
+The scope-change revision adds `PLAN-SCOPE-REVISION` and
+`EXEC-SCOPE-REVISION`: propagate an explicit scope decision across the saved
+plan, then execute only the remaining authorized tasks. The execution fixture's
+initial tests pass while omitting the required invalidation, so reviewers must
+check behavior independently of suite status. `PLAN-INTERFACES` and
+`EXEC-PLAN-RESUME` remain structural and execution controls. Model comparison
+status is recorded in [Plan refinement](../docs/panda-plan-refinement.md).
 
 ## Run and score fairly
 

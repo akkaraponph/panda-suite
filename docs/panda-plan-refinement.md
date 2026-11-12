@@ -61,3 +61,27 @@ Results are in
 [tests/results/plan-handoff](../tests/results/plan-handoff/summary.md): the mode
 offer appeared only with the revision; both Execute versions completed the plan,
 but only the revised one left finished work unchanged. One run per arm.
+
+## Scope-change refinement
+
+Review of the Master File snapshot plan found a concrete propagation failure:
+after the user narrowed work to runtime-only, the plan still required a legacy
+repair migration in its task list, review focus, file map, deployment check, and
+final acceptance checklist. The progress ledger recorded that the migration had
+been removed, so the saved plan and its execution record also disagreed.
+
+`panda-plan` now treats an authoritative scope decision as applying across the
+whole artifact and searches for stale references to removed work. `panda-execute`
+updates the saved plan when the user has already made that decision, removes
+descoped work and checks, then continues with remaining authorized tasks. It
+asks only when the user's direction leaves scope unsettled.
+
+Blind cases `PLAN-SCOPE-REVISION` and `EXEC-SCOPE-REVISION` cover plan editing
+and execution after scope narrowing. The execution fixture starts with a green
+suite that does not detect missing invalidation; hidden checks must inspect the
+behavior and final plan, not treat passing tests as sufficient. Existing plan
+resume and execution-contract cases remain controls. The fixtures were validated
+locally: both initial execution-fixture tests pass, while a direct probe confirms
+the baseline `sync_and_refresh` never calls invalidation; the 30 tooling tests,
+skill validator, and Codex discovery check pass. Fresh-context baseline/skill
+model runs are **Not Run**, so behavioral improvement is not yet established.

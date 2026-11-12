@@ -54,6 +54,13 @@ unknowns and label any proposed file layout as provisional.
    specify them separately. Check that the proposed language or framework can
    actually deliver the promised error at the stated boundary; leave unresolved
    policy explicit rather than assigning an accidental runtime behavior.
+   When an authoritative scope decision changes an existing proposal, apply it
+   throughout the artifact. Reconcile the goal, scope, constraints, file map,
+   review focus, tasks, dependencies, risks, acceptance checklist, verification,
+   and handoff; remove stale work and checks. Keep a brief decision note only
+   when future readers need to know why scope changed. Before delivery, search
+   for names and terms from the removed scope and resolve every remaining
+   reference, including references that imply the work is still required.
 
 ## Output and completion
 

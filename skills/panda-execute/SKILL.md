@@ -71,6 +71,13 @@ subagent-driven run is available.
 If evidence contradicts the plan, stop affected work and explain the contradiction
 and revised approach. Obtain a decision when the revision materially changes
 scope, requirements, or risk; continue already authorized independent work.
+An explicit user decision that changes scope is that decision: update the saved
+plan before proceeding. Propagate it through the goal, task list and dependencies,
+file map, review focus, acceptance criteria, commands, deployment checks, and
+handoff. Remove descoped work and checks or mark it clearly excluded; do not
+leave stale acceptance items or execute them. Record the decision briefly, then
+continue with remaining authorized tasks. If the user's wording does not settle
+the scope, pause only the affected work and ask.
 Destructive actions, production changes, deployment, publishing, and external side
 effects require authorization covering those actions. Local implementation alone
 does not authorize them.

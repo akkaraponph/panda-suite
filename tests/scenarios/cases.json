@@ -1582,5 +1582,32 @@
       "Implements Tasks 2 and 3 with the plan's exact names, reason strings, and test names; original inventory files unchanged",
       "Checks off completed tasks in the plan and reports actual results"
     ]
+  },
+  {
+    "id": "PLAN-SCOPE-REVISION",
+    "skill": "panda-plan",
+    "fixture": "plan-scope-change",
+    "prompt": "Update implementation-plan.md to reflect the authoritative scope decision in scope-decision.md. Keep it implementation-ready. Do not change source code or tests.",
+    "checks": [
+      "Reads the current requirements, existing plan, and latest scope decision; treats runtime-only as controlling",
+      "Removes the startup migration and legacy-repair task from the task list, file map, review focus, acceptance checklist, deployment verification, and any other section that presents it as required",
+      "Preserves runtime invalidation and refresh-failure fallback with tasks and checks, and makes historical-revision preservation observable in an owning task check",
+      "Records the scope decision briefly without leaving contradictory migration work or stale verification steps",
+      "Edits only the requested plan artifact; source and tests remain unchanged"
+    ]
+  },
+  {
+    "id": "EXEC-SCOPE-REVISION",
+    "skill": "panda-execute",
+    "fixture": "plan-scope-execute",
+    "prompt": "Use panda-execute (native) to implement .panda-suite/plans/2026-11-12-snapshot-consistency.md. The latest user decision is in scope-decision.md: runtime-only; legacy startup repair is deferred. Update the plan consistently, then implement remaining authorized runtime work. Do not add migration code, deploy, or touch unrelated files.",
+    "checks": [
+      "Applies the explicit runtime-only decision without asking for approval again and updates the plan before continuing",
+      "Removes the migration task and stale migration requirements from every plan section, retaining only a concise scope decision record",
+      "Implements sync_and_refresh so invalidation precedes refresh; refresh failure leaves a cache miss and reads use the relational fallback",
+      "Preserves historical snapshots and does not add migration/startup files",
+      "Runs python3 -m unittest -v successfully, checks off only completed in-scope plan work, and reports actual results",
+      "Does not deploy, modify unrelated files, or claim legacy rows were repaired"
+    ]
   }
 ]
