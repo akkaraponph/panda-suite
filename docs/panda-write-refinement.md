@@ -184,3 +184,30 @@ case checks DOCX style fidelity, Markdown source delivery, and that template
 content is not used as factual evidence. Behavioral baseline and
 skill comparison: **Not Run**. The workspace has no model-runner evaluation;
 fixture preparation and structural validation do not establish model behavior.
+
+## PM and Tech Lead writing register (2026-11-13)
+
+The user asked for writing that sounds like a product manager, project manager,
+or Tech Lead: easy to understand, academically careful, and free of AI-style
+filler. The skill already required professional Thai, direct prose, and factual
+support, but did not define this reader-oriented register or distinguish it from
+adding a management persona or unsupported decision framework.
+
+Added a concise drafting rule: state status or decision, evidence, impact,
+dependencies, and next action when relevant; connect conclusions to evidence;
+define terms; prefer concrete verbs; remove filler and slogans; add role-oriented
+sections only when requested and supported. This applies to style while preserving
+the skill's evidence and scope requirements.
+
+Added blind case `WRITE-VOICE`, which asks for a Thai status note from the existing
+integration fixture. It checks reader fit, separate path descriptions, useful
+impact and evidence gaps, restrained recommendations, and concise evidence-linked
+language. The reviewer-only checks stay in `tests/scenarios/cases.json`.
+
+Behavioral baseline/skill comparison: **Not Run**. The repository has no model
+runner; the scenario is runnable through the existing preparation script. This
+change is a testable style contract, not evidence that generated prose improved.
+Next justified step: run `WRITE-VOICE` in fresh baseline and specialist contexts
+with the same model, tools, and budget, then compare artifact text against the
+blind checks. The required `RTK.md` referenced by workspace instructions was not
+present in the workspace or its checked ancestors.

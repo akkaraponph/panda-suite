@@ -53,6 +53,16 @@ sections, examples, features, recommendations, or background beyond them.
    B2-level English. For Thai, use professional Thai with established technical
    terms and exact identifiers. Separate implementation, configuration, deployed
    state, external-system contracts, confirmed requirements, and proposals.
+   Write in the register of a product manager, project manager, or technical
+   lead: state the decision or status, supporting evidence, impact, dependencies,
+   and next action in terms the intended reader can use. Keep the reasoning
+   academically careful by defining relevant terms, connecting conclusions to
+   evidence, and distinguishing fact from interpretation. Prefer concrete verbs
+   and familiar wording. Remove generic introductions, repeated summaries,
+   inflated claims, canned transitions, and vague recommendations. Use role
+   language only when the document's purpose calls for it; do not add a persona,
+   management framework, or decision section that the request and sources do not
+   support. Avoid AI-generated-sounding filler and slogans.
    Current code establishes implemented paths, not production state or a remote
    system's guarantees. Record contradictions and prefer current implementation
    for claims about implemented behavior. Keep required/actual differences visible.

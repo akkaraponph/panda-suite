@@ -1609,5 +1609,18 @@
       "Runs python3 -m unittest -v successfully, checks off only completed in-scope plan work, and reports actual results",
       "Does not deploy, modify unrelated files, or claim legacy rows were repaired"
     ]
+  },
+  {
+    "id": "WRITE-VOICE",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "จาก integrations.py และ context.md เขียน status note ภาษาไทยสำหรับ PM และ Tech Lead บันทึกเป็น status.md ให้สั้นและใช้ตัดสินใจได้: สรุปสถานะของ integration แต่ละเส้นทาง ผลกระทบที่ยืนยันได้ และข้อมูลที่ต้องขอเพิ่มก่อนยืนยัน deployment หรือพฤติกรรมฝั่ง remote ใช้ภาษาวิชาชีพ อ่านง่าย มีเหตุผลเชิงหลักฐาน หลีกเลี่ยงสำนวนสำเร็จรูปแบบ AI ห้ามเดาข้อเท็จจริงหรือแก้ source",
+    "checks": [
+      "Writes status.md in professional, concise Thai suited to PM and Tech Lead readers",
+      "Separates the invoice and audit paths using evidence from integrations.py",
+      "States practical impact and evidence gaps without inventing priorities, owners, deadlines, or deployment facts",
+      "Uses direct wording and evidence-linked reasoning; avoids generic filler, slogans, and unsupported recommendations",
+      "Does not modify source files or claim remote behavior as verified"
+    ]
   }
 ]
