@@ -29,6 +29,17 @@ constraint and use only formatting the available tools can verify. In authored
 prose, do not use the em dash character (—); use punctuation such as commas,
 parentheses, colons, or a period instead.
 
+For DOCX documents, assign consistent built-in heading styles and levels to the
+title and section headings. Do not add a table of contents unless the user
+requests one. When the user requests a diagram, draft its Mermaid source first,
+check it against the traced evidence, render it to an image with an available
+tool, then insert that image into the DOCX. Keep the Mermaid source beside the
+Markdown and DOCX deliverables. If no renderer is available, do not install one;
+deliver the source and report that the embedded image was not produced. For Thai
+documents, indent each body prose paragraph by one tab stop. Apply this as
+first-line paragraph formatting in DOCX; headings, list items, table cells, and
+code are not prose paragraphs.
+
 **Ask before guessing.** Each section needs a named source of truth: current
 code, a document or system the user references, or the user's answer. Before
 drafting, ask one precise question when the source of truth, scope, audience, or
@@ -62,7 +73,16 @@ sections, examples, features, recommendations, or background beyond them.
    inflated claims, canned transitions, and vague recommendations. Use role
    language only when the document's purpose calls for it; do not add a persona,
    management framework, or decision section that the request and sources do not
-   support. Avoid AI-generated-sounding filler and slogans.
+   support. Avoid AI-generated-sounding filler and slogans. When a source
+   explicitly names a set of models or tables and gives its count, state the set
+   name and count before listing every exact identifier. For Thai, use a concise
+   construction such as `สำหรับ <ชื่อระบบ> ประกอบด้วยตาราง <จำนวน> ตาราง ดังนี้`
+   and then enumerate the names. Keep models and database tables distinct; do
+   not label models as tables or supply names absent from the source.
+   For Thai documents, turn source fragments into complete, natural sentences
+   and organize them by meaning. Preserve the source's factual boundaries: make
+   arithmetic only from confirmed values, and do not infer causes, functionality,
+   statistical significance, or recommendations that the source does not support.
    Current code establishes implemented paths, not production state or a remote
    system's guarantees. Record contradictions and prefer current implementation
    for claims about implemented behavior. Keep required/actual differences visible.
@@ -85,7 +105,9 @@ sections, examples, features, recommendations, or background beyond them.
    Explain responsibilities, conditions, data
    movement, and boundaries directly rather than narrating the investigation.
    Check diagrams against the traced paths; label logical views so they cannot
-   imply physical deployment. Link useful source locations and check references.
+   imply physical deployment. For a requested DOCX diagram, verify the Mermaid
+   source, rendered image, and embedded image agree. Link useful source locations
+   and check references.
 
 For a substantial architecture explanation, integration guide, or technical
 handover, read [engineering document guidance](references/engineering-documents.md).

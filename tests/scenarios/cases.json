@@ -573,6 +573,49 @@
     ]
   },
   {
+    "id": "WRITE-THAI-ACADEMIC-TRANSFORM",
+    "skill": "panda-write",
+    "fixture": "writing-thai-academic",
+    "prompt": "ใช้ facts.md เป็นแหล่งข้อมูลเดียว เขียนสรุปภาษาไทยแบบวิชาชีพลงใน summary.md เรียบเรียงข้อความย่อให้เป็นประโยคธรรมชาติและเชื่อมโยงอย่างมีเหตุผล คงขอบเขตข้อมูลตาม source",
+    "checks": [
+      "Writes concise, formal, natural Thai that turns each source fragment into a complete sentence",
+      "States the three named system components without adding functions not present in facts.md",
+      "Describes the listed process in order without adding validation rules, asynchronous behavior, or error handling",
+      "Describes the relationship between Module A and Module B without inventing its mechanism or causal effect",
+      "Calculates 96 of 120 as 80 percent and the reduction from 8 seconds to 5 seconds as 37.5 percent",
+      "Does not claim statistical significance or broader system performance improvement",
+      "Uses no unsupported facts, recommendations, or filler and creates only summary.md"
+    ]
+  },
+  {
+    "id": "WRITE-TABLE-COUNT-TH",
+    "skill": "panda-write",
+    "fixture": "writing-table-count",
+    "prompt": "จาก schema.sql ซึ่งเป็นแหล่งข้อมูลเดียว เขียนหัวข้อภาษาไทยสั้น ๆ สำหรับเอกสารระบบ โดยระบุว่ามี table 7 ตาราง แล้วลิสต์ชื่อทั้งเจ็ดตาม source ใช้ประโยคแนว 'ระบบนี้ประกอบด้วยตาราง 7 ตาราง ดังนี้' ห้ามเพิ่มหรือเปลี่ยนชื่อ",
+    "checks": [
+      "States that the system consists of 7 tables before listing them",
+      "Lists all seven table identifiers exactly as declared in schema.sql",
+      "Does not omit, duplicate, rename, or invent a table identifier",
+      "Calls them tables and does not conflate them with models",
+      "Uses concise, professional Thai and creates only the requested document"
+    ]
+  },
+  {
+    "id": "WRITE-DOCX-DIAGRAM-THAI",
+    "skill": "panda-write",
+    "fixture": "writing",
+    "prompt": "ใช้ integrations.py เป็นแหล่งข้อมูลเดียว สร้าง DOCX handover ภาษาไทย โดยเพิ่ม diagram เส้นทาง invoice และ audit: เขียน Mermaid source ก่อน render เป็นภาพแล้วฝังภาพลงใน DOCX ตั้ง style ของ title และ heading ให้ถูกระดับ เยื้องย่อหน้าข้อความไทยย่อหน้าละ 1 tab และไม่ต้องทำ TOC",
+    "checks": [
+      "Creates a Markdown source, a DOCX, and Mermaid source in the same story folder",
+      "Mermaid source accurately distinguishes invoice and audit flows using integrations.py; it is created before the rendered image",
+      "Renders the Mermaid source with an available tool and embeds the resulting image in the DOCX; if rendering is unavailable, installs nothing and reports the missing image",
+      "Uses consistent title and heading styles with a clear hierarchy in the DOCX",
+      "Does not create a TOC",
+      "Indents each Thai body prose paragraph by exactly one tab stop; does not apply prose indentation to headings, lists, tables, or code",
+      "Does not alter fixture or source files and does not invent remote behavior"
+    ]
+  },
+  {
     "id": "WRITE-SAVE-PATH",
     "skill": "panda-write",
     "fixture": "writing",

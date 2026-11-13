@@ -211,3 +211,54 @@ Next justified step: run `WRITE-VOICE` in fresh baseline and specialist contexts
 with the same model, tools, and budget, then compare artifact text against the
 blind checks. The required `RTK.md` referenced by workspace instructions was not
 present in the workspace or its checked ancestors.
+
+## DOCX diagrams, heading styles, and Thai paragraphs (2026-11-13)
+
+The user requested a DOCX workflow that writes Mermaid source before rendering
+and embedding the diagram, consistent title and heading styles, no TOC unless
+requested, and one tab of indentation for Thai paragraphs. These are requested
+behavioral requirements; this turn did not include an observed model failure.
+
+`panda-write` now specifies this workflow, including evidence checking for the
+diagram, retaining Mermaid source beside the document deliverables, use of an
+available renderer only, and no installation when rendering is unavailable. Thai
+indentation applies to body prose in DOCX, not headings, lists, tables, or code.
+DOCX heading levels use consistent built-in styles. TOC creation is opt-in.
+
+Added blind case `WRITE-DOCX-DIAGRAM-THAI` against the existing integration
+fixture. It checks the requested Mermaid-to-image order and embed, accurate
+separate flows, heading styles, omitted TOC, Thai paragraph indentation, and
+scope. Structural validation and scenario preparation do not prove the model
+will follow these rules. Baseline/skill behavioral comparison: **Not Run**.
+
+## Explicit table counts in Thai documentation (2026-11-13)
+
+The user requested a harness case for documentation where seven table names are
+explicit in the source. The desired wording states the table count and then lists
+the names. The source must establish both the count and category; model names must
+not be relabeled as database tables.
+
+`panda-write` now directs writers to state a source-supported set name and count
+before enumerating exact identifiers, with a concise Thai sentence pattern. Added
+blind case `WRITE-TABLE-COUNT-TH` and a synthetic SQL fixture with seven declarations.
+The case checks count, full exact-name coverage, category, and no extra names.
+The fixture is synthetic and is not evidence about any real schema.
+Structural validation and preparation do not establish model behavior;
+baseline/skill comparison: **Not Run**.
+
+## Thai academic and professional writing harness (2026-11-13)
+
+The user supplied a Thai writing guide emphasizing natural formal prose, source
+fidelity, logical organization, exact terminology, numerically correct
+calculations, and no unsupported interpretations. Panda Write already covered
+evidence boundaries and professional Thai; the added skill guidance focuses on
+turning fragments into complete prose while restricting calculations and
+interpretations to source-supported facts.
+
+Added blind case `WRITE-THAI-ACADEMIC-TRANSFORM` and synthetic `facts.md`. Checks
+cover named components, sequential process wording, an unspecified module
+relationship, two calculations (80% and 37.5%), and avoiding unsupported claims.
+The fixture tests these writing transformations only; it does not claim to
+evaluate every academic, legal, or institutional document type in the supplied
+guide. Structural validation and preparation do not establish model behavior;
+baseline/skill comparison: **Not Run**.

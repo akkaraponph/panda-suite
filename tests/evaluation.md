@@ -54,13 +54,20 @@ observe its actual UI using available browser tools. Keep no-browser and observe
 runs separate. A saved [observed manual](results/browser-manual/manual.md) shows
 the bounded journey and actual capture.
 
-The [Write refinement](../docs/panda-write-refinement.md) adds seven `WRITE-*` cases
+The [Write refinement](../docs/panda-write-refinement.md) adds ten `WRITE-*` cases
 for per-integration accuracy, review-only scope, conservative updates, missing
 deployment evidence, unavailable execution tools, and nonactivation.
 `WRITE-VOICE` checks whether a Thai status note for PM and Tech Lead readers uses
 concise, evidence-linked reasoning without generic filler or unsupported
 management details. Baseline and skill behavior must be evaluated in fresh,
 comparable contexts; scenario presence alone does not establish a style improvement.
+`WRITE-DOCX-DIAGRAM-THAI` checks Mermaid-source-first diagram rendering and DOCX
+embedding, heading styles, no unsolicited TOC, and one-tab Thai prose indentation.
+`WRITE-TABLE-COUNT-TH` checks a Thai count-and-list statement against seven explicitly
+named table declarations, preserving their identifiers and category.
+`WRITE-THAI-ACADEMIC-TRANSFORM` checks natural formal Thai rewrites of source
+fragments, accurate calculations, and restraint around unsupported causality or
+significance.
 
 The [Plan refinement](../docs/panda-plan-refinement.md) adds `PLAN-INTERFACES`,
 `PLAN-PROPORTION`, and `PLAN-NONTRIGGER` for cross-task interfaces, review

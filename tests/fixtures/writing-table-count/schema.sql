@@ -1,0 +1,8 @@
+-- Synthetic schema used only by the WRITE-TABLE-COUNT-TH scenario.
+CREATE TABLE organizations (id INTEGER PRIMARY KEY);
+CREATE TABLE users (id INTEGER PRIMARY KEY);
+CREATE TABLE cases (id INTEGER PRIMARY KEY);
+CREATE TABLE case_events (id INTEGER PRIMARY KEY);
+CREATE TABLE documents (id INTEGER PRIMARY KEY);
+CREATE TABLE attachments (id INTEGER PRIMARY KEY);
+CREATE TABLE audit_logs (id INTEGER PRIMARY KEY);
