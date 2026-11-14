@@ -15,6 +15,7 @@ REPO = 'https://github.com/akkaraponph/panda-suite'
 SKILLS = [
     ('panda-lead', 'Panda Lead'),
     ('panda-craft', 'Panda Craft'),
+    ('panda-logo', 'Panda Logo'),
     ('panda-git', 'Panda Git'),
     ('panda-brainstorm', 'Panda Brainstorm'),
     ('panda-research', 'Panda Research'),
@@ -71,6 +72,9 @@ def build():
     packaged = {p.parent.name for p in (ROOT / 'skills').glob('*/SKILL.md')}
     assert packaged == {slug for slug, _ in SKILLS}, 'Update the site skill list for the packaged catalog'
     for slug, title in SKILLS:
+        if slug == 'panda-logo':
+            add(slug, title, 'docs/panda-logo.md')
+            continue
         if slug == 'panda-lead':
             body = usage.split('## Choose a workflow\n', 1)[1].split('\n## Product discovery', 1)[0]
         else:
@@ -92,6 +96,7 @@ def build():
         ('release-v1-1-1', 'Release v1.1.1', 'docs/v1.1.1.md'),
         ('release-v1-2-0', 'Release v1.2.0', 'docs/v1.2.0.md'),
         ('release-v1-6-2', 'Release v1.6.2', 'docs/v1.6.2.md'),
+        ('release-v1-7-0', 'Release v1.7.0', 'docs/v1.7.0.md'),
         ('release-v1-6-3', 'Release v1.6.3', 'docs/v1.6.3.md'),
         ('release-v1-6-1', 'Release v1.6.1', 'docs/v1.6.1.md'),
         ('release-v1-6-0', 'Release v1.6.0', 'docs/v1.6.0.md'),
@@ -108,6 +113,7 @@ def build():
                      if slug not in {s for s, _ in SKILLS} | {'skills', 'installation'}}
     source_routes['README.md'] = 'index.html'
     source_routes['docs/usage.md'] = 'usage.html'
+    source_routes['docs/panda-logo.md'] = 'panda-logo.html'
     # Generated page links stay relative to the project path on GitHub Pages.
     def url_rewrite(url, source):
         if url.startswith(('#', '/', 'https:', 'http:', 'mailto:', 'data:')):
@@ -130,7 +136,7 @@ def build():
     groups = [
         ('Get started', [('index', 'Welcome'), ('installation', 'Installation'), ('skills', 'Skill directory'), ('usage', 'Complete usage guide')]),
         ('Skills', SKILLS),
-        ('Project', [('routing', 'Workflows and routing'), ('architecture', 'Architecture'), ('skill-contract', 'Extend the suite'), ('integration', 'Upstream maintenance'), ('verification', 'Verification record'), ('release-v1-6-3', 'Release v1.6.3'), ('release-v1-6-2', 'Release v1.6.2'), ('release-v1-6-1', 'Release v1.6.1'), ('release-v1-6-0', 'Release v1.6.0'), ('release-v1-5-1', 'Release v1.5.1'), ('release-v1-5-0', 'Release v1.5.0'), ('release-v1-4-0', 'Release v1.4.0'), ('release-v1-3-0', 'Release v1.3.0'), ('release-v1-2-0', 'Release v1.2.0'), ('release-v1-1-1', 'Release v1.1.1'), ('notices', 'Source and licenses'), ('thai', 'ภาษาไทย'), ('maintaining', 'Maintain this site')]),
+        ('Project', [('routing', 'Workflows and routing'), ('architecture', 'Architecture'), ('skill-contract', 'Extend the suite'), ('integration', 'Upstream maintenance'), ('verification', 'Verification record'), ('release-v1-7-0', 'Release v1.7.0'), ('release-v1-6-3', 'Release v1.6.3'), ('release-v1-6-2', 'Release v1.6.2'), ('release-v1-6-1', 'Release v1.6.1'), ('release-v1-6-0', 'Release v1.6.0'), ('release-v1-5-1', 'Release v1.5.1'), ('release-v1-5-0', 'Release v1.5.0'), ('release-v1-4-0', 'Release v1.4.0'), ('release-v1-3-0', 'Release v1.3.0'), ('release-v1-2-0', 'Release v1.2.0'), ('release-v1-1-1', 'Release v1.1.1'), ('notices', 'Source and licenses'), ('thai', 'ภาษาไทย'), ('maintaining', 'Maintain this site')]),
     ]
     search = []
     template = (ROOT / 'site/template.html').read_text()

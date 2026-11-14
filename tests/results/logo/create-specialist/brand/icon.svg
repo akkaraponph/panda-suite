@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <title>Tide Ledger</title>
+  <desc>A field ledger spine and three observation entries with height ticks.</desc>
+  <g id="observation-ledger" stroke="#25877F" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+    <path id="ledger-spine" d="M128 112V368Q128 400 160 400H384"/>
+    <path id="high-observation" d="M208 144H368M368 112V176"/>
+    <path id="middle-observation" d="M208 240H304M304 208V272"/>
+    <path id="low-observation" d="M208 336H256M256 312V360"/>
+  </g>
+</svg>

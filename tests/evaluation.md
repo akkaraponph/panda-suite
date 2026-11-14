@@ -223,3 +223,19 @@ and TASK.txt. Run the task's setup command inside its isolated workspace; no
 nested Git database or reviewer key is distributed. Reviewer-only
 `python3 -B tests/reviewer/check_git.py` verifies the green-suite contract gap and
 compatible original control. See [actual three-context trial record](results/git/comparison.md).
+
+## Logo design and asset production
+
+Fourteen `LOGO-*` cases cover creation, reference-preserving revision, concept
+exploration, kit production, vector integrity, unavailable tools, small-size
+legibility, exact spelling, untrusted input, read-only scope, Git scope, and
+nonactivation. Reviewer expectations stay in the scenario catalog. Use the Lead
+arm for `LOGO-NONTRIGGER` to exercise routing. For the no-image and no-renderer
+cases, keep capability restrictions the same across arms and record whether they
+were technically enforced or provided in the prompt.
+
+Run `python3 -B tests/reviewer/check_logo.py` for the independent vector/raster
+fixture pair and a generated PNG and manifest/ZIP check. The archive control
+requires the optional `rsvg-convert` executable. These controls exercise file
+properties. Visual suitability, scope, and routing require task observations.
+See [trial evidence and limitations](results/logo/comparison.md).

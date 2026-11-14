@@ -1,0 +1,22 @@
+[
+  {
+    "command": "/bin/zsh -lc \"pwd; rg --files -g 'RTK.md' -g 'TASK.txt' -g 'AGENTS.md' -g 'SKILL.md' -g '*reference*'\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'cat RTK.md TASK.txt .agents/skills/panda-logo/SKILL.md'",
+    "exit_code": 1
+  },
+  {
+    "command": "/bin/zsh -lc 'cat README.md .agents/skills/panda-logo/references/production.md; ls -la; rg --files /tmp/panda-logo-regression.9lIBr5 -g RTK.md; command -v magick; command -v rsvg-convert; command -v python3'",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc \"mkdir -p brand; python3 - <<'PY'\nfrom pathlib import Path\np=Path('brand/icon.svg')\np.write_text('''<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"512\\\" height=\\\"512\\\" viewBox=\\\"0 0 512 512\\\" fill=\\\"none\\\">\n  <title>Tide Ledger</title>\n  <desc>A measurement spine with three recorded levels and an amber observation square.</desc>\n  <g id=\\\"measurement-spine\\\" fill=\\\"#167D8D\\\">\n    <path d=\\\"M96 96h48v272h272v48H96V96Z\\\"/>\n    <path id=\\\"upper-record\\\" d=\\\"M184 96h152v48H184z\\\"/>\n    <path id=\\\"middle-record\\\" d=\\\"M184 184h232v48H184z\\\"/>\n    <path id=\\\"lower-record\\\" d=\\\"M184 272h96v48h-96z\\\"/>\n  </g>\n  <path id=\\\"selected-observation\\\" fill=\\\"#D99524\\\" d=\\\"M320 272h48v48h-48z\\\"/>\n</svg>\n''')\nPY\nrsvg-convert -w 512 -h 512 brand/icon.svg -o brand/icon.png\npython3 - <<'PY'\nimport importlib.util\nfor m in ['PIL','cairosvg']:\n print(m, bool(importlib.util.find_spec(m)))\nPY\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport xml.etree.ElementTree as E\ns=Path('brand/icon.svg').read_text()\nE.fromstring(s)\nbody=s[s.index('  <g'):s.rindex('</svg>')]\nout=['<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"720\\\" height=\\\"400\\\" viewBox=\\\"0 0 720 400\\\">','<path fill=\\\"#f6f4ee\\\" d=\\\"M0 0h360v400H0z\\\"/><path fill=\\\"#101e29\\\" d=\\\"M360 0h360v400H360z\\\"/>']\nfor x in [32,392]:\n out.append(f'<g transform=\\\"translate({x} 20) scale(.56)\\\">{body}</g>')\n for size,y in [(24,324),(32,360)]:\n  out.append(f'<g transform=\\\"translate({x} {y}) scale({size/512})\\\">{body}</g>')\n mono=body.replace('#167D8D','#808080').replace('#D99524','#808080')\n out.append(f'<g transform=\\\"translate({x+100} 316) scale(.125)\\\">{mono}</g>')\nout.append('</svg>')\nPath('/tmp/tide-review.svg').write_text(''.join(out))\nPY\nrsvg-convert /tmp/tide-review.svg -o /tmp/tide-review.png\nsips -g pixelWidth -g pixelHeight -g hasAlpha brand/icon.png\"",
+    "exit_code": 0
+  }
+]

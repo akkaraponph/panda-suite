@@ -1,0 +1,26 @@
+[
+  {
+    "command": "/bin/zsh -lc \"pwd; rg --files -g 'RTK.md' -g 'TASK.txt' -g 'AGENTS.md' -g 'SKILL.md' -g '*reference*' .agents . 2>/dev/null\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'cat RTK.md TASK.txt .agents/skills/panda-logo/SKILL.md'",
+    "exit_code": 1
+  },
+  {
+    "command": "/bin/zsh -lc 'cat README.md .agents/skills/panda-logo/references/production.md; rg --files -g RTK.md -g AGENTS.md /tmp/panda-logo-eval.EAsHEq 2>/dev/null; ls -la; which rsvg-convert magick convert inkscape python3'",
+    "exit_code": 1
+  },
+  {
+    "command": "/bin/zsh -lc \"mkdir -p brand\ncat > brand/icon.svg <<'EOF'\n<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"512\\\" height=\\\"512\\\" viewBox=\\\"0 0 512 512\\\" fill=\\\"none\\\">\n  <title>Tide Ledger</title>\n  <desc>A field ledger spine and three observation entries with height ticks.</desc>\n  <g id=\\\"observation-ledger\\\" stroke=\\\"#25877F\\\" stroke-width=\\\"32\\\" stroke-linecap=\\\"round\\\" stroke-linejoin=\\\"round\\\">\n    <path id=\\\"ledger-spine\\\" d=\\\"M128 112V368Q128 400 160 400H384\\\"/>\n    <path id=\\\"high-observation\\\" d=\\\"M208 144H368M368 112V176\\\"/>\n    <path id=\\\"middle-observation\\\" d=\\\"M208 240H304M304 208V272\\\"/>\n    <path id=\\\"low-observation\\\" d=\\\"M208 336H256M256 312V360\\\"/>\n  </g>\n</svg>\nEOF\nrsvg-convert -w 512 -h 512 -o brand/icon.png brand/icon.svg\npython3 -c 'import PIL; print(PIL.__version__)'\"",
+    "exit_code": 1
+  },
+  {
+    "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\nimport xml.etree.ElementTree as E\nimport struct,zlib\ns=Path('brand/icon.svg').read_text(); E.fromstring(s)\ng=s[s.index('  <g'):s.index('</svg>')]\nparts=['<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"800\\\" height=\\\"420\\\" viewBox=\\\"0 0 800 420\\\"><path fill=\\\"#faf9f5\\\" d=\\\"M0 0H400V420H0Z\\\"/><path fill=\\\"#142727\\\" d=\\\"M400 0H800V420H400Z\\\"/>']\nfor x in (30,430):\n parts.append(f'<g transform=\\\"translate({x} 10) scale(.62)\\\">{g}</g>')\n for size,dx in ((24,20),(32,90)):\n  parts.append(f'<g transform=\\\"translate({x+dx} 350) scale({size/512})\\\">{g}</g>')\n parts.append(f'<g transform=\\\"translate({x+170} 340) scale(.1)\\\">{g.replace(\\\"#25877F\\\", \\\"#888888\\\")}</g>')\nparts.append('</svg>'); Path('/tmp/tide-check.svg').write_text(''.join(parts))\nb=Path('brand/icon.png').read_bytes(); p=8; data=b''\nwhile p<len(b):\n n=struct.unpack('>I',b[p:p+4])[0]; t=b[p+4:p+8]; d=b[p+8:p+8+n]; p+=n+12\n if t==b'IHDR':\n  w,h,depth,color,*_=struct.unpack('>IIBBBBB',d); print('PNG:',w,h,'depth',depth,'color type',color)\n if t==b'IDAT': data+=d\nraw=zlib.decompress(data); print('Top-left alpha:',raw[4],'; transparent RGBA:',color==6 and raw[4]==0)\nprint('SVG parsed; self-contained vector geometry')\nPY\nrsvg-convert -o /tmp/tide-check.png /tmp/tide-check.svg\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc \"python3 - <<'PY'\nfrom pathlib import Path\np=Path('/tmp/tide-check.svg'); p.write_text(p.read_text().replace('<svg xmlns=', '<svg fill=\\\"none\\\" xmlns=',1))\nPY\nrsvg-convert -o /tmp/tide-check.png /tmp/tide-check.svg\"",
+    "exit_code": 0
+  }
+]

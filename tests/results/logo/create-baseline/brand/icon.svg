@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <title>Tide Ledger</title>
+  <desc>An abstract observation ledger: three datum rows, a rising stepped trace, and a warm observation point.</desc>
+  <!-- The open corner makes the ledger and its plotted observation one silhouette. -->
+  <path d="M120 48H328V136H416V392C416 431.765 383.765 464 344 464H120C80.235 464 48 431.765 48 392V120C48 80.235 80.235 48 120 48Z" fill="#142F38"/>
+  <path d="M112 160H248M112 240H200M112 320H152" stroke="#F0EEE3" stroke-width="24" stroke-linecap="round"/>
+  <path d="M112 392H232V312H296V232H360" stroke="#61D6BD" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="388" cy="76" r="36" fill="#E9794F"/>
+</svg>

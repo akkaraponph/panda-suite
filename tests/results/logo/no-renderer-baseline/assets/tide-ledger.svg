@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <title>Tide Ledger</title>
+  <desc>A pale field ledger with observation marks and a teal tide wave on a deep navy rounded square.</desc>
+  <g id="background">
+    <rect width="32" height="32" rx="7" fill="#102F40"/>
+  </g>
+  <g id="ledger">
+    <path d="M9 5H23A2 2 0 0 1 25 7V25A2 2 0 0 1 23 27H9A2 2 0 0 1 7 25V7A2 2 0 0 1 9 5Z" fill="#F3F5E9"/>
+    <path d="M11 5V27" stroke="#CDDCD5" stroke-width="2"/>
+  </g>
+  <g id="observation-marks" stroke="#102F40" stroke-width="2" stroke-linecap="round">
+    <path d="M15 10H21"/>
+    <path d="M15 14H19"/>
+  </g>
+  <g id="tide">
+    <path d="M7 20C10 16 13 16 16 20C19 24 22 24 25 20V25A2 2 0 0 1 23 27H9A2 2 0 0 1 7 25Z" fill="#299D9A"/>
+    <path d="M7 20C10 16 13 16 16 20C19 24 22 24 25 20" stroke="#102F40" stroke-width="2"/>
+  </g>
+</svg>

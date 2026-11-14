@@ -1,0 +1,22 @@
+[
+  {
+    "command": "/bin/zsh -lc \"pwd; rg --files -g 'TASK.txt' -g 'RTK.md' -g 'AGENTS.md'\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'cat TASK.txt; ls -la; for p in RTK.md AGENTS.md; do if test -f \"$p\"; then cat \"$p\"; fi; done'",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'cat README.md; for p in /tmp/panda-logo-eval.EAsHEq/RTK.md /tmp/RTK.md /RTK.md; do if test -f \"$p\"; then cat \"$p\"; fi; done'",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'mkdir -p assets'",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc \"python3 - <<'PY'\nimport xml.etree.ElementTree as ET\np = 'assets/tide-ledger.svg'\nr = ET.parse(p).getroot()\nassert r.attrib['width'] == r.attrib['height'] == '32'\nassert r.attrib['viewBox'] == '0 0 32 32'\nassert len(r.findall('{http://www.w3.org/2000/svg}g')) == 4\nprint('SVG XML valid; 32 \u00d7 32 dimensions and four editable groups verified. Visual rendering unavailable.')\nPY\"",
+    "exit_code": 0
+  }
+]

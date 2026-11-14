@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <title>Tide Ledger</title>
+  <desc>A measurement spine with three recorded levels and an amber observation square.</desc>
+  <g id="measurement-spine" fill="#167D8D">
+    <path d="M96 96h48v272h272v48H96V96Z"/>
+    <path id="upper-record" d="M184 96h152v48H184z"/>
+    <path id="middle-record" d="M184 184h232v48H184z"/>
+    <path id="lower-record" d="M184 272h96v48h-96z"/>
+  </g>
+  <path id="selected-observation" fill="#D99524" d="M320 272h48v48h-48z"/>
+</svg>

@@ -38,3 +38,9 @@ or external specialists. Lead retains general workflow selection and coordinatio
 Craft focuses on their shared outcome contract, handoffs and acceptance evidence.
 Neither is a prerequisite for the other. This overlap is intentional; added
 behavioral benefit remains an evaluation question. See [Craft design and checks](panda-craft.md).
+
+Logo owns visual identity exploration, production, refinement, kit packaging,
+and audits. Brainstorm owns broader product direction. UI implementation and
+skill development follow their own workflows. Use Logo directly or compose it
+with an explicitly selected UI specialist through Craft. See the
+[Panda Logo usage guide](panda-logo.md).

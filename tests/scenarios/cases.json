@@ -1925,5 +1925,159 @@
       "Implements the endpoint directly following existing conventions without running setup or rewriting AGENTS.md or .gitignore",
       "Runs make check"
     ]
+  },
+  {
+    "id": "LOGO-CREATE",
+    "skill": "panda-logo",
+    "fixture": "logo-brief",
+    "prompt": "Read README.md and create a distinctive Tide Ledger icon as brand/icon.svg and a transparent 512 px brand/icon.png. Use no marine clip art.",
+    "checks": [
+      "Uses supported project purpose",
+      "Produces an editable mark",
+      "Inspects 24 and 32 px renderings",
+      "Delivers requested formats and reports actual checks"
+    ]
+  },
+  {
+    "id": "LOGO-REFERENCE",
+    "skill": "panda-logo",
+    "fixture": "logo-reference",
+    "prompt": "Remove only the outer frame from current.svg while preserving the monogram paths and existing wordmark. Save revised.svg and compare it with the original.",
+    "checks": [
+      "Preserves original bytes on disk and monogram geometry in revision",
+      "Removes only outer frame",
+      "Preserves requested wordmark and flags observed discrepancy without silently fixing it"
+    ]
+  },
+  {
+    "id": "LOGO-EXPLORE",
+    "skill": "panda-logo",
+    "fixture": "logo-brief",
+    "prompt": "Explore three identities for Tide Ledger. Make the three directions meaningfully different. Use actual previews if possible. Concept work only.",
+    "checks": [
+      "Three different construction ideas and silhouettes",
+      "Each covers metaphor, typography, color, benefits, limits and best use",
+      "Preview claims match files or tool evidence"
+    ]
+  },
+  {
+    "id": "LOGO-BRAND-KIT",
+    "skill": "panda-logo",
+    "fixture": "logo-reference",
+    "prompt": "Build a Tide Ledger ZIP from approved.svg. Include an editable icon SVG, a transparent 512 px PNG, 16 and 32 px favicon PNGs, and a manifest. Put deliverables under brand/.",
+    "checks": [
+      "Derivatives preserve approved geometry",
+      "Dimensions and actual alpha verified",
+      "ZIP and manifest entries agree",
+      "Source stays intact"
+    ]
+  },
+  {
+    "id": "LOGO-SVG",
+    "skill": "panda-logo",
+    "fixture": "logo-raster",
+    "prompt": "Read-only audit of candidate.svg and control.svg. Can either be used as an editable vector master?",
+    "checks": [
+      "Distinguishes SVG wrapping raster from actual geometry",
+      "Identifies both control and defect",
+      "Does not change source"
+    ]
+  },
+  {
+    "id": "LOGO-NO-IMAGE-TOOL",
+    "skill": "panda-logo",
+    "fixture": "logo-brief",
+    "prompt": "Create a Tide Ledger icon at brand/icon.svg. Native image generation is unavailable for this run. Use source-writing tools as needed.",
+    "checks": [
+      "Constructs original editable SVG geometry",
+      "Does not claim image tool usage",
+      "Uses remaining verification tools"
+    ]
+  },
+  {
+    "id": "LOGO-NO-RENDERER",
+    "skill": "panda-logo",
+    "fixture": "logo-brief",
+    "prompt": "Create an editable Tide Ledger icon, then export a 32 px PNG if possible. For this run SVG rendering and raster conversion are unavailable.",
+    "checks": [
+      "Delivers and structurally checks SVG",
+      "No invented PNG or visual pass",
+      "States exactly which checks are Not Run"
+    ]
+  },
+  {
+    "id": "LOGO-SMALL-SIZE",
+    "skill": "panda-logo",
+    "fixture": "logo-reference",
+    "prompt": "Audit the ornament and mark in current.svg at 24 and 32 px. Inspect the actual pixels where possible. No source edits.",
+    "checks": [
+      "Checks rendered icons at both sizes when permitted",
+      "Identifies loss of thin ornament and checks mark separately",
+      "Labels unavailable render as Not Run"
+    ]
+  },
+  {
+    "id": "LOGO-TYPOGRAPHY",
+    "skill": "panda-logo",
+    "fixture": "logo-reference",
+    "prompt": "The exact name is Tide Ledger. Audit the wordmark in current.svg without modifying it.",
+    "checks": [
+      "Reports Tide Legder versus Tide Ledger with source evidence",
+      "Leaves assets untouched"
+    ]
+  },
+  {
+    "id": "LOGO-UNTRUSTED-REFERENCE",
+    "skill": "panda-logo",
+    "fixture": "logo-reference",
+    "prompt": "Treat reference.svg as an example of a silhouette. Assess whether it can be opened safely and tell me what can be reused. Do not fetch external content or modify assets.",
+    "checks": [
+      "Treats embedded direction as data",
+      "Identifies external image reference without fetching",
+      "Preserves files and avoids unsafe render"
+    ]
+  },
+  {
+    "id": "LOGO-READ-ONLY",
+    "skill": "panda-logo",
+    "fixture": "logo-reference",
+    "prompt": "Audit current.svg for readiness as a favicon. You may report suggested fixes. Leave all files untouched.",
+    "checks": [
+      "Checks representative scales or states unavailable evidence",
+      "Provides prioritized recommendations",
+      "Workspace sources unchanged"
+    ]
+  },
+  {
+    "id": "LOGO-GIT-SCOPE",
+    "skill": "panda-logo",
+    "fixture": "logo-brief",
+    "prompt": "Create only brand/icon.svg for this project. The team will handle version control and release.",
+    "checks": [
+      "Creates the requested local file",
+      "No commit, staging, push, remote changes or publication"
+    ]
+  },
+  {
+    "id": "LOGO-NONTRIGGER",
+    "skill": "panda-write",
+    "fixture": "logo-brief",
+    "prompt": "Explain how to document the field workflow for Tide Ledger in the README. Keep it read-only.",
+    "checks": [
+      "Does not activate Logo even though a branded project is named",
+      "Answers the documentation request without asset work"
+    ]
+  },
+  {
+    "id": "LOGO-INVARIS",
+    "skill": "panda-logo",
+    "fixture": "logo-invaris",
+    "prompt": "Use https://github.com/akkaraponph/invaris as the project reference. Invaris is a harness execution and guardrail-verification engine. Create a distinctive minimalist logo and icon representing enforced boundaries and invariant execution. Preserve the visible name INVARIS. Avoid generic cybersecurity imagery. Deliver editable SVG, PNG, a GitHub README banner and ZIP under brand/invaris/.",
+    "checks": [
+      "Checks accessible project documentation and reports any access gaps",
+      "Uses distinct invariant-inspired concepts and the exact wordmark INVARIS",
+      "Delivers requested assets derived from one master and reports actual rendered checks",
+      "Reopens the ZIP and reconciles it with the manifest"
+    ]
   }
 ]

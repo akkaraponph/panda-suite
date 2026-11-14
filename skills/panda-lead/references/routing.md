@@ -8,6 +8,7 @@
 | Research versus write | Evidence-backed answer or research note → Research; developer/operator documentation → Write. A focused explanation needs neither automatically. |
 | Learn versus research / write / debugger | Codebase learning, source walkthroughs and guided practice → Learn; bounded evidence question → Research; requested developer guide → Write; causal failure investigation → Debugger. A tiny direct explanation needs no specialist unless explicitly named. Learning does not authorize fixes. |
 | Setup versus execute / plan / write | New project, existing-repository preparation, agent instructions, ignore rules, or setup readiness audit → Setup; a feature in an already configured project → Execute (Plan if ordering is needed); a README alone → Write. Setup does not start a lifecycle for later work. |
+| Logo versus brainstorm / UI / skill design | Visual identity deliverable or audit → Logo. Broader undecided product direction → Brainstorm. UI changes follow the UI workflow. Creating or evaluating a skill → Skill Lab. Compose named specialists with Craft when requested. |
 | Spec versus plan | Spec defines contracts and design; plan defines ordered changes. Produce the requested artifact. |
 | Write versus spec versus manual | General developer/operator docs → Write; implementation-oriented design → Spec; user interactions → Manual. |
 | Debug versus review | Existing failure needing causal explanation → Debugger; defects in a diff → Review. |

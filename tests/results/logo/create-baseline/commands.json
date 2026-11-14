@@ -1,0 +1,18 @@
+[
+  {
+    "command": "/bin/zsh -lc \"pwd && rg --files -g 'TASK.txt' -g 'RTK.md' -g 'AGENTS.md'\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'cat TASK.txt; if [ -f RTK.md ]; then cat RTK.md; fi; ls -la'",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc 'cat README.md; for p in /tmp/panda-logo-eval.EAsHEq/RTK.md /tmp/RTK.md; do if [ -f \"$p\" ]; then cat \"$p\"; fi; done; which rsvg-convert magick convert inkscape qlmanage; python3 -c \"import importlib.util; print('\"'cairosvg', bool(importlib.util.find_spec('cairosvg'))); print('PIL', bool(importlib.util.find_spec('PIL')))\\\"\"",
+    "exit_code": 0
+  },
+  {
+    "command": "/bin/zsh -lc \"mkdir -p brand\ncat > brand/icon.svg <<'EOF'\n<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" width=\\\"512\\\" height=\\\"512\\\" viewBox=\\\"0 0 512 512\\\" fill=\\\"none\\\">\n  <title>Tide Ledger</title>\n  <desc>An abstract observation ledger: three datum rows, a rising stepped trace, and a warm observation point.</desc>\n  <\"'!-- The open corner makes the ledger and its plotted observation one silhouette. -->\n  <path d=\"M120 48H328V136H416V392C416 431.765 383.765 464 344 464H120C80.235 464 48 431.765 48 392V120C48 80.235 80.235 48 120 48Z\" fill=\"#142F38\"/>\n  <path d=\"M112 160H248M112 240H200M112 320H152\" stroke=\"#F0EEE3\" stroke-width=\"24\" stroke-linecap=\"round\"/>\n  <path d=\"M112 392H232V312H296V232H360\" stroke=\"#61D6BD\" stroke-width=\"32\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  <circle cx=\"388\" cy=\"76\" r=\"36\" fill=\"#E9794F\"/>\n</svg>\nEOF\nrsvg-convert -w 512 -h 512 brand/icon.svg -o brand/icon.png\nsips -g pixelWidth -g pixelHeight -g hasAlpha brand/icon.png'",
+    "exit_code": 0
+  }
+]

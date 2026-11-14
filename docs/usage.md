@@ -73,6 +73,22 @@ Expect delivered artifacts, skills actually loaded, observed checks, remaining
 criteria and VERIFIED, PARTIALLY VERIFIED, BLOCKED or NOT VERIFIED status.
 Implementation completeness is reported separately. See [design and evaluation](panda-craft.md).
 
+## Brand identity
+
+### Panda Logo
+
+Provide the exact product name, purpose, target audience, references, constraints,
+and requested formats. Use it directly for logo concepts, refinement, SVG and PNG
+production, brand kits, or read-only audits.
+
+```text
+$panda-logo Create a logo for Tide Ledger, a tide observation log for field
+researchers. Export an editable SVG and transparent 512 px PNG under brand/.
+```
+
+See the [Panda Logo usage guide](panda-logo.md) for all five workflows, selector
+formats, installation, and export limitations.
+
 ## Product discovery and requirements
 
 ### Panda Brainstorm

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 64">
+  <rect id="frame" x="2" y="2" width="252" height="60" rx="5" fill="none" stroke="#173447"/>
+  <path id="monogram" fill="#173447" d="M12 14H50V22H36V50H26V22H12Z"/>
+  <path id="ornament" fill="none" stroke="#173447" stroke-width=".35" d="M13 54h36m-36 2h36m-36 2h36"/>
+  <text id="wordmark" x="62" y="43" font-size="24" font-family="sans-serif" fill="#173447">Tide Legder</text>
+</svg>
