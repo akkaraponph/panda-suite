@@ -6,12 +6,12 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
-## Latest release: v1.5.0 — Panda Git
+## Latest release v1.7.1
 
-The suite contains 25 independent skills, including [Setup](panda-setup.html) for project initialization. [Git](panda-git.html) inspects changes,
-classifies Conventional Commit messages and separates review from authorized
-execution. Read the [release notes](../docs/v1.5.0.md) and
-[design and evaluation](../docs/panda-git.md).
+Buddhist Method now explicitly credits the original project by nai0om and records
+the akkaraponph fork used by Panda Suite. The suite contains 25 independent skills.
+Read the [release notes](../docs/v1.7.1.md) and
+[source notices](../SOURCE_NOTICES.md#buddhist-method).
 
 ## Your first request
 
