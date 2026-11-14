@@ -1,0 +1,176 @@
+Final local checks (2026-11-14)
+
+$ .venv/bin/python scripts/validate-skills.py
+Validated 25 skills, local references, manifests, and scenario coverage
+exit_code=0
+
+$ .venv/bin/python -m unittest discover -s tests -p 'test_tooling.py' -v
+test_adapted_skill_is_not_a_pinned_restore_target (test_tooling.PackageTest.test_adapted_skill_is_not_a_pinned_restore_target) ... ok
+test_broken_reference_detected (test_tooling.PackageTest.test_broken_reference_detected) ... ok
+test_collision_does_not_partially_install (test_tooling.PackageTest.test_collision_does_not_partially_install) ... ok
+test_craft_preparation_keeps_reviewer_control_out (test_tooling.PackageTest.test_craft_preparation_keeps_reviewer_control_out) ... ok
+test_duplicate_yaml_keys_rejected (test_tooling.PackageTest.test_duplicate_yaml_keys_rejected) ... ok
+test_every_skill_installs_independently (test_tooling.PackageTest.test_every_skill_installs_independently) ... ok
+test_fixture_preparation_excludes_answer_key (test_tooling.PackageTest.test_fixture_preparation_excludes_answer_key) ... ok
+test_install_one_skill_is_self_contained (test_tooling.PackageTest.test_install_one_skill_is_self_contained) ... ok
+test_install_rejects_symlink (test_tooling.PackageTest.test_install_rejects_symlink) ... ok
+test_install_rejects_unknown_skill_and_traversal (test_tooling.PackageTest.test_install_rejects_unknown_skill_and_traversal) ... ok
+test_integrated_sources_are_primary_skills (test_tooling.PackageTest.test_integrated_sources_are_primary_skills) ... ok
+test_late_collision_cannot_report_success (test_tooling.PackageTest.test_late_collision_cannot_report_success) ... ok
+test_learn_preparation_keeps_reviewer_control_out (test_tooling.PackageTest.test_learn_preparation_keeps_reviewer_control_out) ... ok
+test_manifest_identity_drift_detected (test_tooling.PackageTest.test_manifest_identity_drift_detected) ... ok
+test_manifest_path_escape_detected (test_tooling.PackageTest.test_manifest_path_escape_detected) ... ok
+test_missing_reference_definition_detected (test_tooling.PackageTest.test_missing_reference_definition_detected) ... ok
+test_missing_skill_detected (test_tooling.PackageTest.test_missing_skill_detected) ... ok
+test_name_must_match_folder (test_tooling.PackageTest.test_name_must_match_folder) ... ok
+test_package_is_valid (test_tooling.PackageTest.test_package_is_valid) ... ok
+test_plan_preparation_keeps_reviewer_controls_out (test_tooling.PackageTest.test_plan_preparation_keeps_reviewer_controls_out) ... ok
+test_refactor_preparation_keeps_oracles_out (test_tooling.PackageTest.test_refactor_preparation_keeps_oracles_out) ... ok
+test_reference_definition_cannot_escape_skill (test_tooling.PackageTest.test_reference_definition_cannot_escape_skill) ... ok
+test_restore_clean_checkout_needs_no_fetch (test_tooling.PackageTest.test_restore_clean_checkout_needs_no_fetch) ... ok
+test_restore_refuses_modified_upstream (test_tooling.PackageTest.test_restore_refuses_modified_upstream) ... ok
+test_scenario_integrity_checks (test_tooling.PackageTest.test_scenario_integrity_checks) ... ok
+test_setup_preparation_isolates_configured_example (test_tooling.PackageTest.test_setup_preparation_isolates_configured_example) ... ok
+test_skill_cannot_require_outside_reference (test_tooling.PackageTest.test_skill_cannot_require_outside_reference) ... ok
+test_suite_rejects_noncanonical_skill_paths (test_tooling.PackageTest.test_suite_rejects_noncanonical_skill_paths) ... ok
+test_titled_reference_and_encoded_path_are_valid (test_tooling.PackageTest.test_titled_reference_and_encoded_path_are_valid) ... ok
+test_vendor_destination_escape_detected (test_tooling.PackageTest.test_vendor_destination_escape_detected) ... ok
+test_vendor_drift_detected (test_tooling.PackageTest.test_vendor_drift_detected) ... ok
+test_yaml_is_really_parsed (test_tooling.PackageTest.test_yaml_is_really_parsed) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 11.175s
+
+OK
+exit_code=0
+
+$ python3 -B tests/reviewer/check_plan.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+faulty: supplied_suite=PASS; strict_unproven=FAIL (expected)
+control: supplied_suite=PASS; strict_unproven=PASS
+exit_code=0
+
+$ python3 tests/check_codex_discovery.py
+{
+  "codex": "codex-cli 0.159.2",
+  "portable_plugin_skills": [
+    "buddhist-method",
+    "panda-brainstorm",
+    "panda-craft",
+    "panda-debugger",
+    "panda-execute",
+    "panda-git",
+    "panda-impact",
+    "panda-lead",
+    "panda-learn",
+    "panda-logo",
+    "panda-manual",
+    "panda-perf",
+    "panda-plan",
+    "panda-refactor",
+    "panda-release",
+    "panda-requirements",
+    "panda-research",
+    "panda-review",
+    "panda-sec",
+    "panda-setup",
+    "panda-simplify",
+    "panda-skill-lab",
+    "panda-spec",
+    "panda-test",
+    "panda-write"
+  ],
+  "standalone_repo_skills": [
+    "buddhist-method",
+    "panda-brainstorm",
+    "panda-craft",
+    "panda-debugger",
+    "panda-execute",
+    "panda-git",
+    "panda-impact",
+    "panda-lead",
+    "panda-learn",
+    "panda-logo",
+    "panda-manual",
+    "panda-perf",
+    "panda-plan",
+    "panda-refactor",
+    "panda-release",
+    "panda-requirements",
+    "panda-research",
+    "panda-review",
+    "panda-sec",
+    "panda-setup",
+    "panda-simplify",
+    "panda-skill-lab",
+    "panda-spec",
+    "panda-test",
+    "panda-write"
+  ],
+  "installed": true,
+  "note": "Read-only discovery; no installation, model invocation, or global configuration change."
+}
+exit_code=0
+
+$ .venv/bin/python scripts/vendor-upstreams.py
+Upstream file hashes match pinned snapshots
+exit_code=0
+
+Parent reruns of delivered fixture implementations
+$ python3 -B -m unittest -v (cwd=/tmp/panda-plan-final-execute)
+test_status_and_recovery_matrix (test_campaign.CampaignIntegrationTest.test_status_and_recovery_matrix) ... ok
+test_unrelated_exception_propagates_unchanged (test_campaign.CampaignIntegrationTest.test_unrelated_exception_propagates_unchanged) ... ok
+test_report (test_campaign.CampaignTest.test_report) ... ok
+test_policy_matrix_without_mutation (test_campaign.PolicyTest.test_policy_matrix_without_mutation) ... ok
+test_cli_config_status_and_recovery_matrix (test_cli.CliTest.test_cli_config_status_and_recovery_matrix) ... ok
+test_unrelated_exception_propagates_without_output (test_cli.CliTest.test_unrelated_exception_propagates_without_output) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK
+exit_code=0
+$ python3 -B -m unittest -v (cwd=/tmp/panda-plan-execute-scope)
+test_failed_refresh_reads_relational_and_preserves_history (test_sync.SyncTest.test_failed_refresh_reads_relational_and_preserves_history) ... ok
+test_historical_snapshot_is_preserved (test_sync.SyncTest.test_historical_snapshot_is_preserved) ... ok
+test_invalidation_failure_propagates_before_refresh (test_sync.SyncTest.test_invalidation_failure_propagates_before_refresh) ... ok
+test_invalidation_precedes_refresh (test_sync.SyncTest.test_invalidation_precedes_refresh) ... ok
+test_missing_snapshot_still_refreshes (test_sync.SyncTest.test_missing_snapshot_still_refreshes) ... ok
+test_refresh_runs (test_sync.SyncTest.test_refresh_runs) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK
+exit_code=0
+
+
+
+
+Final v3 verification (after handoff wording change):
+$ .venv/bin/python scripts/validate-skills.py
+Validated 25 skills, local references, manifests, and scenario coverage; exit 0.
+$ .venv/bin/python -m unittest discover -s tests -p 'test_tooling.py' -v
+Ran 32 tests in 14.590s; OK; exit 0.
+$ python3 -B tests/results/plan-handoff/verify_exec.py /tmp/panda-plan-execute-resume tests/fixtures/plan-execute
+30/30 checks passed, including actual 15-test run; exit 0.
+$ python3 -B tests/results/plan-ready/verify_generated.py /tmp/panda-plan-final-execute
+Expected original defect: 1 assertion failure and 6 exception errors; probe exit 0.
+The delivered correct implementation passed its six-test suite separately.
+$ .venv/bin/python scripts/build-docs.py
+Built 48 pages, including 25 skill guides; exit 0.
+$ .venv/bin/python scripts/check-docs.py
+Checked 48 pages and 2947 internal links: no broken targets or fragments; exit 0.
+$ git diff --check
+No whitespace errors; exit 0.
+Final skill/reference bytes match candidate-v3 instruction snapshot.
+No commits, pushes, installations, releases or production actions performed.

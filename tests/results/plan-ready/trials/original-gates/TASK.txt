@@ -1,0 +1,3 @@
+Read and use the planning instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/tests/results/plan-ready/instructions/original/SKILL.md.
+
+Create an execution-ready implementation plan for requirements.md using campaign.py, cli.py and the supplied tests. Save plan.md. Do not implement. The release environment and provider credentials are unavailable.

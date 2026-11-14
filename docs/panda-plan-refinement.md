@@ -85,3 +85,119 @@ locally: both initial execution-fixture tests pass, while a direct probe confirm
 the baseline `sync_and_refresh` never calls invalidation; the 30 tooling tests,
 skill validator, and Codex discovery check pass. Fresh-context baseline/skill
 model runs are **Not Run**, so behavioral improvement is not yet established.
+
+## Execution readiness and release gate refinement (2026-11-14)
+
+### Baseline capability audit
+
+Inspection covered Plan, Execute, Test, Release, Requirements, Spec, Impact and
+Git; skill contracts/routing; scenario catalog, fixtures, preparation/validation
+scripts and prior plan-refinement/handoff results. Working tree was clean before
+this work. The user-referenced `RTK.md` was unavailable in the workspace, checked
+ancestor locations and local skill directories; no instructions were inferred.
+
+| Capability | Current support | Evidence | Identified weakness | Action |
+| --- | --- | --- | --- | --- |
+| Repository inspection | Supported | Plan steps 1–2 read source, callers, tests, config | No confirmed absence | Preserve, explicitly inspect assertions |
+| Requirement traceability | Partial | Step 6 maps requirements to tasks | No explicit check-to-evidence chain | Extend acceptance/check/evidence links; inline for small work |
+| Architecture decisions | Supported, some details implicit | Step 3 covers boundaries, proposals and unknowns | Ownership, invariants and dependency direction implicit | Make relevant contracts explicit |
+| Task decomposition | Supported, inconsistent results | Step 4 uses testable deliverables; historical proportion runs partial | Oversized plans and test-only splits persisted | Consolidate contract; one inline task for localized work |
+| Cross-task interfaces | Supported | Exact consumes/produces signatures in step 4 | Already supported | Preserve; check prerequisite IDs and cycles |
+| Verification planning | Supported | Step 6 checks commands/errors/regressions; PLAN-ERROR-BOUNDARY | B's signature defect already corrected | Preserve correction without restating it |
+| Risk-based test planning | Partial | Review focus and risks mapped to checks | No explicit plausible wrong implementation/check pair | Add discriminating assertions and fixture needs |
+| Release gate definition | Partial | Deployment concerns mentioned; Release owns assessment | No Plan gate structure or evidence-pending boundary | Conditional local gate reference |
+| Execution handoff | Supported | Markdown, modes, review and permission boundaries; prior handoff results | No demonstrated consumer defect | Preserve; no Execute edits |
+| Scope change handling | Supported, newest correction unevaluated | Whole-artifact reconciliation and stale-term search | New traceability/gates also need reconciliation | Extend existing rule and scenario |
+| Plan quality validation | Supported, readiness implicit | Requirement/interface/error/risk checks | No explicit readiness outcome or available-task identification | Plan-only readiness labels |
+
+
+The release and traceability gaps are instruction gaps found by inspection, not
+recorded causal model failures. Historical failures of proportion and scope
+propagation remain in the earlier sections and result artifacts. The existing
+scope correction was retained rather than rewritten as another warning.
+
+### Contract and implementation
+
+Plan still translates sufficiently agreed requirements into ordered implementation
+work. Focused explanations, unclear business policy, standalone specifications,
+implementation and actual release assessment retain their existing boundaries.
+Inputs are requirements, source, constraints and optional specs; unavailable source
+keeps proposed paths provisional. Output remains ordinary Markdown, with stable
+task IDs, observable acceptance, relevant contracts and evidence expectations.
+
+The revised workflow co-locates task design, discriminating verification and plan
+validation instead of repeating those contracts in the output section. Small work
+can use one task without a matrix, review-focus section or release ceremony.
+Complex work gets concise Requirement → Task → Check → Evidence links. New
+interfaces stay proposed; established interfaces must match inspected source.
+Optional test-first sequencing is not a requirement.
+
+`references/release-gates.md` is loaded only for release/deployment/migration or
+compatibility boundaries. Each gate links a requirement/risk to an observable
+condition, method, expected evidence, blocking status and known revision/environment
+constraints. Owners and numerical targets are supplied facts, never inventions.
+Gates start **defined; evidence pending**. Missing live evidence can block release
+without blocking implementation. Plan readiness labels describe the plan only.
+
+Plan defines future acceptance gates. Execute implements and records checks; Test
+owns separately requested test design/execution; Release assesses actual revision
+and environment evidence. No peer skill or external framework is required.
+No integration defect justified editing Execute or Release or changing routing.
+The discovery description remains appropriate to ordered planning work.
+
+Format was checked against the [Agent Skills specification](https://agentskills.io/specification)
+on 2026-11-14: matching lowercase folder/name, YAML name/description, Markdown body
+and a skill-local conditional reference. Repository validation and real Codex
+plugin/standalone discovery are distinct checks, not proof of model performance.
+
+### Evaluation design and artifacts
+
+[Current trial report](../tests/results/plan-ready/comparison.md) separates actual
+answers, structural checks and unrun work. Original and candidate instruction
+snapshots are retained. The original is the working-tree skill at the start of
+this change; historical results above are not relabeled as this comparison.
+
+Reuse existing B, PLAN-ERROR-BOUNDARY, PLAN-INTERFACES, PLAN-PROPORTION,
+PLAN-NONTRIGGER, PLAN-HANDOFF/PRESET, EXEC-PLAN-RESUME/SUBAGENT and scope-revision
+cases. New scenarios cover only uncovered combinations:
+
+- `PLAN-RELEASE-GATES`: shared policy interface/task quality, ineffective green
+  tests, functional/config/report/CLI compatibility gates, timeout/cancellation,
+  and missing live-provider evidence in one synthetic versioned CLI.
+- `PLAN-EVIDENCE-BOUNDARY`: read-only planning under unavailable test execution,
+  credentials and environment; a claimed green suite is not release proof.
+- `PLAN-GATE-SCOPE-REVISION`: scope narrowing must remove stale gates and evidence
+  links as well as tasks. Its fixture extends the original scope fixture; the
+  original is unchanged, so changed inputs are explicit.
+
+The proposed PLAN-TASK-QUALITY, PLAN-TEST-EFFECTIVENESS, PLAN-DEPENDENCY-FAILURE,
+PLAN-SMALL-CHANGE and PLAN-HANDOFF-CONSISTENCY behaviors reuse these and existing
+cases rather than duplicating prompts for coverage counts. Reviewer expectations
+stay in `tests/scenarios/cases.json`, outside blind workspaces. The correct
+control and `tests/reviewer/check_plan.py` also remain outside task fixtures.
+Both faulty and correct controls pass the ordinary suite; strict-unproven policy
+fails only for the faulty one. This demonstrates a discriminating fixture, not
+that any model will propose the right check.
+
+### Compatibility and limits
+
+The default `.panda-suite/plans/YYYY-MM-DD-<topic>.md`, explicit destinations,
+chat-only output, collision handling, ignore/tracked-file behavior, checkboxes,
+authorization and native/subagent modes are preserved. Existing resume/scope
+contracts require no new parser or metadata. Scope reconciliation now names
+traceability and release gates explicitly.
+
+No token, latency or reliability savings are claimed. Word counts and instruction
+snapshots cannot establish token savings; fresh runs remain a small sample and
+self-reported command records are not raw host transcripts. Real release-provider
+compatibility in the synthetic example is intentionally unavailable. No release,
+installation, commit, push or production action is part of this refinement.
+
+The first gate-planning trial exposed a new readiness inconsistency: an unavailable
+live-release task appeared in an execution-ready task list. A second revision
+separates future release checks from implementation scope and names blocked task
+IDs. V1 handoff and v2 B trials also omitted required user-facing mode/review
+prompts. A third revision makes the response location explicit in the existing
+handoff opener; its result and all earlier partial outcomes remain in the trial
+report. These are observed trial failures; they do not establish causality or
+reliability from a single rerun.

@@ -1,0 +1,5 @@
+Use panda-plan. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/tests/results/plan-ready/instructions/candidate-v3/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Plan the bulk CSV import in requirements.md so it can be implemented next. Do not implement anything yet.
+
+Host capability: fresh subagent implementation/review is available for later user-authorized execution. Do not delegate during this planning task; this restriction does not remove that future execution option.

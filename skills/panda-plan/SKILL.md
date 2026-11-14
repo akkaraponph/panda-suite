@@ -15,49 +15,58 @@ Use the requirements, repository, constraints, and requested scope. An existing
 design or spec is optional. If source is unavailable, identify the affected
 unknowns and label any proposed file layout as provisional.
 
-1. **Understand requirements.** Extract the intended behavior, non-goals,
-   compatibility promises, and acceptance conditions. Resolve ambiguities that
-   materially change the plan; record smaller assumptions visibly.
-2. **Inspect the system.** Read relevant source, callers, tests, configuration,
-   and project instructions. Find existing patterns and capabilities before
-   introducing components. Cite paths for current behavior.
-3. **Define scope and dependencies.** Identify affected interfaces, data and
-   transaction boundaries, integrations, and deployment concerns where relevant.
-   Separate known existing contracts from design proposals and open decisions.
-   When requirements span independent subsystems, propose one plan per subsystem,
-   each yielding working, testable software.
-4. **Order coherent tasks.** Follow real dependencies. Use milestones only for
-   meaningful deliverable boundaries. Each task contains an objective, relevant
-   files/components if known, prerequisites, concrete acceptance criteria, and
-   verification. Include migrations, rollback/recovery, and observability only
-   where the change needs them. Size a task so it ends in an independently
-   testable deliverable: fold setup, configuration, and documentation into the
-   task that needs them, and split only where a reviewer could accept one part
-   and reject the other. When later tasks depend on earlier ones, give each task
-   an interfaces note: what it consumes and produces, with exact names and
-   signatures, because an implementer may see only their own task.
-5. **Write decisions, not code.** Each step lets the implementer write exactly
-   one reasonable thing. A test step names the test and its assertions with the
-   requirement's exact values; a code step names the file, signature, and pinned
-   values, with a body only for an algorithm the signature and tests leave open;
-   a verification step names the command and the result that means success.
-   Replace lines that decide nothing ("TBD", "handle edge cases", "add
-   validation", a type no task defines). A plan longer than the code it describes
-   has written the code instead.
-6. **Check the plan.** Map every requirement to a task and every material risk to
-   a check or explicit unresolved decision. Check that names, types, and
-   signatures used in later tasks match where they are defined. Check proposed signatures against
-   promised error outcomes. Confirm tests can detect the intended
-   behavior and important regressions. Do not invent commands without checking
-   the repository; mark proposed commands or unavailable checks accurately.
+1. **Understand requirements.** Extract intended behavior, non-goals,
+   compatibility promises, and mandatory acceptance conditions. Keep supplied
+   requirement IDs; assign concise IDs where needed for cross-references. Resolve
+   ambiguities that materially change correctness or scope; label confirmed
+   facts with sources, proposed choices, assumptions, and unresolved decisions.
+2. **Inspect the system.** Read relevant source, callers, test assertions,
+   configuration, and project instructions. Cite paths for current behavior.
+   Reuse existing capabilities and the simplest architecture meeting the need.
+3. **Define scope and contracts.** Identify affected interfaces, source of truth,
+   data ownership, invariants, module/dependency direction, and failure/recovery
+   behavior where relevant. For changed public boundaries, state compatibility
+   promises and their checks, including error semantics and version/migration
+   constraints. Include rollback feasibility and observability where needed.
+   For independent subsystems, propose separate plans with testable deliverables;
+   keep shared contracts and prerequisites explicit.
+4. **Order coherent tasks.** Follow real dependencies. Give each task a stable
+   ID, action title, outcome, requirement references, affected files/components,
+   prerequisites, observable acceptance conditions, and verification. State
+   preserved versus changed behavior and exclusions where they affect execution.
+   Each dependent task states what it consumes and produces, with exact names,
+   types/signatures and compatibility constraints, so its implementer can act
+   from that task and the plan's constraints alone. Label new interfaces proposed;
+   established interfaces must match source. Fold setup, tests and documentation
+   into the useful behavior they support. Split when parts can be accepted
+   independently; a task need not equal one commit or one test.
+5. **Plan discriminating verification.** For each critical behavior, identify a
+   plausible incorrect implementation and the assertion or check that rejects it.
+   Specify test level, relevant normal/failure inputs, expected results, needed
+   fixtures/dependencies and existing regressions. Prioritize authorization,
+   state, invalid inputs, duplicates, concurrency, rollback, dependency failure
+   or idempotency only when relevant. Inspect assertions: a green suite may
+   leave acceptance conditions untested. Confirm commands from repository tooling;
+   label proposed commands and unavailable environments. Checks remain planned
+   until executed; planning observations do not prove future implementation.
+   Test-first sequencing is optional; choose it only when useful.
+6. **Check the plan.** Trace every mandatory requirement to a task and every
+   acceptance condition to a check and expected evidence, or an explicit evidence
+   gap. For complex work, use a compact Requirement → Task → Check → Evidence
+   table; for a small change, put those links in its single task. Check prerequisite
+   IDs exist, order has no cycles, and cross-task names, types and error outcomes
+   agree. Resolve placeholders with concrete decisions or explicit blockers;
+   specify signatures and exact required values, leaving ordinary implementation
+   bodies to the implementer. Check relevant regressions and material risks have
+   checks, mitigations or open decisions.
    Where omission, null, empty, and invalid values have different outcomes,
    specify them separately. Check that the proposed language or framework can
    actually deliver the promised error at the stated boundary; leave unresolved
    policy explicit rather than assigning an accidental runtime behavior.
    When an authoritative scope decision changes an existing proposal, apply it
    throughout the artifact. Reconcile the goal, scope, constraints, file map,
-   review focus, tasks, dependencies, risks, acceptance checklist, verification,
-   and handoff; remove stale work and checks. Keep a brief decision note only
+   review focus, tasks, dependencies, risks, traceability, release gates, acceptance
+   checklist, verification, and handoff; remove stale work and checks. Keep a brief decision note only
    when future readers need to know why scope changed. Before delivery, search
    for names and terms from the removed scope and resolve every remaining
    reference, including references that imply the work is still required.
@@ -80,33 +89,43 @@ Ignore rules do not remove files already tracked by Git; report any tracked
 updated or verified, report that limitation. Respect an explicit request to track
 the plan or a repository instruction requiring it.
 
-Start the document with a title, goal, scope, relevant source or specification,
-and constraints; copy project-wide constraints with exact values from the source
-requirement. Add a review focus: up to five inputs or failure modes the
-requirements imply but no task yet tests, most likely first, each with the
-behavior a reasonable user expects, and add its test to the owning task. Say
-when the check found none. Map the affected files and responsibilities before the tasks.
-Include evidence anchors, ordered tasks, dependencies, risks, decisions, and a
-verification strategy. Use Markdown checkboxes for actionable steps. Each task
-names its objective, affected files or components, prerequisites, acceptance
-criteria, and concrete checks. Specify interfaces and expected check results
-where they matter. Scale detail to the work and mark unknown paths or commands
-as provisional. A task can use this format:
+Start with title, goal, scope, source/specification and constraints, carrying
+project-wide constraints with exact required values. Map affected files and
+responsibilities, then ordered tasks with Markdown checkboxes for actionable work.
+For substantial changes add a review focus: up to five likely implied but untested
+inputs/failures, expected behavior, and the owning task's check; say when none
+remain. A localized change can use one short task with its source, contract,
+acceptance and checks inline, without separate matrices or ceremonial sections.
+Write decisions and expected evidence, not implementation transcripts.
 
-> Add manager rejection in `service.py`; depends on the agreed terminal-state
-> contract. Accept when only managers can reject pending requests and a blank
-> reason is rejected. Verify with focused permission/status/reason tests and the
-> existing approval suite. Persistence is outside the supplied service's scope.
+For a defined release, deployment, migration or compatibility boundary, read
+[release gate planning](references/release-gates.md) and define proportional gates.
+Otherwise omit release gates. Planning defines what must be verified;
+`panda-release`, when requested and available, assesses the actual revision and
+its evidence. `panda-execute` owns implementation and check execution; `panda-test`
+owns separately requested test work. These skills are optional, not dependencies.
 
-Before delivery, check that each requirement maps to a task, task interfaces
-agree, material risks have checks or decisions, proposed verification can
-detect the relevant failures, and no step is a placeholder or a code transcript. Link the saved plan in the response and identify
-any unresolved decisions or checks. Saving a plan does not require a commit.
+Before delivery apply step 6 and assess **plan readiness**:
+
+- **EXECUTION-READY:** no unresolved decision blocks authorized implementation.
+- **PARTIALLY READY:** name tasks that can start and decisions/prerequisites blocking others.
+- **BLOCKED:** critical scope or contract decisions prevent execution.
+
+Assess readiness across every task in the saved execution scope; name blocked
+task IDs rather than labeling that entire scope ready. Name the first unblocked
+task and any evidence gaps. An unavailable release
+check may leave implementation ready while release evidence remains missing.
+These labels do not assess release readiness; defined gates are not passed gates.
+A task checkbox records completion only after its required acceptance checks
+produce evidence. Link the saved plan and identify unresolved decisions/checks.
+Saving a plan requires no commit.
 
 ## Execution handoff
 
-When a plan is saved and implementation is a relevant next step, ask the user to
-review the plan and, unless they already chose, how `panda-execute` should run it:
+When a plan is saved and implementation is a relevant next step, end the
+user-facing response with a request to review the plan and, unless already chosen,
+a choice of how `panda-execute` should run it. Put the review/mode request in the
+response, not only inside the saved plan:
 
 - **Subagent-driven:** a fresh agent implements each task and a fresh reviewer
   checks it before the next starts, then one whole-change review. Most thorough;

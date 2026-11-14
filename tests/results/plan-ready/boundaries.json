@@ -1,0 +1,77 @@
+[
+  {
+    "trial": "original-gates",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-gates",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-B",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-scope",
+    "changed_fixture_files": [
+      "implementation-plan.md"
+    ]
+  },
+  {
+    "trial": "candidate-handoff",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-v2-B",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-v2-gates",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-v2-gate-scope",
+    "changed_fixture_files": [
+      "implementation-plan.md"
+    ]
+  },
+  {
+    "trial": "final-interfaces",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "final-preset",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "final-execute",
+    "changed_fixture_files": [
+      "campaign.py",
+      "test_campaign.py"
+    ]
+  },
+  {
+    "trial": "execute-scope",
+    "changed_fixture_files": [
+      "sync.py",
+      "test_sync.py",
+      ".panda-suite/plans/2026-11-12-snapshot-consistency.md"
+    ]
+  },
+  {
+    "trial": "candidate-v3-B",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-v3-handoff",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "original-handoff-capable",
+    "changed_fixture_files": []
+  },
+  {
+    "trial": "candidate-v3-handoff-capable",
+    "changed_fixture_files": []
+  }
+]

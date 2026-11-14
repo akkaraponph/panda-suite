@@ -239,3 +239,21 @@ fixture pair and a generated PNG and manifest/ZIP check. The archive control
 requires the optional `rsvg-convert` executable. These controls exercise file
 properties. Visual suitability, scope, and routing require task observations.
 See [trial evidence and limitations](results/logo/comparison.md).
+
+## Plan execution readiness and release gates
+
+Reuse existing Plan/Execute regression cases; new `PLAN-RELEASE-GATES`,
+`PLAN-EVIDENCE-BOUNDARY` and `PLAN-GATE-SCOPE-REVISION` cover future gate evidence,
+shared interfaces, green-suite gaps, unavailable integrations and removal of
+stale gates after scope narrowing. See the
+[refinement audit](../docs/panda-plan-refinement.md#execution-readiness-and-release-gate-refinement-2026-11-14)
+and [trial record](results/plan-ready/comparison.md).
+
+Run `python3 -B tests/reviewer/check_plan.py` to validate the faulty/working pair.
+Both pass supplied tests; only the correct control passes strict-unproven policy.
+The control and reviewer expectations must not be copied into task workspaces.
+Prepare original and candidate arms from frozen instruction snapshots with the
+same fixtures/prompts and fresh contexts. Score actual plans for discriminating
+assertions, source accuracy, dependency/interface coherence, evidence boundaries,
+proportionality and preserved handoff. A valid fixture, discovered skill or saved
+plan establishes neither behavioral improvement nor release readiness.

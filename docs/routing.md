@@ -44,3 +44,9 @@ and audits. Brainstorm owns broader product direction. UI implementation and
 skill development follow their own workflows. Use Logo directly or compose it
 with an explicitly selected UI specialist through Craft. See the
 [Panda Logo usage guide](panda-logo.md).
+
+Plan defines implementation tasks and future release acceptance gates when the
+requested boundary warrants them. Release evaluates the actual release revision
+and evidence. Plan readiness describes executable scope, never release readiness;
+no mandatory Plan → Release chain is introduced. See the
+[planning refinement](panda-plan-refinement.md#execution-readiness-and-release-gate-refinement-2026-11-14).

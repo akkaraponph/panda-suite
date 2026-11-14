@@ -1,0 +1,3 @@
+Use panda-plan. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/tests/results/plan-ready/instructions/candidate-v2/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Create an implementation plan for requirements.md that a different engineer will execute task by task without seeing this conversation. Use the existing inventory code. Do not implement.

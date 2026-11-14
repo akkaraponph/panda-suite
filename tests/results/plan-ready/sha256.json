@@ -1,0 +1,16 @@
+{
+  "tests/results/plan-ready/instructions/candidate-v3/SKILL.md": "d6d12e96f3b214633818ab4e75a17c80e04738ea7466d9a023785f1449aba07c",
+  "tests/results/plan-ready/instructions/candidate/SKILL.md": "48e5980f23916c9a3dc654d6b85d76e0e5017f4cecd945804ab4109408bb9747",
+  "tests/results/plan-ready/instructions/candidate-v2/SKILL.md": "61d05b05352a8022cdfd477f51171f9e074f2fc113a212014808d48e14804858",
+  "tests/results/plan-ready/instructions/original/SKILL.md": "b83c2d90b6cb063754bbded287f77de52a86c5004422676b54e15db6f777cff5",
+  "tests/results/plan-ready/instructions/candidate-v2/references/release-gates.md": "83f6c4e284840a54af2dd87d844a2584a4cddc654feef22bc74e590864fdd927",
+  "tests/results/plan-ready/instructions/candidate/references/release-gates.md": "4f1b9854689a58019581770d45edb92265b31ca2486fd85da18ce37b33cf8963",
+  "tests/results/plan-ready/instructions/candidate-v3/references/release-gates.md": "83f6c4e284840a54af2dd87d844a2584a4cddc654feef22bc74e590864fdd927",
+  "tests/fixtures/plan-campaign/requirements.md": "e1d65b73caecb6c40c09d54c371d3b3d5a40b7e9c75bac6765ed64df3a5e6348",
+  "tests/fixtures/plan-campaign/campaign.py": "5b580b20b304c164b2d7c3cd49552cd647ea1cfc0e9bc6d14142ae894ba3b906",
+  "tests/fixtures/plan-campaign/cli.py": "4da0f428d4fbb21d2e97e3c1180ab3f22fc73b75e8b570ed4acc2383ab46abfd",
+  "tests/fixtures/plan-campaign/test_campaign.py": "3e53f2727094aaea2eeafc3e6112d3bcbc422bd79ce8be47fd446e18fd26ee83",
+  "tests/fixtures/plan-gate-scope/requirements.md": "58dc6e400bad431c5935902af0b3b69f27744501b4a6231fd05fcfdeea8c771b",
+  "tests/fixtures/plan-gate-scope/implementation-plan.md": "07d8365f68782de30a3a899b4e267e8e5ae8d97dd32a44c774ce8cdb0a07b337",
+  "tests/fixtures/plan-gate-scope/scope-decision.md": "ddf4f2ffcb057cf62c7eec07f82c9c1cca5ee1ae1649396586a2d429d66eb637"
+}

@@ -2079,5 +2079,45 @@
       "Delivers requested assets derived from one master and reports actual rendered checks",
       "Reopens the ZIP and reconciles it with the manifest"
     ]
+  },
+  {
+    "id": "PLAN-RELEASE-GATES",
+    "skill": "panda-plan",
+    "fixture": "plan-campaign",
+    "prompt": "Create an execution-ready implementation plan for requirements.md using campaign.py, cli.py and the supplied tests. Save plan.md. Do not implement. The release environment and provider credentials are unavailable.",
+    "checks": [
+      "Reads implementation and test assertions; the green test does not verify strict-mode exit_code",
+      "Coherent stable-ID tasks produce and consume exactly evaluate_policy(report: dict, *, require_all_proven: bool) -> bool; dependencies are ordered and tests stay with usable behavior",
+      "Maps REQ-1 through REQ-4 to tasks, discriminating checks and expected evidence; all new checks remain planned",
+      "Strict unproven returns 2, proven returns 0, empty fails strict, permissive stays 0; schema and CLI compatibility checks catch plausible defects",
+      "Timeout/cancellation checks use a controlled transport, assert one call and unchanged input; unrelated exceptions remain observable",
+      "Defines risk-based blocking functional, compatibility and live-provider gates, with methods, expected evidence and applicable revision/environment; no invented ownership or targets",
+      "Unavailable live check is an evidence gap, not a release pass; plan readiness distinguished from release readiness",
+      "Writes only plan.md; preserved handoff, no mandatory peer skills or implementation"
+    ]
+  },
+  {
+    "id": "PLAN-EVIDENCE-BOUNDARY",
+    "skill": "panda-plan",
+    "fixture": "plan-campaign",
+    "prompt": "Review requirements.md and the existing source. Only in chat, plan the verification and release gates for v1.1. Treat the claim \"the green suite proves it is release-ready\" as unverified. Provider credentials, release environment and test execution are unavailable; you may read files but cannot run test commands. Do not implement or create files.",
+    "checks": [
+      "Reads assertions and identifies uncovered strict-policy behavior instead of accepting green-suite claim",
+      "Records test execution as Not Run and required live-provider check as unavailable, with future method and expected evidence",
+      "Defines revision/environment-scoped blocking gates without claiming READY or treating mocks as provider evidence",
+      "No tests run, files changed or invented owner/target; verification planning remains separate from release assessment"
+    ]
+  },
+  {
+    "id": "PLAN-GATE-SCOPE-REVISION",
+    "skill": "panda-plan",
+    "fixture": "plan-gate-scope",
+    "prompt": "Revise implementation-plan.md using the authoritative runtime-only decision in scope-decision.md. Reconcile the entire plan, including traceability and release gates. Do not change source or tests.",
+    "checks": [
+      "Removes Task 3 and legacy-repair gate, verification, traceability and implied startup repair obligations throughout; retains only a concise exclusion/decision note",
+      "Keeps runtime invalidation, fallback and historical preservation checks; reconciles dependency IDs",
+      "Gates remain defined, not passed; plan readiness assessed from remaining contracts and unknown source, without fabricated evidence",
+      "Only implementation-plan.md changes; no implementation or deployment"
+    ]
   }
 ]

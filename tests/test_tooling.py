@@ -258,6 +258,28 @@ class PackageTest(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             prepare(self.root, dest, "B", "lead")
 
+    def test_plan_preparation_keeps_reviewer_controls_out(self):
+        cases = json.loads((self.root / "tests/scenarios/cases.json").read_text())
+        for case_id in ("PLAN-RELEASE-GATES", "PLAN-EVIDENCE-BOUNDARY",
+                        "PLAN-GATE-SCOPE-REVISION"):
+            case = next(c for c in cases if c["id"] == case_id)
+            fixture = self.root / "tests/fixtures" / case["fixture"]
+            for arm in ("baseline", "specialist", "lead"):
+                with self.subTest(case=case_id, arm=arm):
+                    dest = Path(self.temp.name) / (case_id + arm)
+                    prepare(self.root, dest, case_id, arm)
+                    expected = {p.relative_to(fixture) for p in fixture.rglob("*")
+                                if p.is_file() and "__pycache__" not in p.parts
+                                and p.suffix != ".pyc"}
+                    actual = {p.relative_to(dest) for p in dest.rglob("*") if p.is_file()}
+                    self.assertEqual(expected | {Path("TASK.txt")}, actual)
+                    for path in expected:
+                        self.assertEqual((fixture / path).read_bytes(), (dest / path).read_bytes())
+                    task = (dest / "TASK.txt").read_text()
+                    self.assertTrue(task.endswith(case["prompt"] + "\n"))
+                    for check in case["checks"]:
+                        self.assertNotIn(check, task)
+
     def test_learn_preparation_keeps_reviewer_control_out(self):
         cases = json.loads((self.root / "tests/scenarios/cases.json").read_text())
         for case in cases:

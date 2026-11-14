@@ -1,0 +1,7 @@
+Read and use /Users/akkaraponph/Workspaces/codespaces/panda-lead/skills/panda-execute/SKILL.md.
+Implement the saved plan.md in native mode in this disposable synthetic fixture only.
+Preserve its exact interface and acceptance contract. Run available local checks,
+record Python 3.9 verification as unavailable if no interpreter exists, and report
+remaining evidence gaps honestly. No live provider access, deployment, commit or
+external action is authorized. Future release gates remain separate from implementation.
+Do not weaken task acceptance or mark unavailable Python 3.9 acceptance as passed.

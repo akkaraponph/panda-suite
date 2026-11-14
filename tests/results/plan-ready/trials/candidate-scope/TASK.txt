@@ -1,0 +1,3 @@
+Use panda-plan. Read its instructions at /Users/akkaraponph/Workspaces/codespaces/panda-lead/tests/results/plan-ready/instructions/candidate/SKILL.md through available instruction-loading tools. Load only relevant references or specialist instructions. Do not claim a programmatic skill invocation.
+
+Update implementation-plan.md to reflect the authoritative scope decision in scope-decision.md. Keep it implementation-ready. Do not change source code or tests.

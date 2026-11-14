@@ -1,0 +1,1 @@
+PASS: 14 cases, 42 blind workspace preparations; fixture bytes preserved; reviewer keys absent. Temporary workspaces removed. No model invocation in this check.

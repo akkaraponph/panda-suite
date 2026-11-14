@@ -208,6 +208,13 @@ do not implement the feature.
 Expect an actionable plan, evidence anchors, risks and unresolved decisions. A
 request to save a plan authorizes that document, not application changes.
 
+Each task links requirements to observable checks and expected evidence. Plan
+reports whether the saved scope is execution-ready, partially ready, or blocked,
+and names the first unblocked task. Small changes can use one task with inline
+checks. For a release, migration, deployment, or compatibility boundary, Plan
+defines proportional acceptance gates with evidence pending. Release evaluates
+the actual revision and results. See the [planning refinement and trial limits](panda-plan-refinement.md#execution-readiness-and-release-gate-refinement-2026-11-14).
+
 Where error contracts matter, expect omitted, null, empty, and invalid inputs to
 be distinguished. Proposed signatures must be capable of producing the promised
 errors; for example, a required Python argument omitted by a caller normally raises
