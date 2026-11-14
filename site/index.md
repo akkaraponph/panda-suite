@@ -6,12 +6,12 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 [Get started](installation.html) · [Browse the skills](skills.html)
 
-## Latest release v1.7.1
+## Latest release v1.7.2
 
-Buddhist Method now explicitly credits the original project by nai0om and records
-the akkaraponph fork used by Panda Suite. The suite contains 25 independent skills.
-Read the [release notes](../docs/v1.7.1.md) and
-[source notices](../SOURCE_NOTICES.md#buddhist-method).
+Panda Plan links requirements, implementation tasks, verification and expected
+evidence. It reports execution readiness and defines release gates when the
+requested scope needs them. The suite contains 25 independent skills.
+Read the [release notes](../docs/v1.7.2.md) and [Plan guide](panda-plan.html).
 
 ## Your first request
 
