@@ -105,6 +105,40 @@ Standalone Codex ใช้ `$panda-spec`; Claude Code ที่ติดตั�
 `$HOME/.claude/skills` ใช้ `/panda-spec` รายละเอียดการติดตั้งทุกแบบอยู่ใน
 [คู่มือภาษาอังกฤษ](README.md)
 
+## อัปเดต skills ที่ติดตั้งแล้ว
+
+สำหรับ Codex ที่ใช้ Git marketplace ให้อัปเดต marketplace และ plugin:
+
+```sh
+codex plugin marketplace upgrade panda-suite
+codex plugin add panda-suite@panda-suite
+```
+
+สำหรับ Claude Code ที่ใช้ Git marketplace:
+
+```sh
+claude plugin marketplace update panda-suite
+claude plugin update panda-suite@panda-suite
+```
+
+หาก marketplace ใช้ local checkout ให้อัปเดต checkout เป็น release ที่ต้องการก่อน
+แล้วรันคำสั่ง plugin ของ host หากใช้ `claude --plugin-dir` ให้เปิด Claude Code ใหม่
+จาก checkout ที่อัปเดตแล้ว และ restart host หลังอัปเดต plugin
+
+สำหรับ standalone skills ของ Codex, Claude Code หรือ host อื่น ให้อัปเดต checkout
+ก่อน แล้วย้าย directory ของ skill เดิมไปเก็บสำรอง จากนั้นรัน installer จาก checkout
+เพราะ installer ไม่เขียนทับ directory ที่มีอยู่ ตัวอย่างอัปเดต `panda-plan`
+ระดับ user ของ Codex:
+
+```sh
+mkdir -p "$HOME/panda-skill-backups"
+mv -i "$HOME/.agents/skills/panda-plan" "$HOME/panda-skill-backups/panda-plan"
+python3 scripts/install-skills.py --destination "$HOME/.agents/skills" --skill panda-plan
+```
+
+หากชื่อสำรองมีอยู่แล้วให้เลือกชื่อใหม่ สำหรับ host อื่นให้ใช้ skills directory
+ตามเอกสารของ host และทำซ้ำกับแต่ละ skill ที่ต้องการอัปเดต แล้ว restart หรือ refresh host
+
 ## ตัวอย่าง
 
 ```text

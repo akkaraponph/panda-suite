@@ -179,6 +179,44 @@ standalone Claude Code uses `/panda-lead`, `/panda-plan`, or `/panda-spec`.
 Other Agent Skills hosts need their own documented discovery/instruction-loading
 mechanism. Format validation alone does not prove those runtimes are compatible.
 
+## Update an existing installation
+
+For a Git-backed Codex marketplace, refresh its snapshot and install the current
+plugin version:
+
+```sh
+codex plugin marketplace upgrade panda-suite
+codex plugin add panda-suite@panda-suite
+```
+
+For a Git-backed Claude Code marketplace, update the marketplace and plugin:
+
+```sh
+claude plugin marketplace update panda-suite
+claude plugin update panda-suite@panda-suite
+```
+
+For a marketplace configured from a local checkout, first update that checkout to
+the desired release, then run the relevant plugin command above. If you use
+`claude --plugin-dir`, restart Claude Code from the updated checkout. Restart the
+host after updating a plugin so it loads the new skills.
+
+For standalone skills in Codex, Claude Code, or another compatible host, update
+the checkout first. The installer refuses existing skill directories. For each
+skill you want to refresh, move its existing directory to a safe backup location,
+then reinstall it from the checkout. For example, to refresh the user-level
+Codex `panda-plan` skill:
+
+```sh
+mkdir -p "$HOME/panda-skill-backups"
+mv -i "$HOME/.agents/skills/panda-plan" "$HOME/panda-skill-backups/panda-plan"
+python3 scripts/install-skills.py --destination "$HOME/.agents/skills" --skill panda-plan
+```
+
+Run the installer from the updated checkout. Choose an unused backup name if one
+already exists, and use your host's documented skills directory for other hosts.
+Repeat for each installed skill you want to update, then restart or refresh the host.
+
 ## Examples
 
 These prompts use standalone Codex names; use your installation's selector above.
