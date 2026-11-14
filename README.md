@@ -292,9 +292,14 @@ Packaging sources: [Agent Skills specification](https://agentskills.io/specifica
 
 [Panda Debugger](https://github.com/akkaraponph/panda-debugger) supplies the existing
 investigation workflow, confidence classification, references, tests, and report.
-[Buddhist Method](https://github.com/akkaraponph/buddhist-method) supplies the
-trigger-based reasoning discipline, terminology, references, and original pressure
-evaluation. Exact revisions and file mappings are in `upstream-lock.json`.
+
+Panda Suite includes the `buddhist-method` skill from the
+[akkaraponph/buddhist-method fork](https://github.com/akkaraponph/buddhist-method).
+Credit for the original skill goes to [nai0om/buddhist-method](https://github.com/nai0om/buddhist-method).
+See [source notices](SOURCE_NOTICES.md#buddhist-method) for the pinned revision
+and original MIT license.
+
+Exact revisions and file mappings are in `upstream-lock.json`.
 Suite-specific research and trade-offs are in [repository findings](docs/research.md).
 
 ## Essential expansion

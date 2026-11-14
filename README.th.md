@@ -158,8 +158,10 @@ Research และ Write ผ่าน structural validation และ Codex disc
 ## ที่มาและ license
 
 ใช้ไฟล์ต้นฉบับจาก [Panda Debugger](https://github.com/akkaraponph/panda-debugger)
-และ [Buddhist Method](https://github.com/akkaraponph/buddhist-method)
-โดยเก็บ revision และ SHA-256 ใน `upstream-lock.json`
+ส่วนสกิล `buddhist-method` นำมาจาก fork
+[akkaraponph/buddhist-method](https://github.com/akkaraponph/buddhist-method)
+ขอขอบคุณผู้สร้างสกิลต้นฉบับ [nai0om/buddhist-method](https://github.com/nai0om/buddhist-method)
+โดยเก็บ revision และ SHA-256 ของทั้งสองสกิลใน `upstream-lock.json`
 
 ไฟล์ที่เขียนใหม่ของ Suite ใช้ MIT ส่วน Buddhist Method เก็บ MIT เดิมไว้
 revision ของ Panda Debugger ที่ตรวจสอบไม่มีไฟล์ LICENSE จึงยังไม่มีข้อสรุป
