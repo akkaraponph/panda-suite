@@ -277,6 +277,23 @@ class PackageTest(unittest.TestCase):
                     for check in case["checks"]:
                         self.assertNotIn(check, task)
 
+    def test_setup_preparation_isolates_configured_example(self):
+        cases = json.loads((self.root / "tests/scenarios/cases.json").read_text())
+        selected = [case for case in cases if case["id"].startswith("SETUP-")]
+        self.assertEqual(20, len(selected))
+        for case in selected:
+            with self.subTest(case=case["id"]):
+                dest = Path(self.temp.name) / case["id"]
+                prepare(self.root, dest, case["id"], "specialist")
+                self.assertEqual({"TASK.txt", "setup.py"}, {p.name for p in dest.iterdir()})
+                self.assertFalse((dest / "check_setup.py").exists())
+                generator = (dest / "setup.py").read_text()
+                # Only repeat/nonactivation workspaces may see the configured project.
+                self.assertEqual(case["fixture"] == "project-setup-repeat", "## Commands" in generator)
+                task = (dest / "TASK.txt").read_text()
+                for check in case["checks"]:
+                    self.assertNotIn(check, task)
+
 
 if __name__ == "__main__":
     unittest.main()

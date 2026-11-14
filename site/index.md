@@ -8,7 +8,7 @@ Start with **Panda Lead** when you want help choosing a workflow. Go straight to
 
 ## Latest release: v1.5.0 — Panda Git
 
-The suite contains 23 independent skills. [Git](panda-git.html) inspects changes,
+The suite contains 24 independent skills, including [Setup](panda-setup.html) for project initialization. [Git](panda-git.html) inspects changes,
 classifies Conventional Commit messages and separates review from authorized
 execution. Read the [release notes](../docs/v1.5.0.md) and
 [design and evaluation](../docs/panda-git.md).

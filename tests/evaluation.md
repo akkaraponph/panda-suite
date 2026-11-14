@@ -83,6 +83,19 @@ check behavior independently of suite status. `PLAN-INTERFACES` and
 `EXEC-PLAN-RESUME` remain structural and execution controls. Model comparison
 status is recorded in [Plan refinement](../docs/panda-plan-refinement.md).
 
+The [Setup design](../docs/panda-setup.md) adds twenty `SETUP-*` cases built by
+`tests/fixtures/project-setup/setup.py <scenario> repo` (repeat and nonactivation
+cases use the separate `project-setup-repeat` fixture so a configured example is
+not visible to other cases): one per noted stack, a
+stack without a note (Rust + Axum), a combined repository, an existing project with custom architecture and
+instructions, tracked `.env`/`.panda-suite` artifacts, a tracking-policy negation,
+repeated setup, offline documentation, a missing team tool, a runtime/framework
+conflict, a read-only audit, an explicit architecture preference, an unavailable
+agent host, a failing private registry, and nonactivation.
+`python3 -B tests/reviewer/check_setup.py` validates the fixtures;
+`--grade <repo> --scenario <id>` reports objective boundary violations in a
+finished workspace. Neither establishes answer quality.
+
 ## Run and score fairly
 
 The [Research addition](../docs/panda-research.md) documents nine `RESEARCH-*`

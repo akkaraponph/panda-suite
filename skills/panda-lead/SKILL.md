@@ -44,6 +44,7 @@ edit can be handled directly without another skill or a project plan.
 | Prepare release readiness | `panda-release` |
 | Inspect Git state, recommend/create commits, resolve conflicts or recover history | `panda-git` |
 | Create or evaluate Agent Skills | `panda-skill-lab` |
+| Initialize or prepare a project for agent-assisted development, or audit setup readiness | `panda-setup` |
 | Ordered implementation work and acceptance criteria | `panda-plan` |
 | Implement authorized work | `panda-execute` |
 | Diagnose unexpected behavior | `panda-debugger` |

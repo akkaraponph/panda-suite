@@ -36,6 +36,7 @@ SKILLS = [
     ('panda-manual', 'Panda Manual'),
     ('panda-release', 'Panda Release'),
     ('panda-skill-lab', 'Panda Skill Lab'),
+    ('panda-setup', 'Panda Setup'),
 ]
 
 

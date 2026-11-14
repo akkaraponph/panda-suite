@@ -1,6 +1,6 @@
 # Panda Suite
 
-Version **1.6.3** · 23 independent skills
+Version **1.6.3** · 24 independent skills
 
 ![Cyberpunk Panda Suite branding](images/branding.png)
 
@@ -34,6 +34,7 @@ a shared outcome, compact handoffs and acceptance evidence.
 | `panda-skill-lab` | Design and evaluate skills with honest baseline comparisons |
 | `panda-lead` | Select the smallest workflow and coordinate requested activities |
 | `panda-git` | Inspect Git state, classify commit messages, and perform authorized Git operations |
+| `panda-setup` | Initialize or prepare projects for agent-assisted development with current versions, agent instructions, ignore rules and verified commands |
 | `panda-craft` | Compose explicitly selected specialists with shared acceptance and outcome verification |
 | `panda-brainstorm` | Explore a problem, constraints, assumptions, and alternatives |
 | `panda-research` | Answer technical questions and verify capabilities with traceable evidence |

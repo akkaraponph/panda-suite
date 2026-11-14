@@ -451,6 +451,38 @@ Expect a reviewable readiness decision and preparation artifacts. No discovered
 issue is not sufficient evidence for READY. A known mandatory failure is BLOCKED;
 insufficient deciding evidence is UNKNOWN. Preparation does not execute the release.
 
+## Project setup
+
+### Panda Setup
+
+**Inputs:** what you are building, backend/frontend/both, required frameworks,
+destination (new directory or existing repository), project or Go module name,
+agent hosts, and team conventions. Existing files answer most of these; the
+skill asks only questions that change the setup.
+
+```text
+$panda-setup Initialize a Go + Fiber backend in ./api with a health endpoint.
+```
+
+Checks current official docs and package metadata, selects the latest compatible
+stable versions, creates the smallest working service, writes `AGENTS.md`, adds
+`.gitignore` rules including `/.panda-suite/`, and runs build, vet, tests and a
+real request. Reports versions with sources and each check as passed, failed,
+not run or blocked.
+
+```text
+$panda-setup Set up a React frontend and Go backend in one repository.
+$panda-setup Prepare this existing project for Panda Suite.
+$panda-setup Audit this repository's setup readiness. Do not change files.
+```
+
+Existing projects keep their architecture, package manager, lockfiles and
+instructions; upgrades and migrations are proposed, not applied. An audit changes
+nothing. Any stack is supported: the skill researches its official setup path
+at setup time. Optional notes cover pitfalls already observed for Go + Fiber,
+Fastify, FastAPI, React/Vue + Vite and Next.js. Commits, pushes, deployment, global installs and host
+configuration need separate authorization. See [design and evaluation](panda-setup.md).
+
 ## Maintaining skills
 
 ### Panda Skill Lab

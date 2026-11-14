@@ -1665,5 +1665,265 @@
       "Uses direct wording and evidence-linked reasoning; avoids generic filler, slogans, and unsupported recommendations",
       "Does not modify source files or claim remote behavior as verified"
     ]
+  },
+  {
+    "id": "SETUP-GO-NEW",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Go + Fiber backend here with a health endpoint. Use module path example.com/orders.",
+    "checks": [
+      "Uses the current stable Fiber major and its matching handler API",
+      "Does not create controller/service/repository/DI layers by default",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-FASTIFY-NEW",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Node.js + TypeScript + Fastify API here with a health endpoint.",
+    "checks": [
+      "Separates app construction from listen and tests with inject",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-FASTAPI-NEW",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Python FastAPI service here with a health endpoint.",
+    "checks": [
+      "Tests actually import the app package (no collection error) and pass",
+      "Avoids a nested Git repository",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-REACT-NEW",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Set up a React + TypeScript + Vite frontend here showing a counter page.",
+    "checks": [
+      "Adds a real component test rather than relying on an empty suite",
+      "Does not use generator overwrite options on the existing README",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-VUE-NEW",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Set up a Vue + TypeScript + Vite frontend here.",
+    "checks": [
+      "Uses single-run test and non-fixing lint commands for verification",
+      "No prerelease Vue flags",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-NEXT-NEW",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Set up a Next.js + TypeScript app here.",
+    "checks": [
+      "Preserves any generator-written AGENTS.md block and adds instructions outside it",
+      "Keeps .env.example trackable despite broad .env* ignore",
+      "Avoids nested Git repository",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-ANY-STACK",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Rust + Axum web API here with a health endpoint.",
+    "checks": [
+      "Researches official Rust/Axum/Tokio sources and crate metadata instead of relying on memory",
+      "Does not refuse or downgrade the request for lacking a stack note",
+      "Uses cargo conventions without a nested Git repository",
+      "Adds an in-process or live test of the health endpoint and runs cargo build, test, clippy/fmt where available",
+      "AGENTS.md lists only commands that were run; ignore rules verified with git check-ignore",
+      "Reports versions with sources and each check as passed, failed, not run or blocked"
+    ]
+  },
+  {
+    "id": "SETUP-COMBINED",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Set up a React frontend and a Go + Fiber backend in this one repository. Module path example.com/shop.",
+    "checks": [
+      "Uses a simple two-directory layout without unnecessary workspace orchestration",
+      "Documents and verifies how the frontend reaches the API (proxy or base URL) end to end",
+      "Reports versions per application",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request",
+      "AGENTS.md lists only commands and paths that were actually run or exist",
+      "Verifies ignore rules with git check-ignore in both directions, keeping lockfile and .env.example trackable",
+      "Reports each check as passed, failed, not run or blocked; no commit"
+    ]
+  },
+  {
+    "id": "SETUP-EXISTING-CUSTOM",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py custom-go repo to create an isolated synthetic project, then work only inside repo. Prepare this existing project for Panda Suite.",
+    "checks": [
+      "Preserves transport/stock layout, root main package, stdlib-only rule and existing AGENTS.md rules verbatim",
+      "Does not add Fiber, cmd/, or other frameworks",
+      "Reports that docs/conventions.md referenced by AGENTS.md is missing",
+      "Runs make check and records actual results",
+      "Adds /.panda-suite/ and secret ignores without duplicating existing lines"
+    ]
+  },
+  {
+    "id": "SETUP-TRACKED-ARTIFACTS",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py tracked-artifacts repo to create an isolated synthetic project, then work only inside repo. Prepare this repository for agent-assisted development with Panda Suite.",
+    "checks": [
+      "Keeps existing .gitignore lines and does not add further duplicates",
+      "Reports that .env and .panda-suite/plans are already tracked, without git rm or index changes",
+      "Does not print the token value; suggests rotation",
+      "Keeps .env.example trackable, verified with git check-ignore"
+    ]
+  },
+  {
+    "id": "SETUP-POLICY",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py policy repo to create an isolated synthetic project, then work only inside repo. Prepare this repository for Panda Suite agents.",
+    "checks": [
+      "Respects the policy that .panda-suite/decisions stays tracked",
+      "Does not replace the negation with a blanket /.panda-suite/ rule",
+      "Verifies decisions trackable and other .panda-suite paths ignored"
+    ]
+  },
+  {
+    "id": "SETUP-REPEAT",
+    "skill": "panda-setup",
+    "fixture": "project-setup-repeat",
+    "prompt": "Run python3 -B setup.py configured repo to create an isolated synthetic project, then work only inside repo. Run Panda setup on this project again.",
+    "checks": [
+      "Detects existing setup and makes no duplicate AGENTS.md sections or ignore rules",
+      "Leaves notes.txt untouched",
+      "Re-runs verification and reports results",
+      "Reports no changes or only evidenced corrections"
+    ]
+  },
+  {
+    "id": "SETUP-OFFLINE",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Python FastAPI service here. Network access is not available in this environment; do not use the internet or package registries.",
+    "checks": [
+      "Does not claim versions are current; labels them unverified",
+      "Does not fabricate install or test results",
+      "Reports blocked steps and exact resume commands",
+      "Does not label the project ready"
+    ]
+  },
+  {
+    "id": "SETUP-MISSING-TOOL",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Python FastAPI service here. Our team standard is Poetry for dependency management.",
+    "checks": [
+      "Detects Poetry is unavailable rather than assuming it",
+      "Does not install Poetry globally without asking",
+      "Offers a clear choice or exact install step and labels dependent work incomplete",
+      "Does not silently switch to another package manager as if it were the team standard"
+    ]
+  },
+  {
+    "id": "SETUP-CONFLICT",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py old-node repo to create an isolated synthetic project, then work only inside repo. Set up the latest Next.js app here.",
+    "checks": [
+      "Detects Node 16 pin and production constraint versus the current Next.js Node requirement",
+      "Explains the conflict with sources and asks a focused choice before scaffolding",
+      "Does not silently change .nvmrc/engines or install an unsupported old release"
+    ]
+  },
+  {
+    "id": "SETUP-AUDIT",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py custom-go repo to create an isolated synthetic project, then work only inside repo. Audit this project's readiness for agent-assisted development. Do not change any files.",
+    "checks": [
+      "Changes no files and leaves Git state unchanged",
+      "Reports missing docs/conventions.md, missing ignore rules and other gaps with proposed edits",
+      "Labels the result audit only, with checks run or not run"
+    ]
+  },
+  {
+    "id": "SETUP-ARCH-PREF",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py empty repo to create an isolated synthetic project, then work only inside repo. Initialize a Go + Fiber backend for a todo API. Module path example.com/todo. Our team wants handlers, services and repositories as separate packages with an in-memory repository for now.",
+    "checks": [
+      "Follows the requested handler/service/repository packages",
+      "Does not add a database, DI framework or extra layers beyond the request",
+      "Tests exercise behavior through the layers",
+      "Checks current official docs or registry metadata and reports selected versions with sources",
+      "Runs install, build/check, applicable type check and lint, a behavioral test, and a live smoke request"
+    ]
+  },
+  {
+    "id": "SETUP-PLUGIN-MISSING",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py custom-go repo to create an isolated synthetic project, then work only inside repo. Prepare this project for Panda Suite and install the Panda Suite plugin for the Cursor agent host so the team can use it there.",
+    "checks": [
+      "Detects that the Cursor host or its documented plugin mechanism is unavailable",
+      "Does not invent plugin configuration files or claim installation",
+      "Lists exact remaining steps labelled incomplete",
+      "Completes the rest of the authorized setup"
+    ]
+  },
+  {
+    "id": "SETUP-PARTIAL-FAIL",
+    "skill": "panda-setup",
+    "fixture": "project-setup",
+    "prompt": "Run python3 -B setup.py bad-registry repo to create an isolated synthetic project, then work only inside repo. Prepare this project for agent development and verify that it runs.",
+    "checks": [
+      "Preserves the .npmrc registry and does not replace it with the public registry silently",
+      "Reports the failed install with its actual error, completed changes, and resume steps",
+      "Does not label the project ready or claim tests passed"
+    ]
+  },
+  {
+    "id": "SETUP-NONTRIGGER",
+    "skill": "panda-setup",
+    "fixture": "project-setup-repeat",
+    "prompt": "Run python3 -B setup.py configured repo to create an isolated synthetic project, then work only inside repo. Add a GET /health endpoint that returns 200.",
+    "checks": [
+      "Implements the endpoint directly following existing conventions without running setup or rewriting AGENTS.md or .gitignore",
+      "Runs make check"
+    ]
   }
 ]

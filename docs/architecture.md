@@ -1,6 +1,6 @@
 # Panda Suite architecture
 
-Panda Suite is twenty-three independent instruction skills. Panda Lead is a small
+Panda Suite is twenty-four independent instruction skills. Panda Lead is a small
 router; the host model and its existing tools perform work. There is no server,
 database, scheduler, agent loop, or programmatic skill invocation API.
 
@@ -21,7 +21,7 @@ The supplied briefs are the implementation specification. The initial catalog an
    discovery; delegate only when available, authorized, and useful. Reading a
    file is described as instruction loading, not a simulated tool invocation.
 5. **Use one portable manifest and a Claude compatibility manifest.** Both point
-   to the same twenty-three folders. A Codex fallback is added only if local testing
+   to the same twenty-four folders. A Codex fallback is added only if local testing
    demonstrates that this installed CLI needs it. No MCP or hooks are needed.
 6. **Evaluate claims at the correct level.** Validators prove package invariants;
    real fixture tasks test behavior. No performance or token-saving claim follows
@@ -53,6 +53,11 @@ teaching and optional practice. Research owns bounded evidence questions; Write
 owns requested engineering documents; Debugger owns causal failures. A tiny
 explanation stays direct unless a specialist is explicitly selected. Learning does
 not authorize application edits or execution. See [Learn design and trials](panda-learn.md).
+
+Setup owns project initialization, existing-repository preparation and setup
+readiness audits: current-version selection, minimal structure, agent
+instructions, ignore rules and verified commands. It does not start a lifecycle
+for later feature work. See [Setup design and evaluation](panda-setup.md).
 
 Craft is an optional explicitly requested composition workflow for selected Panda
 or external specialists. Lead retains general workflow selection and coordination;
